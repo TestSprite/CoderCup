@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Analysis text appears substantive and match-specific, not generic boilerplate",
+  "description": "The analysis content should reference specific teams, players, or tactical aspects of the match rather than generic placeholder text. Content like 'Analysis coming soon' or repeated identical paragraphs across matches fails this test.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a knockout bracket match cell — ideally a Quarterfinal or Semifinal match — to open the match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "assertion", "description": "Verify the analysis text contains specific references such as team names, country names, or tactical terms (formation, midfield, defense, goals, prediction, form, FIFA). Generic placeholder text like 'Match analysis will be available closer to kickoff' or 'This is a sample analysis' should cause the test to fail." }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "A References panel or section is present after the analysis text",
+  "description": "The analysis tab should include a References or Sources section below the analysis paragraphs, listing the sources that were cited inline in the text.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Scroll down past the analysis paragraphs to look for a references or sources section" },
+    { "type": "assertion", "description": "Verify that a References, Sources, or Citations section is visible below the analysis paragraphs. It should contain at least one numbered reference entry with a URL or source name." }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Dark mode body and heading text meet WCAG AA contrast",
+  "description": "Dark mode body and heading text meet WCAG AA contrast.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Toggle to dark mode on / and sample the contrast of body text and a heading"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify body text contrast ≥ 4.5:1 and large/heading text ≥ 3:1 in dark mode — no near-black-on-near-black low-contrast text."
+    }
+  ]
+}

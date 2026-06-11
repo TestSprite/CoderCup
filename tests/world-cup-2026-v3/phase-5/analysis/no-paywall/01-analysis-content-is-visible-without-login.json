@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Analysis content is fully visible without requiring login or signup",
+  "description": "The analysis content should be accessible to anonymous visitors without any login wall, paywall, signup prompt, or age gate blocking the view.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage without logging in" },
+    { "type": "action", "description": "Click on any match bracket cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "assertion", "description": "Verify the full analysis text is visible without any modal, paywall, login prompt, or 'sign in to read more' overlay blocking the content. The analysis paragraphs should be fully readable without any authentication requirement." }
+  ]
+}

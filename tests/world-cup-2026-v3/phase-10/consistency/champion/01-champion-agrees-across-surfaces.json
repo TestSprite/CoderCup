@@ -1,0 +1,24 @@
+{
+  "type": "frontend",
+  "name": "Predicted champion is identical on the Final page, the bracket, and the landing",
+  "description": "Predicted champion is identical on the Final page, the bracket, and the landing.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Read the predicted champion named on the Final match page"
+    },
+    {
+      "type": "action",
+      "description": "Read the team that wins the last (Final) node of the bracket on /"
+    },
+    {
+      "type": "action",
+      "description": "Read any \"predicted champion\" mention on the landing/hero"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify all three name the SAME real nation — no disagreement, and not a placeholder."
+    }
+  ]
+}

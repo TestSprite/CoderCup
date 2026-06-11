@@ -1,0 +1,18 @@
+{
+  "type": "frontend",
+  "name": "Three Round-of-16 cell clicks lead to three different match detail pages",
+  "description": "When a visitor returns to the homepage between clicks and clicks three different Round-of-16 cells in sequence, each click lands on a different match detail URL — proving R16 cells are bound to individual matches, not all pointing at the same generic page.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the knockout bracket section" },
+    { "type": "action", "description": "Click the first cell in the Round-of-16 area" },
+    { "type": "action", "description": "Note the current match detail URL as the first R16 destination" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click the second cell in the Round-of-16 area" },
+    { "type": "action", "description": "Note the current match detail URL as the second R16 destination" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click the third cell in the Round-of-16 area" },
+    { "type": "assertion", "description": "Verify the three noted destination URLs are all distinct from each other" }
+  ]
+}

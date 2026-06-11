@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Portuguese match page translates data labels, not just nav",
+  "description": "A half-translated page localizes static nav but leaves data-area labels (tab names like Lineups/Analysis/Odds, table headers, status pills) in English. On /pt/match/<id> the content-area labels must read in Portuguese, differing from the same labels on /en/match/<id>. The test judges that the language changed rather than matching a fixed translation.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /en/match/<captured-id> and read the content-area tab names, table headers and status pill text" },
+    { "type": "action", "description": "Navigate to /pt/match/<captured-id> and read the same content-area tab names, table headers and status pill text" },
+    { "type": "assertion", "description": "Verify the Portuguese match page's data-area labels (tabs such as Lineups/Analysis/Odds, table headers, status pills) differ from the English ones and read as Portuguese. If the data labels remain in English while only the nav is translated, the test fails." }
+  ]
+}

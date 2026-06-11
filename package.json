@@ -1,0 +1,59 @@
+{
+  "name": "codercup",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "description": "CoderCup — the continuous public benchmark and leaderboard for AI coding agents.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@aws-sdk/client-amplify": "^3.967.0",
+    "@aws-sdk/client-cloudfront": "^3.967.0",
+    "@aws-sdk/client-dynamodb": "^3.967.0",
+    "@aws-sdk/client-lambda": "^3.967.0",
+    "@aws-sdk/client-s3": "^3.967.0",
+    "@aws-sdk/client-secrets-manager": "^3.967.0",
+    "@aws-sdk/lib-dynamodb": "^3.967.0",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@types/aws-lambda": "^8.10.161",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.40.0",
+    "lucide-react": "^1.16.0",
+    "next": "14.2.13",
+    "next-themes": "^0.4.6",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-markdown": "^10.1.0",
+    "recharts": "^3.8.1",
+    "remark-gfm": "^4.0.1",
+    "swr": "^2.4.1",
+    "tailwind-merge": "^3.6.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "20.14.10",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "autoprefixer": "10.4.19",
+    "happy-dom": "^17.6.1",
+    "postcss": "8.4.39",
+    "tailwindcss": "3.4.6",
+    "typescript": "5.5.3",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=18.17"
+  }
+}

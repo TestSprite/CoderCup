@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Group standings page exists under all three locales",
+  "description": "Beyond the root and match pages, secondary pages like group standings must also be localized. /en/groups, /es/groups and /pt/groups should each return a real standings page. A partial i18n that only localized the homepage fails here.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /en/groups and observe the page" },
+    { "type": "action", "description": "Navigate to /es/groups and observe the page" },
+    { "type": "action", "description": "Navigate to /pt/groups and observe the page" },
+    { "type": "assertion", "description": "Verify all three /groups locale variants return 200 and render group standings tables (group letters, team rows, points columns). If any locale variant of the groups page 404s or renders empty, the test fails." }
+  ]
+}

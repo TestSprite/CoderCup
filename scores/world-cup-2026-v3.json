@@ -1,0 +1,476 @@
+{
+  "_doc": "SCORE LEDGER — source of truth for CoderCup World Cup 2026 v3. Raw measured per-phase data ONLY. Derived values (composite, cumulative, trajectory) are computed by scripts/build-agent-fixtures.mjs — never hand-typed into the fixtures. To add phase 4-9: append a phase entry per agent from that phase's live TestSprite scoring + run console-log wall-clock, then re-run the generator + publish-fixtures.mjs.",
+  "task_slug": "world-cup-2026-v3",
+  "task_name": "World Cup Code Battle 2026 — Match Brief Edition",
+  "event_slug": "world-cup-2026",
+  "total_phases": 9,
+  "composite_formula": "Quality composite (pure quality; cost + wall are separate side-metrics, Pareto-style): 0.35·correctness + 0.25·first-try-rate + 0.20·(1−regression-rate) + 0.10·(1−never-rate) + 0.10·ACM. correctness = cumulative weighted pass-rate (p0=3/p1=2/p2=1). ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85). first-try/late/never/regression are per-plan outcomes; late is implicit (first_try+late+never=total).",
+  "cost_score_formula": "clamp(1 - usd_spent/50, 0, 1)",
+  "cost_note": "Real tokens × rate card (imputed USD; all agents on flat subs). cost + wall-clock are side-metrics, shown alongside the quality composite (not blended into it). claude-code: total_cost_usd from --output-format json. codex: --json tiered. antigravity + kimi: codex token volume × their own rate card (per-run tokens uncapturable).",
+  "token_estimate": {
+    "per_phase_input_tokens": 1500000,
+    "per_phase_output_tokens": 200000,
+    "basis": "Flat moderate profile for one multi-turn agentic phase build (cache-inflated input re-sent across turns + code/tool-call output). Same for every agent and phase since the per-phase task scope is shared. Pricing sourced 2026-05-30: Opus 4.8 $5/$25, gpt-5-codex $1.25/$10, gemini-3.1-pro $2/$12 per M input/output (standard <=200K context)."
+  },
+  "phase_labels": {
+    "1": "Landing page",
+    "2": "Match details",
+    "3": "Predictions",
+    "4": "Lineups",
+    "5": "Your analysis",
+    "6": "Related news",
+    "7": "Betting odds",
+    "8": "Multi-language · i18n",
+    "9": "Light/Dark · polish",
+    "10": "Final polish · release"
+  },
+  "scored_through_phase": 10,
+  "metric_note": "cum_passed/cum_total = CUMULATIVE-as-of-phase: all plans from phases 1..N re-scored against THIS phase's deploy (catches regressions + fixes; e.g. antigravity P1 8/17 standalone rose to 16/17 by P2 after it fixed its regressions). run_wall_seconds = that phase's run wall clock (delta).",
+  "agents": {
+    "claude-code": {
+      "name": "Claude Code",
+      "vendor": "Anthropic",
+      "model_id": "claude-opus-4-8",
+      "input_price_per_mtok": 5,
+      "output_price_per_mtok": 25,
+      "amplify_app_id": "d2cyz5kp1vxns8",
+      "deploy_url": "https://main.d2cyz5kp1vxns8.amplifyapp.com",
+      "phases": {
+        "1": {
+          "run_id": "claude-code-phase1",
+          "started_at": "2026-05-22T12:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 983,
+          "usd_spent": 5.9367,
+          "source": "TestSprite live @P1 deploy (clean re-run)",
+          "cum_correctness": 0.8919
+        },
+        "2": {
+          "run_id": "claude-code-phase2",
+          "started_at": "2026-05-23T18:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 520,
+          "usd_spent": 2.8468,
+          "source": "TestSprite live @P2 deploy (clean re-run)",
+          "cum_correctness": 0.8696
+        },
+        "3": {
+          "run_id": "claude-code-phase3",
+          "started_at": "2026-05-25T00:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 789,
+          "usd_spent": 3.6043,
+          "source": "TestSprite live @P3 deploy (clean re-run)",
+          "cum_correctness": 0.8673
+        },
+        "4": {
+          "run_id": "claude-code-phase4",
+          "started_at": "2026-05-26T06:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 931,
+          "usd_spent": 9.7695,
+          "source": "TestSprite live @P4 deploy (clean re-run)",
+          "cum_correctness": 0.8425
+        },
+        "5": {
+          "run_id": "claude-code-phase5",
+          "started_at": "2026-05-27T12:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 1454,
+          "usd_spent": 15.4449,
+          "source": "TestSprite live @P5 deploy (clean re-run)",
+          "cum_correctness": 0.8724
+        },
+        "6": {
+          "run_id": "claude-code-phase6",
+          "started_at": "2026-05-28T18:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 649,
+          "usd_spent": 3.3483,
+          "source": "TestSprite live @P6 deploy (clean re-run)",
+          "cum_correctness": 0.9017
+        },
+        "7": {
+          "run_id": "claude-code-phase7",
+          "started_at": "2026-05-30T00:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 528,
+          "usd_spent": 2.8683,
+          "source": "TestSprite live @P7 deploy (clean re-run)",
+          "cum_correctness": 0.8853
+        },
+        "8": {
+          "run_id": "claude-code-phase8",
+          "started_at": "2026-05-31T06:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 1314,
+          "usd_spent": 9.2686,
+          "source": "TestSprite live @P8 deploy (clean re-run)",
+          "cum_correctness": 0.8728
+        },
+        "9": {
+          "run_id": "claude-code-phase9",
+          "started_at": "2026-06-01T12:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 1034,
+          "usd_spent": 7.1509,
+          "source": "TestSprite live @P9 deploy (clean re-run)",
+          "cum_correctness": 0.8747
+        },
+        "10": {
+          "run_id": "claude-code-phase10",
+          "started_at": "2026-06-02T18:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 779,
+          "usd_spent": 3.9831,
+          "source": "TestSprite live @P10 deploy (clean re-run)",
+          "cum_correctness": 0.8527
+        }
+      }
+    },
+    "codex": {
+      "name": "Codex",
+      "vendor": "OpenAI",
+      "model_id": "gpt-5.5",
+      "input_price_per_mtok": 5,
+      "output_price_per_mtok": 30,
+      "amplify_app_id": "d73bifx6lxpxb",
+      "deploy_url": "https://main.d73bifx6lxpxb.amplifyapp.com",
+      "phases": {
+        "1": {
+          "run_id": "codex-phase1",
+          "started_at": "2026-05-22T12:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 566,
+          "usd_spent": 3.2135,
+          "source": "TestSprite live @P1 deploy (clean re-run)",
+          "cum_correctness": 0.8378
+        },
+        "2": {
+          "run_id": "codex-phase2",
+          "started_at": "2026-05-23T18:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 396,
+          "usd_spent": 3.0431,
+          "source": "TestSprite live @P2 deploy (clean re-run)",
+          "cum_correctness": 0.7971
+        },
+        "3": {
+          "run_id": "codex-phase3",
+          "started_at": "2026-05-25T00:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 595,
+          "usd_spent": 4.7616,
+          "source": "TestSprite live @P3 deploy (clean re-run)",
+          "cum_correctness": 0.8142
+        },
+        "4": {
+          "run_id": "codex-phase4",
+          "started_at": "2026-05-26T06:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 662,
+          "usd_spent": 4.5809,
+          "source": "TestSprite live @P4 deploy (clean re-run)",
+          "cum_correctness": 0.8904
+        },
+        "5": {
+          "run_id": "codex-phase5",
+          "started_at": "2026-05-27T12:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 702,
+          "usd_spent": 8.0402,
+          "source": "TestSprite live @P5 deploy (clean re-run)",
+          "cum_correctness": 0.8929
+        },
+        "6": {
+          "run_id": "codex-phase6",
+          "started_at": "2026-05-28T18:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 469,
+          "usd_spent": 4.7402,
+          "source": "TestSprite live @P6 deploy (clean re-run)",
+          "cum_correctness": 0.9444
+        },
+        "7": {
+          "run_id": "codex-phase7",
+          "started_at": "2026-05-30T00:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 407,
+          "usd_spent": 4.0115,
+          "source": "TestSprite live @P7 deploy (clean re-run)",
+          "cum_correctness": 0.8817
+        },
+        "8": {
+          "run_id": "codex-phase8",
+          "started_at": "2026-05-31T06:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 561,
+          "usd_spent": 6.6779,
+          "source": "TestSprite live @P8 deploy (clean re-run)",
+          "cum_correctness": 0.9201
+        },
+        "9": {
+          "run_id": "codex-phase9",
+          "started_at": "2026-06-01T12:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 535,
+          "usd_spent": 7.3674,
+          "source": "TestSprite live @P9 deploy (clean re-run)",
+          "cum_correctness": 0.8747
+        },
+        "10": {
+          "run_id": "codex-phase10",
+          "started_at": "2026-06-02T18:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 722,
+          "usd_spent": 9.5588,
+          "source": "TestSprite live @P10 deploy (clean re-run)",
+          "cum_correctness": 0.8527
+        }
+      }
+    },
+    "antigravity": {
+      "name": "Anti-Gravity",
+      "vendor": "Google",
+      "model_id": "gemini-3.5-flash-high",
+      "input_price_per_mtok": 1.5,
+      "output_price_per_mtok": 9,
+      "_cost_note": "Gemini 3.5 Flash (High) — $1.5/$9 per Mtok. Real marginal cost $0 (flat Google AI Ultra sub); per-run tokens uncapturable → cost imputed.",
+      "amplify_app_id": "d3ds0cy7nla3ka",
+      "deploy_url": "https://main.d3ds0cy7nla3ka.amplifyapp.com",
+      "phases": {
+        "1": {
+          "run_id": "antigravity-phase1",
+          "started_at": "2026-05-22T12:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 389,
+          "usd_spent": 2.4041,
+          "source": "imputed: codex token volume (1383716 in / 36498 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0
+        },
+        "2": {
+          "run_id": "antigravity-phase2",
+          "started_at": "2026-05-23T18:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 317,
+          "usd_spent": 2.5005,
+          "source": "imputed: codex token volume (1532503 in / 22419 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0.7971
+        },
+        "3": {
+          "run_id": "antigravity-phase3",
+          "started_at": "2026-05-25T00:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 506,
+          "usd_spent": 4.395,
+          "source": "imputed: codex token volume (2738722 in / 31883 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0.7699
+        },
+        "4": {
+          "run_id": "antigravity-phase4",
+          "started_at": "2026-05-26T06:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 595,
+          "usd_spent": 3.8725,
+          "source": "imputed: codex token volume (2359970 in / 36953 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0.8151
+        },
+        "5": {
+          "run_id": "antigravity-phase5",
+          "started_at": "2026-05-27T12:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 532,
+          "usd_spent": 8.0625,
+          "source": "imputed: codex token volume (5157727 in / 36209 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0.8571
+        },
+        "6": {
+          "run_id": "antigravity-phase6",
+          "started_at": "2026-05-28T18:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 286,
+          "usd_spent": 3.4156,
+          "source": "imputed: codex token volume (2114970 in / 27017 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0.8333
+        },
+        "7": {
+          "run_id": "antigravity-phase7",
+          "started_at": "2026-05-30T00:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 360,
+          "usd_spent": 3.6954,
+          "source": "imputed: codex token volume (2316344 in / 24539 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0.8853
+        },
+        "8": {
+          "run_id": "antigravity-phase8",
+          "started_at": "2026-05-31T06:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 958,
+          "usd_spent": 6.1687,
+          "source": "imputed: codex token volume (3929653 in / 30471 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0.855
+        },
+        "9": {
+          "run_id": "antigravity-phase9",
+          "started_at": "2026-06-01T12:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 670,
+          "usd_spent": 7.3775,
+          "source": "imputed: codex token volume (4730110 in / 31371 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0.8293
+        },
+        "10": {
+          "run_id": "antigravity-phase10",
+          "started_at": "2026-06-02T18:00:00Z",
+          "cum_passed": 0,
+          "cum_total": 0,
+          "run_wall_seconds": 1238,
+          "usd_spent": 9.271,
+          "source": "imputed: codex token volume (5995683 in / 30835 out) × gemini-3.5-flash-high rate ($1.5/$9 per M); agy per-run tokens uncapturable",
+          "cum_correctness": 0.8382
+        }
+      }
+    },
+    "kimi": {
+      "name": "Kimi",
+      "vendor": "Moonshot",
+      "model_id": "kimi-k2.6",
+      "input_price_per_mtok": 0.95,
+      "output_price_per_mtok": 4,
+      "amplify_app_id": "d1i83t74qytjgs",
+      "deploy_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+      "phases": {
+        "1": {
+          "run_id": "kimi-phase1",
+          "started_at": "2026-06-05T10:33:15Z",
+          "cum_passed": 12,
+          "cum_total": 17,
+          "run_wall_seconds": 1228,
+          "usd_spent": 1.4605,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P1 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.737
+        },
+        "2": {
+          "run_id": "kimi-phase2",
+          "started_at": "2026-06-05T11:28:19Z",
+          "cum_passed": 23,
+          "cum_total": 33,
+          "run_wall_seconds": 2376,
+          "usd_spent": 1.5456,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P2 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.722
+        },
+        "3": {
+          "run_id": "kimi-phase3",
+          "started_at": "2026-06-05T13:24:34Z",
+          "cum_passed": 39,
+          "cum_total": 53,
+          "run_wall_seconds": 933,
+          "usd_spent": 2.7293,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P3 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.741
+        },
+        "4": {
+          "run_id": "kimi-phase4",
+          "started_at": "2026-06-05T14:50:02Z",
+          "cum_passed": 45,
+          "cum_total": 69,
+          "run_wall_seconds": 1739,
+          "usd_spent": 2.3898,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P4 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.685
+        },
+        "5": {
+          "run_id": "kimi-phase5",
+          "started_at": "2026-06-05T16:24:20Z",
+          "cum_passed": 78,
+          "cum_total": 91,
+          "run_wall_seconds": 3600,
+          "usd_spent": 5.0447,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P5 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.869
+        },
+        "6": {
+          "run_id": "kimi-phase6",
+          "started_at": "2026-06-05T19:02:02Z",
+          "cum_passed": 90,
+          "cum_total": 107,
+          "run_wall_seconds": 1408,
+          "usd_spent": 2.1173,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P6 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.865
+        },
+        "7": {
+          "run_id": "kimi-phase7",
+          "started_at": "2026-06-05T19:54:34Z",
+          "cum_passed": 107,
+          "cum_total": 126,
+          "run_wall_seconds": 924,
+          "usd_spent": 2.2987,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P7 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.875
+        },
+        "8": {
+          "run_id": "kimi-phase8",
+          "started_at": "2026-06-06T11:16:54Z",
+          "cum_passed": 126,
+          "cum_total": 150,
+          "run_wall_seconds": 3600,
+          "usd_spent": 3.8551,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P8 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.848
+        },
+        "9": {
+          "run_id": "kimi-phase9",
+          "started_at": "2026-06-06T15:13:17Z",
+          "cum_passed": 136,
+          "cum_total": 166,
+          "run_wall_seconds": 2877,
+          "usd_spent": 4.6191,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P9 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.833
+        },
+        "10": {
+          "run_id": "kimi-phase10",
+          "started_at": "2026-06-06T18:50:15Z",
+          "cum_passed": 160,
+          "cum_total": 182,
+          "run_wall_seconds": 2303,
+          "usd_spent": 5.8192,
+          "source": "Kimi K2.6 (Kimi Code) — TestSprite live @P10 deploy d1i83t74qytjgs (target-verified). Allegretto flat sub → USD imputed (codex token volume × kimi rate $0.95/$4.0). wall = run_id-start→workdir-save.",
+          "cum_correctness": 0.892
+        }
+      }
+    }
+  }
+}

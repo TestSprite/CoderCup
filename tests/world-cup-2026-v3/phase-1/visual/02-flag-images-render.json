@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Homepage team flag images render the correct national flag, not broken or placeholder",
+  "description": "Every team flag image on the homepage must actually load as a real graphic and visually match the correct national flag of the team it labels. A broken image, a generic placeholder, or a wrong flag must FAIL — a correct src/alt attribute on a broken or wrong graphic is not enough.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Inspect the team flag images rendered in the knockout bracket and the group standings" },
+    { "type": "assertion", "description": "Verify each visible team flag image actually rendered as a real graphic (not a broken-image placeholder or empty box) and visually matches the correct national flag of the team named beside it. A flag that is broken, a generic placeholder (e.g. a plain colored block or a tricolor stamped with the team's letter-code as text), or a different country's flag fails this assertion." }
+  ]
+}

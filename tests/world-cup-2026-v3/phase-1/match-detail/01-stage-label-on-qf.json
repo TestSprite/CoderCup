@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Clicking a Quarterfinal cell reaches a match page labeled Quarterfinal",
+  "description": "When a visitor clicks a Quarterfinal cell in the bracket, the destination match page surfaces a Quarterfinal stage label — proving stage context follows the navigation, not just the homepage chrome.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the knockout bracket section" },
+    { "type": "action", "description": "Click a cell in the Quarterfinal area of the bracket" },
+    { "type": "assertion", "description": "Verify the destination URL differs from the homepage URL" },
+    { "type": "assertion", "description": "Verify the destination page surfaces a Quarterfinal stage indicator — accepting any of QF, Quarterfinal, Quarter-final, Quarter Final, Quarter Finals, or a heading/breadcrumb whose first word starts with Q" }
+  ]
+}

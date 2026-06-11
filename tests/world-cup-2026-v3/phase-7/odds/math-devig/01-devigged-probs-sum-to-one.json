@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Each book's de-vigged probabilities sum to 1.0",
+  "description": "The per-match odds artifact stores de-vigged implied probabilities for every bookmaker. De-vigging removes the bookmaker margin so the three outcome probabilities for any single book must sum to 1.0. A naive build that skips de-vigging (probabilities summing to >1.0) fails this test.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-odds/<first-id>.json using the captured id (the per-match odds artifact)" },
+    { "type": "action", "description": "Inspect the books array and read each book's devigged.home, devigged.draw and devigged.away values" },
+    { "type": "assertion", "description": "Verify that for every book in the artifact the three de-vigged probabilities (home + draw + away) sum to 1.0 within a tolerance of plus or minus 0.001. Any book whose de-vigged probabilities sum to more than 1.001 (the bookmaker margin was not removed) fails this test." }
+  ]
+}

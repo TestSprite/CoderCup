@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "The predicted champion is a real qualified nation, not a placeholder",
+  "description": "The predicted champion is a real qualified nation, not a placeholder.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Open the Final page and read the predicted champion"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify it is a real World Cup 2026 nation (e.g. France/Brazil/Argentina/Spain/etc.), not \"TBD\", \"Team A\", blank, or a club."
+    }
+  ]
+}

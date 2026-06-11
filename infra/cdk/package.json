@@ -1,0 +1,25 @@
+{
+  "name": "codearena-infra",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AWS CDK infrastructure for CoderCup. Deploys to us-east-1. All resources prefixed codearena-, tagged Project=CodeArena ManagedBy=ClaudeCode.",
+  "scripts": {
+    "build": "tsc",
+    "synth": "cdk synth",
+    "diff": "cdk diff",
+    "deploy": "cdk deploy",
+    "destroy": "cdk destroy",
+    "bootstrap": "cdk bootstrap"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.10",
+    "aws-cdk": "2.155.0",
+    "esbuild": "^0.28.0",
+    "ts-node": "10.9.2",
+    "typescript": "5.5.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.155.0",
+    "constructs": "10.3.0"
+  }
+}

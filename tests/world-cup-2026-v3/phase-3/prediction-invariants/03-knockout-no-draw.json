@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Knockout-stage predictions never declare a draw winner",
+  "description": "Opening a knockout-stage match page shows a predicted winner that is a team name, never the word Draw.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Open a match page from a link labeled as a knockout round" },
+    { "type": "assertion", "description": "Verify the prediction block names a predicted winner that is one of the two competing teams and never shows a draw outcome" }
+  ]
+}

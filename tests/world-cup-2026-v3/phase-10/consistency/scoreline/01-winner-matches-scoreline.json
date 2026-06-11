@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Each predicted winner is the higher-scored side (no winner/scoreline contradiction)",
+  "description": "Each predicted winner is the higher-scored side (no winner/scoreline contradiction).",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Sample 4 different /match/<id> pages and read each predicted winner + predicted scoreline"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the named winner is the side with the higher score in the scoreline (or a draw only where the format allows). No match may name one team as winner while the scoreline favors the other."
+    }
+  ]
+}

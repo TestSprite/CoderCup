@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "News panel does not show placeholder or fake article titles",
+  "description": "The news cards should contain real article titles, not placeholder content like 'Article Title 1', 'News Item', 'Lorem ipsum', or obviously templated fake headlines.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on any bracket match to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "assertion", "description": "Verify the news card titles appear to be real news headlines about football, World Cup, or the teams involved. Titles like 'Article Title', 'News 1', 'Placeholder', or lorem ipsum text fail this test. Real titles should be descriptive sentences about actual football events." }
+  ]
+}

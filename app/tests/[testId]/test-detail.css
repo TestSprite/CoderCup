@@ -1,0 +1,632 @@
+/* /tests/[testId] — extracted verbatim from codearena (2)/tests/790c7f65.html
+   Tokens (--ink, --line, --accent, --positive, --negative, --vendor-*)
+   come from design.css. */
+
+.plan-shell { padding-top: 32px; padding-bottom: 80px; }
+
+.crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-3);
+  margin-bottom: 28px;
+}
+.crumb a { color: var(--ink-2); text-decoration: none; }
+.crumb a:hover { color: var(--ink); }
+.crumb .sep { color: var(--ink-4); }
+
+.plan-head {
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 28px;
+}
+.plan-id {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+}
+.plan-title {
+  font-family: var(--font-sans);
+  font-size: clamp(26px, 3.4vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  margin: 0 0 16px;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.plan-title code {
+  font-family: var(--font-mono);
+  font-size: 0.78em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 2px 8px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.plan-lede {
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  color: var(--ink-2);
+  max-width: 760px;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+.plan-lede code {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1px 5px;
+  color: var(--ink);
+}
+.plan-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0;
+}
+
+.plan-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+@media (max-width: 920px) {
+  .plan-body { grid-template-columns: 1fr; gap: 28px; }
+}
+
+.card-block { margin-bottom: 36px; }
+.card-block h2 {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.card-block h2 .meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+  font-weight: 500;
+}
+
+/* Plan steps */
+.steps {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+.step {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 14px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.step:last-child { border-bottom: none; }
+.step .n {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  text-align: center;
+  background: var(--surface);
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  margin-top: 1px;
+}
+.step .body {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.65;
+}
+.step .body code {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1px 5px;
+  color: var(--ink);
+}
+.step .body .assertion {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink-2);
+  font-size: 12px;
+}
+.step .body .assertion::before {
+  content: "↳ assert · ";
+  color: var(--accent);
+  font-weight: 500;
+}
+.aside-block .steps .step { padding: 12px 16px; grid-template-columns: 26px 1fr; gap: 10px; }
+.aside-block .steps .step .n { width: 20px; height: 20px; font-size: 10.5px; }
+.aside-block .steps .step .body { font-size: 12.5px; line-height: 1.55; }
+.aside-block .steps .step .body .assertion { font-size: 11.5px; margin-top: 4px; }
+
+/* History matrix — N agents × M phase columns.
+   Cells share a fixed height (not aspect-ratio) so every row aligns cleanly
+   whether the cell is filled, blocked, pending, or n/a — the column width
+   varies with viewport, but the matrix must read as even horizontal rows. */
+.history-head {
+  display: grid;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+.history-head > div {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--ink-3);
+  text-align: center;
+  padding: 4px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.history-head > div:first-child { text-align: left; padding-left: 4px; }
+/* Future (not-yet-run) phase headers read muted; n/a headers (plan didn't
+   exist in that earlier phase) sit between muted and active. */
+.history-head > div.is-future { color: var(--ink-4); }
+.history-head > div.is-na { color: var(--ink-4); }
+.history {
+  display: grid;
+  gap: 4px;
+  margin-top: 4px;
+  align-items: center;
+  /* Fixed 34px square cells in fixed 34px columns (the header grid uses the
+     same template). Fixed width AND height — NOT aspect-ratio + stretch, which
+     fought each other and stretched filled cells into tall rectangles while
+     leaving pending cells short. Fixed sizing guarantees true squares and
+     uniform rows regardless of verdict state or label wrapping. Left-aligned;
+     the .history-wrap scrolls head+body together if the roadmap overflows. */
+}
+/* Scroll head + body as one unit so the P1..P9 header stays aligned with the
+   cells on narrow screens. */
+.history-wrap {
+  overflow-x: auto;
+}
+.history .row {
+  display: contents;
+}
+.history .row .label {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.2;
+  color: var(--ink);
+  padding: 0 8px 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* Height auto-matches the square cells (driven by their aspect-ratio). */
+  white-space: nowrap;
+  overflow: hidden;
+}
+.history .row .label .mini-lg {
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+  color: #fff;
+  display: grid; place-items: center;
+  font-family: var(--font-mono);
+  font-size: 7.5px;
+  font-weight: 600;
+}
+.history .cell {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  min-width: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+}
+.history .cell.pass { background: var(--accent-soft); color: var(--positive); border-color: var(--positive); }
+.history .cell.fail { background: #FEF2F2; color: var(--negative); border-color: var(--negative); }
+.history .cell.blocked { background: rgba(161, 98, 7, 0.10); color: var(--warning); border-color: rgba(161, 98, 7, 0.4); }
+.history .cell.inc { background: var(--surface); color: var(--ink-3); }
+.history .cell.pending {
+  background: transparent;
+  color: var(--ink-4);
+  border: 1px dashed var(--line-2);
+}
+/* n/a — plan did not exist in this earlier scored phase. Distinguished from
+   pending (future) by a flatter fill so the eye reads it as "out of scope",
+   not "still to come". */
+.history .cell.na {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  opacity: 0.45;
+}
+.history-note {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-3);
+  margin: 16px 0 0;
+  line-height: 1.6;
+}
+
+/* Per-agent verdict accordion */
+.agent-verdict {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  margin-bottom: 12px;
+}
+.agent-verdict.is-pass { border-top: 3px solid var(--positive); }
+.agent-verdict.is-fail { border-top: 3px solid var(--negative); }
+.agent-verdict.is-blocked { border-top: 3px solid var(--warning); }
+.agent-verdict-head {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 14px;
+  align-items: center;
+  padding: 13px 18px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+}
+.agent-verdict.is-pass .agent-verdict-head { background: rgba(71, 141, 84, 0.06); }
+.agent-verdict.is-pass .agent-verdict-head:hover { background: rgba(71, 141, 84, 0.10); }
+.agent-verdict.is-fail .agent-verdict-head { background: rgba(176, 41, 43, 0.05); }
+.agent-verdict.is-fail .agent-verdict-head:hover { background: rgba(176, 41, 43, 0.09); }
+.agent-verdict.is-blocked .agent-verdict-head { background: rgba(161, 98, 7, 0.05); }
+.agent-verdict.is-blocked .agent-verdict-head:hover { background: rgba(161, 98, 7, 0.09); }
+.agent-verdict.collapsed .agent-verdict-head { border-bottom: none; }
+.agent-verdict .head-meta { min-width: 0; }
+.agent-verdict .name {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+.agent-verdict .vendor {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+  margin-top: 1px;
+}
+.agent-verdict .duration {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+.agent-verdict .stat {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid;
+}
+.agent-verdict .stat .dot { width: 6px; height: 6px; border-radius: 50%; }
+.agent-verdict .stat.pass {
+  background: var(--positive);
+  color: #fff;
+  border-color: var(--positive);
+  font-weight: 600;
+}
+.agent-verdict .stat.pass .dot { background: #fff; }
+.agent-verdict .stat.fail {
+  background: var(--negative);
+  color: #fff;
+  border-color: var(--negative);
+  font-weight: 600;
+}
+.agent-verdict .stat.fail .dot { background: #fff; }
+.agent-verdict .stat.blocked {
+  background: var(--warning);
+  color: #fff;
+  border-color: var(--warning);
+  font-weight: 600;
+}
+.agent-verdict .stat.blocked .dot { background: #fff; }
+.agent-verdict .stat.inc {
+  background: var(--surface);
+  color: var(--ink-3);
+  border-color: var(--line);
+}
+.agent-verdict-body {
+  padding: 20px 22px 22px;
+}
+.agent-verdict.collapsed .agent-verdict-body { display: none; }
+.agent-verdict-body h3 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+  font-weight: 500;
+  margin: 22px 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.agent-verdict-body > *:first-child h3:first-child,
+.agent-verdict-body > h3:first-child { margin-top: 0; }
+
+/* Test recording — embedded TestSprite video */
+.test-recording { margin-bottom: 0; }
+.test-recording video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #0A0A0C;
+  border: 1px solid #1F1F1F;
+  display: block;
+}
+.test-recording.pending {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--surface);
+  border: 1px dashed var(--line-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-3);
+  padding: 18px;
+  text-align: center;
+}
+.test-recording.pending .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink-3);
+  animation: pulse 1.6s ease-out infinite;
+  flex-shrink: 0;
+}
+.video-caption {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-3);
+  margin: 6px 0 0;
+  letter-spacing: 0.02em;
+}
+.video-caption a {
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--line-2);
+}
+.video-caption a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* Reasoning quote */
+.reasoning {
+  border-left: 3px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 12px 16px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+.reasoning.fail {
+  border-left-color: var(--negative);
+  background: #FEF2F2;
+  color: var(--negative, #B91C1C);
+  white-space: pre-line;
+}
+.reasoning code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 1px 5px;
+  color: var(--ink);
+}
+
+/* Failure-analysis sub-rows — one per (Error / Hypothesis / Fix target).
+   Visual hierarchy: small subdued label above each quoted block; blocks
+   share the .reasoning baseline but stack tightly so the page reads as one
+   diagnostic section rather than three loose cards. */
+.reasoning-row {
+  margin-bottom: 10px;
+}
+.reasoning-row:last-child {
+  margin-bottom: 0;
+}
+.reasoning-row-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-3);
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+/* Tag that rides on the .agent-verdict-body h3 — used for failure_kind
+   ("assertion", "routing 404", ...) and recorded-steps count. */
+.reasoning-tag {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1px 6px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+.reasoning-tag.soft {
+  background: transparent;
+  border-color: var(--line-2);
+}
+
+/* Recorded-steps list — TestSprite's per-step agent trace.
+   Reads as a thin numbered ledger; one row per (action, observation). */
+.recorded-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  max-height: 280px;
+  overflow-y: auto;
+}
+.recorded-steps .rs-row {
+  display: grid;
+  grid-template-columns: 28px 1fr 20px;
+  gap: 10px;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.recorded-steps .rs-row:last-child {
+  border-bottom: none;
+}
+.recorded-steps .rs-row.fail {
+  background: #FEF2F2;
+}
+.recorded-steps .rs-n {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-3);
+  text-align: center;
+  background: var(--surface);
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  margin-top: 1px;
+}
+.recorded-steps .rs-body {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  line-height: 1.55;
+  min-width: 0;
+}
+.recorded-steps .rs-action {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 1px 5px;
+  margin-right: 8px;
+  color: var(--ink-2);
+  font-weight: 500;
+}
+.recorded-steps .rs-obs {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+}
+.recorded-steps .rs-stat {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 2px;
+}
+.recorded-steps .rs-row.pass .rs-stat { color: var(--positive); }
+.recorded-steps .rs-row.fail .rs-stat { color: var(--negative); }
+.recorded-steps .rs-row.inc .rs-stat { color: var(--ink-3); }
+
+/* Sidebar */
+.plan-aside {
+  position: sticky;
+  top: 80px;
+  align-self: start;
+}
+.aside-block {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+.aside-block h4 {
+  font-family: var(--font-mono);
+  font-size: var(--fs-label);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+.aside-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+  align-items: center;
+}
+.aside-row:first-of-type { border-top: none; padding-top: 2px; }
+.aside-row .k {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--ink-2);
+}
+.aside-row .v {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink);
+  font-weight: 500;
+}
+.aside-row .v.pass { color: var(--positive); }
+.aside-row .v.fail { color: var(--negative); }
+
+/* Related plans */
+.related {
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+.related a {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  transition: background .12s ease;
+  align-items: center;
+  color: var(--ink);
+  text-decoration: none;
+}
+.related a:last-child { border-bottom: none; }
+.related a:hover { background: var(--surface); }
+.related .rid {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-3);
+}
+.related .rname {
+  /* Mono to match how plan names render everywhere else (the /tests index
+     .plan-row .name inherits the body's --font-mono; only the large display
+     heading uses --font-sans). Sans here read as a different typeface. */
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  line-height: 1.4;
+}
+.related .rverdict { display: inline-flex; gap: 3px; }
+.related .vdot {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+.related .vdot.pass { background: var(--positive); border-color: var(--positive); }
+.related .vdot.fail { background: var(--negative); border-color: var(--negative); }
+.related .vdot.blocked { background: var(--warning); border-color: var(--warning); }
+.related .vdot.inc { background: var(--ink-4); border-color: var(--ink-4); }

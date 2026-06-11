@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tokens, layout, components live in ./design.css (imported separately in
+   layout.tsx after this file so design system wins over Tailwind preflight). */

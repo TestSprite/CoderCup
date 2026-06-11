@@ -1,0 +1,10 @@
+{
+  "type": "frontend",
+  "name": "Group standings are projected from predictions, not all-zero placeholders",
+  "description": "The 12 group tables must reflect a real projected group stage, with W/D/L, goals and points computed from the agent's predicted results and the rows ranked accordingly. All-zero standings (W/D/L/Pts all 0, Played 0) are unfinished placeholder data and must fail.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the groups view (/ or /groups linked from /) and read several of the group standings tables, including the Played and Points columns." },
+    { "type": "assertion", "description": "Verify the standings are projected, not zeroed: across the sampled groups, Played counts are greater than 0 and the Points/W/D/L columns are not uniformly zero. At least one team per sampled group shows a non-zero points total, and rows are ordered by points (descending). Tables that are entirely zeros fail the test." }
+  ]
+}

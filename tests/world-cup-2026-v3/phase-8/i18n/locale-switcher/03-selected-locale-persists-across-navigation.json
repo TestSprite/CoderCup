@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Selected locale persists across in-app navigation",
+  "description": "Once a non-default locale is selected, navigating to another page within the app must keep that locale (the new page renders in the selected language, via the URL prefix or stored preference). A skeleton that resets to English on every navigation fails this test.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /es (Spanish root)" },
+    { "type": "action", "description": "Click a bracket match cell or a nav link to move to another page within the app" },
+    { "type": "assertion", "description": "Verify the destination page is still rendered in Spanish: its URL stays under the /es prefix and its UI chrome (nav labels, tab names) is in Spanish rather than reverting to English. If navigation drops the user back into English, the test fails." }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Odds tab renders a per-book table with concrete decimal values",
+  "description": "Opening the Betting Odds tab on a match page must show a table with at least three bookmaker rows, each displaying concrete decimal odds for home, draw and away. Empty cells, dashes, skeleton rows, or 'coming soon' copy mean the tab is a stub.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage and click a bracket match to open its detail page" },
+    { "type": "action", "description": "Click the Betting Odds tab in the match page tab navigation" },
+    { "type": "assertion", "description": "Verify the Odds tab shows a per-book table with at least three named bookmaker rows, and that each row displays concrete numeric decimal odds (values like 2.45) for home, draw and away. Empty cells, placeholder dashes, skeleton loaders, zeros, or 'coming soon' text fail this test." }
+  ]
+}

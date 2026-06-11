@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Portuguese decimals use a comma separator",
+  "description": "Portuguese, like Spanish, uses a comma as the decimal separator. A decimal value on a /pt page must show a comma where the English page shows a dot. This catches a number-formatting layer that only handled English.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /pt/match/<captured-id>, open a tab showing a decimal value (odds or prediction percentage), and read the formatted number" },
+    { "type": "assertion", "description": "Verify the decimal value on the Portuguese page uses a comma decimal separator (e.g. 2,45) rather than a dot. If the /pt decimal is rendered with a dot separator, the test fails." }
+  ]
+}

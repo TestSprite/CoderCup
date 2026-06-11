@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Regression: /match still shows the prediction block",
+  "description": "Regression: /match still shows the prediction block.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Open a /match/<id> page"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the predicted winner + scoreline + win-probability bars + reasoning still render (phase-3 deliverable intact)."
+    }
+  ]
+}

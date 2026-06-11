@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Lineups content is reachable by scrolling the match page",
+  "description": "When a visitor scrolls a match detail page to the lineups area, the lineups content is present in the document and surfaces a formation label for at least one team, confirming the section exists even when implemented as an inline section rather than a switchable tab.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "action", "description": "Open the Lineups tab if present, otherwise scroll down to the lineups region of the page" },
+    { "type": "assertion", "description": "Verify the lineups region is present in the document and surfaces a formation label for at least one team rendered as visible text" }
+  ]
+}

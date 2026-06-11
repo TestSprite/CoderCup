@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Missing translations fall back gracefully without blank or broken text",
+  "description": "If a particular string lacks a translation in a locale, the UI must fall back to a readable value (typically the English text) rather than rendering a blank label, an empty button, or a raw key. Every interactive control on a localized page must show readable text.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /pt/match/<captured-id> and scan all labels, buttons, tabs and headings for readable content" },
+    { "type": "assertion", "description": "Verify every interface control on the Portuguese page shows non-empty, human-readable text (a real Portuguese or fallback English word), with no blank labels, empty buttons, or raw key tokens. If any control renders empty or as an unresolved key, the test fails." }
+  ]
+}

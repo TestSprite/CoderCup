@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Light theme is the default on first load",
+  "description": "The site loads in light theme by default (dark available via the persisted toggle).",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / with no stored theme preference (fresh/clear localStorage) and a neutral prefers-color-scheme"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the first paint is the LIGHT theme — page background is light/near-white and text is dark. The default must be light (not dark); a dark first-load fails."
+    }
+  ]
+}

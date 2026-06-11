@@ -1,0 +1,51 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-3",
+  "phase": 3,
+  "status": "fully-authored",
+  "total_plans": 20,
+  "planned_plans": 20,
+  "categories": {
+    "prediction-shape": [
+      "01-prediction-block-visible.json",
+      "02-winner-named.json",
+      "03-scoreline-rendered.json",
+      "04-probability-bars.json",
+      "05-probability-sum.json"
+    ],
+    "prediction-invariants": [
+      "01-no-team-plays-itself.json",
+      "02-scoreline-sane.json",
+      "03-knockout-no-draw.json",
+      "04-knockout-tie-resolves.json",
+      "05-group-allows-draw.json",
+      "06-reasoning-present.json"
+    ],
+    "champion-lock": [
+      "01-final-has-champion.json",
+      "02-champion-is-fifa-team.json",
+      "03-champion-on-landing.json"
+    ],
+    "bracket-progression": [
+      "01-bracket-cardinality.json",
+      "02-predicted-finalists-from-sf.json",
+      "03-favorite-progresses.json"
+    ],
+    "visible": [
+      "01-prediction-above-fold.json",
+      "02-prediction-on-match-card.json",
+      "03-prediction-mobile-readable.json"
+    ]
+  },
+  "planned_categories": [
+    "prediction-shape",
+    "prediction-invariants",
+    "champion-lock",
+    "bracket-progression",
+    "visible"
+  ],
+  "feature_theme": "Predictions — per-match winner + scoreline + probability bars + reasoning; KO tie resolution; champion locked at SIGSTART",
+  "depends_on_phases": [1, 2],
+  "pass_criterion": "at least 16 of 20 plans pass; all predictions/invariants plans must pass (math is non-negotiable)",
+  "composite_formula": "0.40 * correctness + 0.25 * invariant_satisfaction + 0.20 * coverage + 0.15 * efficiency"
+}

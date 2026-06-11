@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Unknown match id returns HTTP 404 with rendered page",
+  "description": "When a visitor opens a match URL whose id does not exist, the response returns HTTP 404 with a rendered not-found page.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /match/does-not-exist-2026-99-99" },
+    { "type": "assertion", "description": "Verify the document response HTTP status code equals 404" },
+    { "type": "assertion", "description": "Verify the page renders a not-found indicator such as a 404 heading or message" }
+  ]
+}

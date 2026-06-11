@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Both team names render as readable text on match page",
+  "description": "When a visitor opens a match permalink, both competing team names render as readable text rather than as flag images alone.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "assertion", "description": "Verify the match detail page renders both competing team names as readable text, distinct from any flag image" }
+  ]
+}

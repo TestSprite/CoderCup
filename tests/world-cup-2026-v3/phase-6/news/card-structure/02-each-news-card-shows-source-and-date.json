@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Each news card shows a source name and publication date",
+  "description": "News cards should display both the source/publisher name (e.g., 'BBC Sport', 'ESPN', 'Reuters') and a publication date or timestamp so readers know how recent and credible the article is.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "action", "description": "Examine the first two news cards in the panel" },
+    { "type": "assertion", "description": "Verify each news card shows at least one of: a source name (media outlet name), a date string (like May 2026, or 2 days ago), or a timestamp. Cards with only a title and no source or date metadata fail this test." }
+  ]
+}

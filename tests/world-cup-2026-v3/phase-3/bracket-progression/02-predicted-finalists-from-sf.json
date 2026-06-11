@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Predicted finalists derive from predicted semi-final winners",
+  "description": "When the bracket renders predicted progression, the two predicted finalists match the predicted winners of the two semi-final matches.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/predictions" },
+    { "type": "action", "description": "Identify the two semi-final predictions and the Final prediction" },
+    { "type": "assertion", "description": "Verify the two teams listed in the Final prediction match the two predicted semi-final winners" }
+  ]
+}

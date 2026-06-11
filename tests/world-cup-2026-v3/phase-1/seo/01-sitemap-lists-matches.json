@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "A match URL listed in sitemap.xml renders real match content when visited",
+  "description": "When a visitor opens /sitemap.xml, extracts a match URL from it, then visits that URL, the destination is a real match detail page — proving sitemap entries are not stale links or 404 traps.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /sitemap.xml on the target host" },
+    { "type": "action", "description": "Read the first URL whose path begins with /match/ from the sitemap" },
+    { "type": "action", "description": "Navigate to that match URL on the same target host (do not change hostnames)" },
+    { "type": "assertion", "description": "Verify the destination page is not a 404 view (no 404 indicator or not-found message visible)" },
+    { "type": "assertion", "description": "Verify the destination page surfaces match-detail content — a kickoff time, venue, team name, or stage label" }
+  ]
+}

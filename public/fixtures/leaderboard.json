@@ -1,0 +1,380 @@
+{
+  "schema_version": "2",
+  "task_slug": "world-cup-2026-v3",
+  "task_name": "World Cup Code Battle 2026 — Match Brief Edition",
+  "event_slug": "world-cup-2026",
+  "current_phase": 10,
+  "current_iteration_slug": "phase-10-rerun",
+  "last_updated_iso": "2026-06-07T14:46:15Z",
+  "state": "graded",
+  "note": "Phase 1-10 re-run, derived from the score ledger. Per-phase = cumulative-as-of-phase (all plans 1..N re-scored against phase N's deploy). Real tokens × rate card (imputed USD; all agents on flat subs). cost + wall-clock are side-metrics, shown alongside the quality composite (not blended into it). claude-code: total_cost_usd from --output-format json. codex: --json tiered. antigravity + kimi: codex token volume × their own rate card (per-run tokens uncapturable).",
+  "methodology": {
+    "composite_formula": "composite = Quality composite (pure quality; cost + wall are separate side-metrics, Pareto-style): 0.35·correctness + 0.25·first-try-rate + 0.20·(1−regression-rate) + 0.10·(1−never-rate) + 0.10·ACM. correctness = cumulative weighted pass-rate (p0=3/p1=2/p2=1). ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85). first-try/late/never/regression are per-plan outcomes; late is implicit (first_try+late+never=total).",
+    "wall_clock_score": "clamp(1 − run_wall_min / 75, 0, 1)",
+    "cost_score": "clamp(1 - usd_spent/50, 0, 1)",
+    "current_state": "Real tokens × rate card (imputed USD; all agents on flat subs). cost + wall-clock are side-metrics, shown alongside the quality composite (not blended into it). claude-code: total_cost_usd from --output-format json. codex: --json tiered. antigravity + kimi: codex token volume × their own rate card (per-run tokens uncapturable)."
+  },
+  "rankings": [
+    {
+      "agent_slug": "claude-code",
+      "agent_name": "Claude Code",
+      "vendor": "Anthropic",
+      "composite": 0.8516,
+      "components": {
+        "correctness": 0.8527
+      },
+      "side_metrics": {
+        "prediction_accuracy_at_t": 0,
+        "lifetime_bugs_caught": 0,
+        "raw": {
+          "bugs_caught_this_task": 0,
+          "usd_spent_this_task": 64.2214,
+          "tokens_total": 0,
+          "iterations": 0,
+          "wall_clock_minutes": 149.6833
+        }
+      },
+      "official_run_id": "claude-code-phase10",
+      "deployed_app_url": "https://main.d2cyz5kp1vxns8.amplifyapp.com",
+      "detail_url": "/agents/claude-code",
+      "status": "completed",
+      "per_phase": {
+        "phase_1": {
+          "correctness": 0.8919,
+          "passed": 14,
+          "total": 17
+        },
+        "phase_2": {
+          "correctness": 0.8696,
+          "passed": 12,
+          "total": 16
+        },
+        "phase_3": {
+          "correctness": 0.8673,
+          "passed": 16,
+          "total": 20
+        },
+        "phase_4": {
+          "correctness": 0.8425,
+          "passed": 14,
+          "total": 16
+        },
+        "phase_5": {
+          "correctness": 0.8724,
+          "passed": 22,
+          "total": 22
+        },
+        "phase_6": {
+          "correctness": 0.9017,
+          "passed": 16,
+          "total": 16
+        },
+        "phase_7": {
+          "correctness": 0.8853,
+          "passed": 17,
+          "total": 19
+        },
+        "phase_8": {
+          "correctness": 0.8728,
+          "passed": 20,
+          "total": 24
+        },
+        "phase_9": {
+          "correctness": 0.8747,
+          "passed": 7,
+          "total": 16
+        },
+        "phase_10": {
+          "correctness": 0.8527,
+          "passed": 14,
+          "total": 16
+        }
+      },
+      "cumulative": {
+        "passed": 14,
+        "total_definitive": 16,
+        "correctness": 0.8527
+      },
+      "rank": 1,
+      "acm": 0.8283,
+      "acm_breakdown": {
+        "first_try": 154,
+        "solved_late": 15,
+        "never_solved": 13,
+        "regressions": 31,
+        "total_plans": 182
+      }
+    },
+    {
+      "agent_slug": "kimi",
+      "agent_name": "Kimi",
+      "vendor": "Moonshot",
+      "composite": 0.8354,
+      "components": {
+        "correctness": 0.892
+      },
+      "side_metrics": {
+        "prediction_accuracy_at_t": 0,
+        "lifetime_bugs_caught": 0,
+        "raw": {
+          "bugs_caught_this_task": 0,
+          "usd_spent_this_task": 31.8793,
+          "tokens_total": 0,
+          "iterations": 0,
+          "wall_clock_minutes": 349.8
+        }
+      },
+      "official_run_id": "kimi-phase10",
+      "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+      "detail_url": "/agents/kimi",
+      "status": "completed",
+      "per_phase": {
+        "phase_1": {
+          "correctness": 0.737,
+          "passed": 12,
+          "total": 17
+        },
+        "phase_2": {
+          "correctness": 0.722,
+          "passed": 10,
+          "total": 16
+        },
+        "phase_3": {
+          "correctness": 0.741,
+          "passed": 15,
+          "total": 20
+        },
+        "phase_4": {
+          "correctness": 0.685,
+          "passed": 12,
+          "total": 16
+        },
+        "phase_5": {
+          "correctness": 0.869,
+          "passed": 22,
+          "total": 22
+        },
+        "phase_6": {
+          "correctness": 0.865,
+          "passed": 16,
+          "total": 16
+        },
+        "phase_7": {
+          "correctness": 0.875,
+          "passed": 16,
+          "total": 19
+        },
+        "phase_8": {
+          "correctness": 0.848,
+          "passed": 17,
+          "total": 24
+        },
+        "phase_9": {
+          "correctness": 0.833,
+          "passed": 7,
+          "total": 16
+        },
+        "phase_10": {
+          "correctness": 0.892,
+          "passed": 13,
+          "total": 16
+        }
+      },
+      "cumulative": {
+        "passed": 13,
+        "total_definitive": 16,
+        "correctness": 0.892
+      },
+      "rank": 2,
+      "acm": 0.8252,
+      "acm_breakdown": {
+        "first_try": 140,
+        "solved_late": 30,
+        "never_solved": 12,
+        "regressions": 41,
+        "total_plans": 182
+      }
+    },
+    {
+      "agent_slug": "codex",
+      "agent_name": "Codex",
+      "vendor": "OpenAI",
+      "composite": 0.8294,
+      "components": {
+        "correctness": 0.8527
+      },
+      "side_metrics": {
+        "prediction_accuracy_at_t": 0,
+        "lifetime_bugs_caught": 0,
+        "raw": {
+          "bugs_caught_this_task": 0,
+          "usd_spent_this_task": 55.9951,
+          "tokens_total": 0,
+          "iterations": 0,
+          "wall_clock_minutes": 93.5833
+        }
+      },
+      "official_run_id": "codex-phase10",
+      "deployed_app_url": "https://main.d73bifx6lxpxb.amplifyapp.com",
+      "detail_url": "/agents/codex",
+      "status": "completed",
+      "per_phase": {
+        "phase_1": {
+          "correctness": 0.8378,
+          "passed": 16,
+          "total": 17
+        },
+        "phase_2": {
+          "correctness": 0.7971,
+          "passed": 14,
+          "total": 16
+        },
+        "phase_3": {
+          "correctness": 0.8142,
+          "passed": 14,
+          "total": 20
+        },
+        "phase_4": {
+          "correctness": 0.8904,
+          "passed": 12,
+          "total": 16
+        },
+        "phase_5": {
+          "correctness": 0.8929,
+          "passed": 22,
+          "total": 22
+        },
+        "phase_6": {
+          "correctness": 0.9444,
+          "passed": 15,
+          "total": 16
+        },
+        "phase_7": {
+          "correctness": 0.8817,
+          "passed": 17,
+          "total": 19
+        },
+        "phase_8": {
+          "correctness": 0.9201,
+          "passed": 21,
+          "total": 24
+        },
+        "phase_9": {
+          "correctness": 0.8747,
+          "passed": 8,
+          "total": 16
+        },
+        "phase_10": {
+          "correctness": 0.8527,
+          "passed": 12,
+          "total": 16
+        }
+      },
+      "cumulative": {
+        "passed": 12,
+        "total_definitive": 16,
+        "correctness": 0.8527
+      },
+      "rank": 3,
+      "acm": 0.8091,
+      "acm_breakdown": {
+        "first_try": 148,
+        "solved_late": 23,
+        "never_solved": 11,
+        "regressions": 43,
+        "total_plans": 182
+      }
+    },
+    {
+      "agent_slug": "antigravity",
+      "agent_name": "Anti-Gravity",
+      "vendor": "Google",
+      "composite": 0.7931,
+      "components": {
+        "correctness": 0.8382
+      },
+      "side_metrics": {
+        "prediction_accuracy_at_t": 0,
+        "lifetime_bugs_caught": 0,
+        "raw": {
+          "bugs_caught_this_task": 0,
+          "usd_spent_this_task": 51.1628,
+          "tokens_total": 0,
+          "iterations": 0,
+          "wall_clock_minutes": 97.5167
+        }
+      },
+      "official_run_id": "antigravity-phase10",
+      "deployed_app_url": "https://main.d3ds0cy7nla3ka.amplifyapp.com",
+      "detail_url": "/agents/antigravity",
+      "status": "completed",
+      "per_phase": {
+        "phase_1": {
+          "correctness": 0,
+          "passed": 15,
+          "total": 17
+        },
+        "phase_2": {
+          "correctness": 0.7971,
+          "passed": 11,
+          "total": 16
+        },
+        "phase_3": {
+          "correctness": 0.7699,
+          "passed": 14,
+          "total": 20
+        },
+        "phase_4": {
+          "correctness": 0.8151,
+          "passed": 13,
+          "total": 16
+        },
+        "phase_5": {
+          "correctness": 0.8571,
+          "passed": 20,
+          "total": 22
+        },
+        "phase_6": {
+          "correctness": 0.8333,
+          "passed": 14,
+          "total": 16
+        },
+        "phase_7": {
+          "correctness": 0.8853,
+          "passed": 17,
+          "total": 19
+        },
+        "phase_8": {
+          "correctness": 0.855,
+          "passed": 22,
+          "total": 24
+        },
+        "phase_9": {
+          "correctness": 0.8293,
+          "passed": 10,
+          "total": 16
+        },
+        "phase_10": {
+          "correctness": 0.8382,
+          "passed": 14,
+          "total": 16
+        }
+      },
+      "cumulative": {
+        "passed": 14,
+        "total_definitive": 16,
+        "correctness": 0.8382
+      },
+      "rank": 4,
+      "acm": 0.7608,
+      "acm_breakdown": {
+        "first_try": 138,
+        "solved_late": 38,
+        "never_solved": 6,
+        "regressions": 57,
+        "total_plans": 182
+      }
+    }
+  ],
+  "scoring_model": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85)."
+}

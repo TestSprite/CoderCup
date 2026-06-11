@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Consensus row and agent implied row both render with percentages",
+  "description": "Beneath the per-book table the Odds tab must show a market consensus row and the agent's own implied-probability row side by side, each as concrete home/draw/away percentages, so a visitor can compare the market against the agent's pick without doing math.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage and open a match detail page" },
+    { "type": "action", "description": "Click the Betting Odds tab" },
+    { "type": "assertion", "description": "Verify the tab renders a labeled market consensus row AND a separate agent implied-probability row, each showing concrete home, draw and away percentages (e.g. 'Home 42% · Draw 26% · Away 32%'). Both rows must carry real numbers; a missing agent row, a missing consensus row, or placeholder/blank percentages fail." }
+  ]
+}

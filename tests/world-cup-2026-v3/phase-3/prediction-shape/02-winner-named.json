@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Prediction block names a winner or a draw",
+  "description": "When a visitor opens a match permalink, the prediction block names a predicted winner that is one of the two teams or a draw outcome for group-stage matches.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id and the two team names from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "assertion", "description": "Verify the prediction block names a winner that is one of the match's two teams (or a draw label for a group-stage fixture), matching the team names returned by the API" }
+  ]
+}

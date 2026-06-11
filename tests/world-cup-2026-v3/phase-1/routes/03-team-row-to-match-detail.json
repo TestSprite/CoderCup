@@ -1,0 +1,14 @@
+{
+  "type": "frontend",
+  "name": "Clicking a Group A team row navigates to a page that names that team",
+  "description": "When a visitor clicks a specific team row inside Group A, the destination page surfaces that team's name — proving team rows are bound to their own team, not all pointing at the same generic group page.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the group standings area" },
+    { "type": "action", "description": "Read and remember the name of the first team listed in Group A" },
+    { "type": "action", "description": "Click that team row" },
+    { "type": "assertion", "description": "Verify the destination URL differs from the homepage URL" },
+    { "type": "assertion", "description": "Verify the destination page surfaces the remembered team name — accepting the literal team name, an uppercase or shortened form, a three-letter code, or that team's flag image with matching alt text" }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Regression: the odds tab still renders",
+  "description": "Regression: the odds tab still renders.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Open a /match/<id> page and the odds section/tab"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the odds market (implied probabilities + consensus) still renders with real values (phase-7 deliverable intact)."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-4",
+  "phase": 4,
+  "status": "fully-authored",
+  "total_plans": 16,
+  "planned_plans": 16,
+  "categories": {
+    "lineups/tab-present": [
+      "01-tab-visible-on-match-page.json",
+      "02-tab-keyboard-accessible.json",
+      "03-section-reachable-by-scroll.json"
+    ],
+    "lineups/starting-xi": [
+      "01-home-team-eleven-players.json",
+      "02-away-team-eleven-players.json",
+      "03-player-names-nonempty.json",
+      "04-player-list-structured.json"
+    ],
+    "lineups/formation": [
+      "01-formation-label-valid-pattern.json",
+      "02-both-teams-have-formation.json",
+      "03-pitch-diagram-present.json"
+    ],
+    "lineups/injuries": [
+      "01-player-status-note-visible.json",
+      "02-status-vocabulary-standard.json"
+    ],
+    "lineups/head-check": [
+      "01-no-player-in-both-teams.json",
+      "02-exactly-eleven-per-team.json"
+    ],
+    "lineups/responsive": [
+      "01-lineups-at-360px.json",
+      "02-formation-diagram-mobile.json"
+    ]
+  },
+  "planned_categories": [
+    "lineups/tab-present",
+    "lineups/starting-xi",
+    "lineups/formation",
+    "lineups/injuries",
+    "lineups/head-check",
+    "lineups/responsive"
+  ],
+  "feature_theme": "Lineups · 阵容 — predicted starting XI (11 per team) + formation label + pitch diagram + per-player injury/suspension notes; per-match /match-lineups/<id>.json artifact with HEAD-checked source URLs",
+  "depends_on_phases": [2, 3],
+  "pass_criterion": "at least 13 of 16 plans pass; all three tab-present plans must pass (the Lineups tab is the phase deliverable)",
+  "composite_formula": "0.50 * correctness + 0.20 * formation_validity + 0.15 * injury_freshness + 0.15 * efficiency"
+}

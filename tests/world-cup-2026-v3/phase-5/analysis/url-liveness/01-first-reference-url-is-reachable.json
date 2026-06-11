@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "The first reference URL is a valid reachable web address",
+  "description": "The first URL shown in the References section should be a real, non-broken link that starts with https:// and points to a real domain (not localhost or placeholder).",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on any bracket cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Scroll to the References section" },
+    { "type": "assertion", "description": "Verify the first reference URL is a valid web address starting with https:// and pointing to a recognizable domain (e.g., fifa.com, bbc.com, goal.com, transfermarkt.com, or any real news/sports site). URLs like https://example.com, http://localhost, or placeholder text are not acceptable." }
+  ]
+}

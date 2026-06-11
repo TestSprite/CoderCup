@@ -1,0 +1,14 @@
+{
+  "type": "frontend",
+  "name": "Every starting XI player has a non-empty name and a valid position",
+  "description": "When the per-match lineups artifact is fetched, every player in both teams' starting_xi has a non-empty name string and a position drawn from the GK, DEF, MID, FWD vocabulary, so the lineup is real structured data rather than blank slots.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-lineups/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Iterate over every player entry across home.starting_xi and away.starting_xi" },
+    { "type": "assertion", "description": "Verify every player entry has a name that is a non-empty, non-whitespace string" },
+    { "type": "assertion", "description": "Verify every player entry has a position equal to one of GK, DEF, MID, or FWD" }
+  ]
+}

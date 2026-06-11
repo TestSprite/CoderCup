@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "No prose/reasoning sentence contradicts the structured prediction",
+  "description": "No prose/reasoning sentence contradicts the structured prediction.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "On a sampled /match page and the Final page, read the structured prediction (winner/champion) AND the reasoning prose paragraph(s)"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify no prose sentence names a different winner or champion than the structured prediction (the exact bug to catch: a \"champion: France\" block beside a line that says \"Japan win\"). Any contradiction fails."
+    }
+  ]
+}

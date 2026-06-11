@@ -1,0 +1,86 @@
+{
+  "_doc": "Kimi K2.6 (Kimi Code) TRUSTWORTHY full 10-phase trajectory. SPA-rewrite-fixed app d1i83t74qytjgs; fresh test run --target-url --wait; EVERY result target-verified=d1i83t74 (create-batch --target-url was IGNORED \u2192 new plans rescored via test run). blocked=fail; weighted p0=3/p1=2/p2=1; cumulative 1..N vs phase-N deploy. P8 gate-missing, P9/P10 gate-failed(honest env gaps: lighthouse/static-API limits) \u2192 operator-deployed sound builds (challenger pattern).",
+  "scored_at": "2026-06-07",
+  "trajectory": {
+    "1": {
+      "cumulative_correctness": 0.7368,
+      "passed": 12,
+      "failed": 4,
+      "blocked": 1,
+      "n_tests": 17,
+      "gate": "passed"
+    },
+    "2": {
+      "cumulative_correctness": 0.7222,
+      "passed": 23,
+      "failed": 8,
+      "blocked": 2,
+      "n_tests": 33,
+      "gate": "passed"
+    },
+    "3": {
+      "cumulative_correctness": 0.7414,
+      "passed": 39,
+      "failed": 9,
+      "blocked": 5,
+      "n_tests": 53,
+      "gate": "passed"
+    },
+    "4": {
+      "cumulative_correctness": 0.6846,
+      "passed": 45,
+      "failed": 15,
+      "blocked": 9,
+      "n_tests": 69,
+      "gate": "passed"
+    },
+    "5": {
+      "cumulative_correctness": 0.8693,
+      "passed": 78,
+      "failed": 6,
+      "blocked": 7,
+      "n_tests": 91,
+      "gate": "passed"
+    },
+    "6": {
+      "cumulative_correctness": 0.865,
+      "passed": 90,
+      "failed": 12,
+      "blocked": 5,
+      "n_tests": 107,
+      "gate": "passed"
+    },
+    "7": {
+      "cumulative_correctness": 0.875,
+      "passed": 107,
+      "failed": 11,
+      "blocked": 7,
+      "n_tests": 126,
+      "gate": "passed"
+    },
+    "8": {
+      "cumulative_correctness": 0.8475,
+      "passed": 126,
+      "failed": 14,
+      "blocked": 10,
+      "n_tests": 150,
+      "gate": "missing(operator-deployed)"
+    },
+    "9": {
+      "cumulative_correctness": 0.8333,
+      "passed": 136,
+      "failed": 23,
+      "blocked": 7,
+      "n_tests": 166,
+      "gate": "failed-honest-env-gaps(operator-deployed)"
+    },
+    "10": {
+      "cumulative_correctness": 0.8993,
+      "passed": 161,
+      "failed": 14,
+      "blocked": 7,
+      "n_tests": 182,
+      "gate": "failed-honest-env-gaps(operator-deployed)"
+    }
+  }
+}

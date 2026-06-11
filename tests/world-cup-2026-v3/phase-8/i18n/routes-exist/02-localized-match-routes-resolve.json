@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Match detail pages resolve under es and pt locale prefixes",
+  "description": "Every match page must exist at /en/match/<id>, /es/match/<id> and /pt/match/<id>. A real id is sampled from the live data so the test does not hard-code a match. A build that only routes the English match page fails the localized variants.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the id of the first match in the response" },
+    { "type": "action", "description": "Navigate to /es/match/<captured-id> using the sampled id" },
+    { "type": "action", "description": "Navigate to /pt/match/<captured-id> using the sampled id" },
+    { "type": "assertion", "description": "Verify both /es/match/<id> and /pt/match/<id> return 200 and render a match detail page (team names, kickoff time block visible). If either localized match route 404s, redirects to the English path, or renders an empty shell, the test fails." }
+  ]
+}

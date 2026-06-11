@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Home team starting XI lists exactly eleven players",
+  "description": "When the per-match lineups artifact is fetched, the home team's starting_xi array contains exactly eleven entries, matching a real football starting lineup.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-lineups/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Read the home.starting_xi array from the lineups artifact" },
+    { "type": "assertion", "description": "Verify the home.starting_xi array contains exactly eleven player entries" }
+  ]
+}

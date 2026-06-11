@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Reference source links are clickable anchor tags",
+  "description": "The source URLs or titles in the References panel should be rendered as clickable anchor elements, not just plain text strings. Clicking a reference should attempt to navigate to the source.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Scroll to the References section" },
+    { "type": "assertion", "description": "Verify that at least one entry in the References section is rendered as a clickable link (anchor tag) that shows a URL or underlined/highlighted text. Plain text that shows a URL but is not clickable fails this test." }
+  ]
+}

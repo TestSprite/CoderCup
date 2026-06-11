@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Each news card is a clickable link to the source article",
+  "description": "News cards should be clickable links that lead to the original source article URL. Cards that are purely decorative with no link fail this test.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "assertion", "description": "Verify the first news card contains a clickable anchor element (either wrapping the card or shown as a 'Read more' link) that points to a URL starting with https://. The link should lead to an external news source, not the app's own pages." }
+  ]
+}

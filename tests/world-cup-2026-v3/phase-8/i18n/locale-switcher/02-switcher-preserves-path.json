@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Switching language preserves the current path",
+  "description": "Clicking a different locale in the switcher must navigate to the equivalent URL in that locale, preserving the current path (from /en/match/X clicking Portuguese lands on /pt/match/X, not the /pt homepage). A switcher that always dumps the user back to the localized root fails this test.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /en/match/<captured-id>" },
+    { "type": "action", "description": "Open the locale switcher and select Portuguese (pt)" },
+    { "type": "assertion", "description": "Verify the resulting URL is the Portuguese equivalent of the same match page (path still resolves to match/<captured-id> under the /pt prefix), not the localized homepage. If switching language discards the match path and redirects to /pt root, the test fails." }
+  ]
+}

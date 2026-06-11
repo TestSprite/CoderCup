@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Malformed match id renders a graceful error page",
+  "description": "When a visitor opens a match URL with a malformed id, the response renders a graceful error page rather than a 500 or blank screen.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /match/!!!" },
+    { "type": "assertion", "description": "Verify the document response status code is in the 4xx range rather than 5xx or a blank 200" },
+    { "type": "assertion", "description": "Verify the page renders a user-facing error message rather than a blank body" }
+  ]
+}

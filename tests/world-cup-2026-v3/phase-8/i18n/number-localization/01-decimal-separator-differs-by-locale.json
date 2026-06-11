@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Decimal numbers use locale-correct separators",
+  "description": "Numbers must localize: English uses a dot decimal separator (2.45) while Spanish and Portuguese use a comma (2,45). A decimal value shown on a match page (odds or a percentage) must reflect the locale's separator. A build that prints raw English-formatted numbers in every locale fails this test.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /en/match/<captured-id>, open a tab showing a decimal value (odds or prediction percentage), and read the formatted number" },
+    { "type": "action", "description": "Navigate to /es/match/<captured-id>, open the same tab, and read the corresponding decimal value" },
+    { "type": "assertion", "description": "Verify the same decimal quantity renders with a dot separator on the English page (e.g. 2.45) and a comma separator on the Spanish page (e.g. 2,45). If both locales display the identical dot-formatted number, the test fails." }
+  ]
+}

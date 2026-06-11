@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "All images have non-empty alt text and the document lang is set",
+  "description": "All images have non-empty alt text and the document lang is set.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / and scan all <img> elements and the <html> element"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify every <img> has a non-empty alt attribute (flag/photo/thumbnail images included) and <html> has a lang attribute matching the active locale."
+    }
+  ]
+}

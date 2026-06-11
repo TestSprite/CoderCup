@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Consensus is computed on probabilities, not by averaging decimal odds",
+  "description": "A common naive mistake is averaging the decimal odds across books and inverting that, or averaging 1/decimal without de-vigging. Both produce a distribution that does not sum to 1.0 and disagrees with the mean of de-vigged probabilities. This test detects the decimal-averaging trap.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-odds/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Compute the mean of the books' decimal.home values and invert it (1 / mean-decimal), then read the stored consensus.home" },
+    { "type": "assertion", "description": "Verify the stored consensus.home matches the mean of the books' de-vigged home probabilities and does NOT equal the inverse of the averaged decimal odds. If consensus.home is closest to 1/(mean decimal.home) instead, the build used the decimal-averaging trap and fails." }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Analysis panel contains at least three paragraphs",
+  "description": "The analysis content for a match should have at least three separate paragraphs of text, providing enough depth to cover different aspects of the match.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab or section control" },
+    { "type": "action", "description": "Scroll down within the analysis panel to reveal all content" },
+    { "type": "assertion", "description": "Verify the analysis panel contains at least 3 distinct paragraph blocks of text content. Count visible text paragraphs separated by whitespace or paragraph breaks." }
+  ]
+}

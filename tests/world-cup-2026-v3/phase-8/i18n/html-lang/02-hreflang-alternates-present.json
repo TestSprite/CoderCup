@@ -1,0 +1,10 @@
+{
+  "type": "frontend",
+  "name": "Head lists hreflang alternates for all three locales",
+  "description": "For SEO, each page's <head> must declare <link rel=\"alternate\" hreflang=\"...\"> entries for en, es and pt pointing at the locale variants of the current page. A page missing hreflang alternates fails this test.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /en and inspect the document <head> link elements" },
+    { "type": "assertion", "description": "Verify the head contains <link rel=\"alternate\"> tags with hreflang values for en, es and pt, each pointing at the corresponding locale variant URL of the current page. If any of the three hreflang alternates is absent, the test fails." }
+  ]
+}

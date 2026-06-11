@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Analysis panel contains no more than five paragraphs",
+  "description": "The analysis content should not exceed five paragraphs to stay focused and avoid bloating the match detail page.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on any bracket cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab or section control" },
+    { "type": "action", "description": "Scroll through the entire analysis panel to see all text" },
+    { "type": "assertion", "description": "Verify the analysis panel contains at most 5 distinct paragraph blocks. If more than 5 paragraph blocks are visible, the test fails." }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "frontend",
+  "name": "Lineups tab is reachable and activatable by keyboard",
+  "description": "When a keyboard-only visitor tabs through a match detail page, the Lineups control receives a visible focus indicator and activating it with Enter reveals the lineups panel content.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "action", "description": "Press Tab repeatedly until the Lineups control receives keyboard focus" },
+    { "type": "assertion", "description": "Verify the Lineups control shows a visible focus indicator when focused via the keyboard" },
+    { "type": "action", "description": "Press Enter to activate the focused Lineups control" },
+    { "type": "assertion", "description": "Verify the lineups panel becomes visible and exposes at least one named starting player row after keyboard activation" }
+  ]
+}

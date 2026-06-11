@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Clicking the News tab reveals a populated news panel",
+  "description": "When the Related News tab or section control is clicked on a match detail page, a panel with news articles should appear rather than an empty state.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the News or Related News tab or section control" },
+    { "type": "assertion", "description": "Verify the news panel is now visible and contains at least one news card or article entry. The panel should not show an empty state, 'no news available', or placeholder content." }
+  ]
+}

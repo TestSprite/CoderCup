@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Agent implied probability on the Odds tab matches the phase-3 prediction",
+  "description": "The agent's implied probability shown on the Odds tab is carried forward from the phase-3 prediction's agent_implied_probability for the same match. The two sources must agree; a mismatch means the odds feature invented a separate number instead of reusing the prediction.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/predictions (or /api/matches then the prediction source) and read the agent_implied_probability home/draw/away for a chosen match id" },
+    { "type": "action", "description": "Navigate to /match-odds/<same-id>.json and read agent_implied home/draw/away" },
+    { "type": "assertion", "description": "Verify the agent_implied values in the odds artifact equal the phase-3 agent_implied_probability for the same match within plus or minus 0.01 for each outcome. Divergent numbers between the prediction and the odds tab fail the cross-feature consistency check." }
+  ]
+}

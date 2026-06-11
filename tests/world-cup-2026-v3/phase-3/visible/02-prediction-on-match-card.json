@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Bracket match cards surface the predicted winner",
+  "description": "When the homepage bracket renders match cards, each card surfaces the agent's predicted winner pick alongside the team names.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Locate the first bracket match card" },
+    { "type": "assertion", "description": "Verify the bracket match card visually marks which of its two teams is the predicted winner, distinguishing the picked team from its opponent rather than listing both names unmarked" }
+  ]
+}

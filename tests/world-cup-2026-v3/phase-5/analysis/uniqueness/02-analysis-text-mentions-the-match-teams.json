@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Analysis text mentions the specific teams playing in the match",
+  "description": "The analysis content for a match should reference the actual teams competing in that match. Generic analysis that could apply to any match fails this test.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a specific bracket match cell — note the two teams shown in the bracket cell (e.g., France vs Argentina)" },
+    { "type": "action", "description": "On the match detail page, note the team names displayed in the match header" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "assertion", "description": "Verify the analysis text contains at least one of the two team names, country names, or their common abbreviations. If neither team name appears anywhere in the visible analysis paragraphs, the test fails." }
+  ]
+}

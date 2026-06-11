@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "News URLs point to real recognizable domains",
+  "description": "News card links should point to real news domains, not placeholder URLs like example.com, localhost, or domain names that look made up.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on any bracket match to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "action", "description": "Look at the URLs shown in or around news cards (either displayed text URLs, link hrefs visible on hover, or source names that indicate a domain)" },
+    { "type": "assertion", "description": "Verify the news links or source domains appear to be real news organizations. Domains like bbc.com, espn.com, fifa.com, reuters.com, goal.com, marca.com, or any legitimate sports news outlet are acceptable. 'example.com', 'fake-news.com', or localhost fail." }
+  ]
+}

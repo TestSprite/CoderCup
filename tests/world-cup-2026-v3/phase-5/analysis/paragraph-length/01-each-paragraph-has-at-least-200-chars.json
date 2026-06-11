@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Each analysis paragraph is at least 200 characters long",
+  "description": "Analysis paragraphs should be substantive. Each visible paragraph in the analysis panel should contain at least 200 characters of text to ensure meaningful content rather than one-liners.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a match bracket cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab to reveal the analysis panel" },
+    { "type": "action", "description": "Scroll through the analysis panel to see all paragraphs" },
+    { "type": "assertion", "description": "Verify that the first visible analysis paragraph contains at least 200 characters of text. The paragraph should be a full sentence or more, not a short stub." }
+  ]
+}

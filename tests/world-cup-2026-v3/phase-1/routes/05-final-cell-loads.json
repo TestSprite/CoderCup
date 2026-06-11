@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Clicking the Final cell reaches a match detail page labeled Final",
+  "description": "When a visitor clicks the Final cell in the bracket, the destination is a match detail page that explicitly labels itself as the Final — proving the Final cell is wired to a fixture, not a placeholder.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the knockout bracket section" },
+    { "type": "action", "description": "Click the Final cell at the right edge of the bracket" },
+    { "type": "assertion", "description": "Verify the URL after the click differs from the homepage URL" },
+    { "type": "assertion", "description": "Verify the destination page surfaces a Final-stage indicator — accepting any of the literal text 'Final', 'FINAL', 'Final Match', 'The Final', 'Championship', 'Championship Match', a stage label/heading/breadcrumb starting with F, or a URL path segment containing 'final'" }
+  ]
+}

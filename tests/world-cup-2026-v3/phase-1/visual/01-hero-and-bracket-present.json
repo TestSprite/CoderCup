@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Homepage shows a hero heading at the top and the bracket section below",
+  "description": "When a visitor opens the homepage, the top 600 pixels surface a hero region containing a heading or large title element, scrolling down reveals the knockout bracket section, the overall page is not a blank white viewport, and any hero background image or photo has actually rendered rather than showing a broken-image placeholder.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Inspect the hero region inside the top 600 pixels of the viewport" },
+    { "type": "assertion", "description": "Verify the hero region in the top 600 pixels surfaces a heading or large title element rather than blank space, and that any hero background image or photo has actually loaded (visible rendered pixels, not a broken-image placeholder or empty box)" },
+    { "type": "action", "description": "Scroll down the page until the knockout bracket section enters the viewport" },
+    { "type": "assertion", "description": "Verify the bracket section is visible in the viewport after scrolling and the page background is not a pure white blank surface" }
+  ]
+}

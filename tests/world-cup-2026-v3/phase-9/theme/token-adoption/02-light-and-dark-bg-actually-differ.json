@@ -1,0 +1,20 @@
+{
+  "type": "frontend",
+  "name": "Light and dark are two real themes, not a CSS invert",
+  "description": "Light and dark are two real themes, not a CSS invert.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Capture the computed background-color and a heading text color on / in light mode"
+    },
+    {
+      "type": "action",
+      "description": "Toggle to dark mode and capture the same two computed colors"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the light and dark computed background-colors are genuinely different token values (light ≈ near-white, dark ≈ near-black) and text remains legible in both — not a filter:invert hack that would also invert images."
+    }
+  ]
+}

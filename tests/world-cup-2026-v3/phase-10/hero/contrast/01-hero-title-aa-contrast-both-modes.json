@@ -1,0 +1,20 @@
+{
+  "type": "frontend",
+  "name": "Hero title meets WCAG AA contrast over the image in light and dark",
+  "description": "Hero title meets WCAG AA contrast over the image in light and dark.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / and measure the hero title text contrast against the hero image/scrim in the default mode"
+    },
+    {
+      "type": "action",
+      "description": "Toggle dark mode and re-measure"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the hero title meets WCAG AA (≥4.5:1 body / ≥3:1 large text) over the image in BOTH light and dark — a scrim/overlay is expected."
+    }
+  ]
+}

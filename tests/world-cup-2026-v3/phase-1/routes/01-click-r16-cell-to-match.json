@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Clicking a Round-of-16 cell navigates from homepage to a match detail page",
+  "description": "When a visitor clicks any Round-of-16 cell in the bracket, the URL changes away from the homepage and the new page renders match detail content — proving R16 cells are real navigation, not visual stubs.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the knockout bracket section" },
+    { "type": "action", "description": "Click a cell in the Round-of-16 area of the bracket" },
+    { "type": "assertion", "description": "Verify the URL after the click differs from the homepage URL" },
+    { "type": "assertion", "description": "Verify the destination page surfaces match-detail content — a kickoff time, venue, team name pair, or match identifier" }
+  ]
+}

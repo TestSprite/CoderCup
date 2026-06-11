@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "html lang attribute matches the selected locale",
+  "description": "The document's <html lang> attribute must reflect the active locale: lang=\"en\" on /en pages, lang=\"es\" on /es pages, lang=\"pt\" on /pt pages. A skeleton that hard-codes lang=\"en\" everywhere fails this test and breaks screen-reader pronunciation.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /en and read the lang attribute of the root <html> element" },
+    { "type": "action", "description": "Navigate to /es and read the lang attribute of the root <html> element" },
+    { "type": "action", "description": "Navigate to /pt and read the lang attribute of the root <html> element" },
+    { "type": "assertion", "description": "Verify <html lang> is \"en\" on the /en page, \"es\" on the /es page, and \"pt\" on the /pt page. If the lang attribute is identical (e.g. always \"en\") across locales or missing, the test fails." }
+  ]
+}

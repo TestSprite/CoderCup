@@ -1,0 +1,70 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-9",
+  "phase": 9,
+  "status": "fully-authored",
+  "total_plans": 16,
+  "categories": {
+    "theme/system-pref": [
+      "01-dark-pref-renders-dark.json",
+      "02-light-pref-renders-light.json"
+    ],
+    "theme/toggle-persists": [
+      "01-toggle-flips-theme.json",
+      "02-choice-persists-reload-and-nav.json"
+    ],
+    "theme/token-adoption": [
+      "01-surface-text-colors-from-token-palette.json",
+      "02-light-and-dark-bg-actually-differ.json"
+    ],
+    "theme/contrast": [
+      "01-light-mode-aa-contrast.json",
+      "02-dark-mode-aa-contrast.json"
+    ],
+    "brand/matchday": [
+      "01-branded-matchday-with-favicon.json"
+    ],
+    "completeness/both-modes": [
+      "01-landing-features-render-both-modes.json",
+      "02-match-page-features-render-both-modes.json"
+    ],
+    "errors/404-html": [
+      "01-unknown-match-returns-404-styled.json"
+    ],
+    "errors/404-json": [
+      "01-unknown-api-returns-404-json.json"
+    ],
+    "a11y/dom": [
+      "01-images-have-alt-and-lang-set.json",
+      "02-focus-visible-on-interactive.json"
+    ],
+    "perf/dom": [
+      "01-images-sized-no-layout-shift.json"
+    ]
+  },
+  "planned_categories": [
+    "theme/system-pref",
+    "theme/toggle-persists",
+    "theme/token-adoption",
+    "theme/contrast",
+    "brand/matchday",
+    "completeness/both-modes",
+    "errors/404-html",
+    "errors/404-json",
+    "a11y/dom",
+    "perf/dom"
+  ],
+  "feature_theme": "Production \"Matchday\" skin + completeness — adopt the provided design tokens (semantic --Bg-*/--Fg-*/--Border-*, light AND dark) + Matchday brand/favicon; system-pref dark mode + persisted toggle; WCAG AA contrast both modes; every prior-phase feature renders in both modes; graceful 404; DOM-observable a11y + CLS-proxy.",
+  "depends_on_phases": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "pass_criterion": "at least 13 of 16 plans pass; theme/token-adoption, brand/matchday and completeness/both-modes must all pass (the skin + completeness are the point of this phase)",
+  "composite_formula": "0.30 * correctness + 0.25 * theme_correctness + 0.20 * completeness_both_modes + 0.15 * a11y_score + 0.10 * efficiency"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Knockout bracket matches the editorial design (flag chips, rank badges, green winner, champion panel)",
+  "description": "The landing knockout bracket reproduces the provided design: per-tie white cards with two teams, a flag chip + 3-letter country code, a FIFA-rank badge, the predicted winner highlighted (green) with a chevron, connector lines between rounds, and a PREDICTED CHAMPION panel.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / and inspect the knockout bracket region"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the bracket shows the rounds (Round of 16 → Quarter-finals → Semi-finals → Final) as cards, each tie listing two teams with a flag chip + 3-letter code and a rank badge (e.g. #6), the predicted winner of each tie visually highlighted (green/accent, distinct from the loser), and a PREDICTED CHAMPION panel with a flag + nation. A plain text list or a bracket missing flags/rank-badges/winner-highlight/champion-panel fails."
+    }
+  ]
+}

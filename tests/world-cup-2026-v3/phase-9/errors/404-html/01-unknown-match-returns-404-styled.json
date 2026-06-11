@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Unknown match route returns HTTP 404 with a styled page",
+  "description": "Unknown match route returns HTTP 404 with a styled page.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to /match/this-match-does-not-exist-zzz"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the HTTP response status is 404 (not 200) and the page is a styled 404 (shows \"404\"/\"not found\" and a link back home), not a blank page or a stack trace."
+    }
+  ]
+}

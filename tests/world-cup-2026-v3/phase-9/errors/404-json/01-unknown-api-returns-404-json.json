@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Unknown API match returns 404 JSON with error and code",
+  "description": "Unknown API match returns 404 JSON with error and code.",
+  "priority": "p2",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Request /api/match/this-does-not-exist/odds (or the app's equivalent unknown-match API path)"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the response is HTTP 404 and the body is JSON containing an `error` message and a `code` field — not HTML and not a 200."
+    }
+  ]
+}

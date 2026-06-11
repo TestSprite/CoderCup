@@ -1,0 +1,52 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-1",
+  "phase": 1,
+  "status": "fully-authored",
+  "total_plans": 17,
+  "planned_plans": 17,
+  "note": "17 functional FE plans (5-15 click-through steps each) replacing the smoke set. Categories: routes/ (5 interaction-driven navigation), data/ (4 UI-rendered cardinality checks), match-detail/ (3 content assertions), a11y/ (2 keyboard + alt-text), visual/ (2: hero+bracket layout, flag render+correctness), seo/ (1 sitemap). Each plan executed once per agent (claude-code, codex, antigravity) for a total of 51 distinct TestSprite tests under the codercup-world-cup-v3 project.",
+  "categories": {
+    "routes": [
+      "01-click-r16-cell-to-match.json",
+      "02-groups-link-shows-all-12.json",
+      "03-team-row-to-match-detail.json",
+      "04-404-then-recover.json",
+      "05-final-cell-loads.json"
+    ],
+    "data": [
+      "01-bracket-cardinality.json",
+      "02-group-row-count.json",
+      "03-three-match-pages-distinct.json",
+      "04-kickoff-and-venue-visible.json"
+    ],
+    "match-detail": [
+      "01-stage-label-on-qf.json",
+      "02-group-letter-on-group-match.json",
+      "03-five-permalinks-load.json"
+    ],
+    "a11y": [
+      "01-keyboard-tab-focus.json",
+      "02-flag-images-alt.json"
+    ],
+    "visual": [
+      "01-hero-and-bracket-present.json",
+      "02-flag-images-render.json"
+    ],
+    "seo": [
+      "01-sitemap-lists-matches.json"
+    ]
+  },
+  "planned_categories": [
+    "routes/interaction",
+    "data/cardinality",
+    "match-detail/content",
+    "a11y/baseline",
+    "visual/layout",
+    "seo/sitemap"
+  ],
+  "feature_theme": "Landing page + groups + match-detail click-through behavior. Functional FE flows (5-15 steps each) covering bracket navigation, group standings, match-detail rendering, basic a11y, and sitemap.",
+  "depends_on_phases": [],
+  "pass_criterion": "at least 14 of 17 plans pass per agent",
+  "composite_formula": "0.5 * correctness + 0.3 * bugs_normalized + 0.2 * efficiency"
+}

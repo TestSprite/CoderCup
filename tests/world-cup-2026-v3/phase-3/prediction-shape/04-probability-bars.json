@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Prediction block shows probability bars with percentages",
+  "description": "When a visitor opens a match permalink, the prediction block shows probability bars or percentages for the home, draw, and away outcomes.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "assertion", "description": "Verify the prediction block renders probability bars or labeled percentages for the home, draw, and away outcomes, each showing a real value rather than an empty or zero-width bar" }
+  ]
+}

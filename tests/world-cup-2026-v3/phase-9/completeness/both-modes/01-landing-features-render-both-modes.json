@@ -1,0 +1,20 @@
+{
+  "type": "frontend",
+  "name": "Landing bracket and group standings render correctly in both light and dark",
+  "description": "Landing bracket and group standings render correctly in both light and dark.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / in light mode and confirm the knockout bracket cells and the 12 group standings tables are visible with readable team names and numbers"
+    },
+    {
+      "type": "action",
+      "description": "Toggle to dark mode and re-check the same bracket + standings"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the bracket and all group standings render fully and legibly in BOTH modes — no invisible text (same-color-as-background), clipped tables, or sections that vanish after the re-skin."
+    }
+  ]
+}

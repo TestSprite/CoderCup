@@ -1,0 +1,23 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-5",
+  "phase": 5,
+  "status": "fully-authored",
+  "total_plans": 22,
+  "planned_plans": 22,
+  "planned_categories": [
+    "analysis/tab-present",
+    "analysis/paragraph-count",
+    "analysis/paragraph-length",
+    "analysis/citation-density",
+    "analysis/anchor-resolves",
+    "analysis/url-liveness",
+    "analysis/freshness",
+    "analysis/uniqueness",
+    "analysis/no-paywall"
+  ],
+  "feature_theme": "Your analysis · 你的分析 — 3-5 paragraphs per match with inline <sup>[N]</sup> citations resolving to References panel; no boilerplate; 200-600 chars per paragraph",
+  "depends_on_phases": [2, 3, 4],
+  "pass_criterion": "at least 18 of 22 plans pass; analysis/url-liveness must hit at least 90 percent",
+  "composite_formula": "0.30 * correctness + 0.30 * url_liveness + 0.20 * originality + 0.10 * freshness + 0.10 * efficiency"
+}

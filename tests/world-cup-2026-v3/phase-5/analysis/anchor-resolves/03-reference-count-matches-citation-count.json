@@ -1,0 +1,14 @@
+{
+  "type": "frontend",
+  "name": "The number of references matches the number of unique inline citations",
+  "description": "If the analysis text contains inline citations [1], [2], [3], there should be exactly 3 reference entries in the references panel. Mismatched counts indicate broken citation anchors.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Count the unique citation numbers visible in the analysis paragraphs (e.g., [1], [2], [3])" },
+    { "type": "action", "description": "Scroll to the References section and count the numbered reference entries" },
+    { "type": "assertion", "description": "Verify the references section contains at least 1 entry and the number of reference entries is plausibly consistent with the number of unique citation markers seen in the text (within 1-2 of each other). A references panel with 0 entries when citations exist in the text is a failure." }
+  ]
+}

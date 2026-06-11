@@ -1,0 +1,15 @@
+{
+  "type": "frontend",
+  "name": "Two different match detail pages both show analysis content",
+  "description": "The analysis feature should be implemented for multiple matches, not just a single hard-coded one. Two different match pages should both display populated analysis panels.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on the first knockout bracket cell to open a match detail page and note the page URL" },
+    { "type": "action", "description": "Click the Analysis tab and verify analysis content is present with at least one paragraph" },
+    { "type": "action", "description": "Navigate back to the homepage using the back link or header navigation" },
+    { "type": "action", "description": "Click on a different bracket cell to open a second match detail page" },
+    { "type": "action", "description": "Click the Analysis tab on the second match page" },
+    { "type": "assertion", "description": "Verify the second match also has analysis content with at least one paragraph of text. The two match URLs should be different." }
+  ]
+}

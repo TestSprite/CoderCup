@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Images declare dimensions to avoid layout shift",
+  "description": "Images declare dimensions to avoid layout shift.",
+  "priority": "p2",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / and a /match/<id> page and inspect the <img> elements (flags, thumbnails, hero/photos)"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify content images declare width/height (or aspect-ratio / sized container) so they reserve space and do not cause layout shift on load — unsized images that reflow content fail this CLS-proxy check."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Bracket shows the expected number of cells per knockout round",
+  "description": "When the homepage bracket is rendered, it shows the expected number of cells for each knockout round across R32, R16, QF, SF, and Final.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Locate each knockout round within the bracket" },
+    { "type": "assertion", "description": "Verify the bracket renders 16 R32 cells, 8 R16 cells, 4 Quarter-final cells, 2 Semi-final cells, and 1 Final cell" }
+  ]
+}

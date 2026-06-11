@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Clicking the Groups navigation surfaces all twelve groups A through L",
+  "description": "When a visitor clicks the Groups link in the navigation, they arrive at a page that surfaces all twelve groups labeled A through L — proving the full group draw is reachable from one click, not split across many pages.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click the Groups link in the navigation" },
+    { "type": "action", "description": "Scroll through the destination page to surface all group sections" },
+    { "type": "assertion", "description": "Verify the destination URL differs from the homepage URL" },
+    { "type": "assertion", "description": "Verify the page surfaces twelve distinct group sections — counting any group labels that match patterns like A/B/.../L, 'Group A'/'Group B'/.../'Group L', 'GROUP A'/.../'GROUP L', or 'Pool A'/.../'Pool L'" }
+  ]
+}

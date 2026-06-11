@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Interactive elements show a visible focus ring on keyboard focus",
+  "description": "Interactive elements show a visible focus ring on keyboard focus.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / and tab through the nav links, the theme toggle, and the first few match links"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify each focused interactive element shows a visible :focus-visible indicator (outline/ring) — focus is never invisible."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "type": "frontend",
+  "name": "Five sequential bracket-cell clicks land on five distinct match detail pages",
+  "description": "When a visitor returns to the homepage between clicks and clicks five different cells in the bracket, every destination renders a real match detail page and the five destinations are distinct — proving deep links into matches work for at least five distinct fixtures, not just one cherry-picked entry.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the knockout bracket section" },
+    { "type": "action", "description": "Click the first cell in the bracket" },
+    { "type": "action", "description": "Note the current match detail URL as destination 1" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click a second, different cell in the bracket" },
+    { "type": "action", "description": "Note the current match detail URL as destination 2" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click a third, different cell in the bracket" },
+    { "type": "action", "description": "Note the current match detail URL as destination 3" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click a fourth, different cell in the bracket" },
+    { "type": "action", "description": "Note the current match detail URL as destination 4" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click a fifth, different cell in the bracket" },
+    { "type": "assertion", "description": "Verify the fifth destination renders real match-detail content (kickoff time, venue, or team names), not a blank or error page" },
+    { "type": "assertion", "description": "Verify the five noted destination URLs are all distinct from each other" }
+  ]
+}

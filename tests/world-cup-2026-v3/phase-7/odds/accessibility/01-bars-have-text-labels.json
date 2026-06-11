@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Probability bars carry text labels, not color alone",
+  "description": "The consensus probability bars must convey their values through text (outcome name plus percentage), not color or length alone, so the data is accessible to screen-reader and color-blind users. Bars with no associated readable label fail.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage and open a match detail page" },
+    { "type": "action", "description": "Click the Betting Odds tab and inspect each of the three probability bars" },
+    { "type": "assertion", "description": "Verify each probability bar has an associated text label identifying its outcome (home/draw/away) and its percentage value, available as visible text or an accessible name (aria-label / aria-valuetext / adjacent text). A bar conveying its value only through width or color, with no readable label, fails." }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Locale switcher is present in the nav and offers all three languages",
+  "description": "A nav-level locale switcher (dropdown or three-button toggle) must be visible on the page and offer at least the three supported locales (English, Spanish, Portuguese). A site with no switcher control, or one that only lists a single language, fails this test.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /en" },
+    { "type": "action", "description": "Locate the language/locale switcher control in the navigation bar" },
+    { "type": "assertion", "description": "Verify a locale switcher exists in the nav and exposes three selectable language options (English/es/pt or equivalent labels/flags plus language names). If no switcher control is present, or it offers fewer than three languages, the test fails." }
+  ]
+}

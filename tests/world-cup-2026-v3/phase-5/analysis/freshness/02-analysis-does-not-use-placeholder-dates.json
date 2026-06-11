@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Analysis text does not contain placeholder dates or lorem ipsum",
+  "description": "The analysis content should not contain placeholder text such as lorem ipsum, TBD, 'insert date here', or obviously templated stub content that was not replaced with real analysis.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on any bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Read through all visible analysis paragraphs" },
+    { "type": "assertion", "description": "Verify the analysis text does not contain obvious placeholder content such as 'lorem ipsum', 'TBD', 'Coming soon', 'Insert analysis here', 'PLACEHOLDER', or repeated identical sentences. The text should appear to be real, written analysis about the specific match." }
+  ]
+}

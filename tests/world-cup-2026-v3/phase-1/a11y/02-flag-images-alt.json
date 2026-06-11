@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Screen-reader users can identify each team flag in the bracket and group standings",
+  "description": "A non-sighted user navigating with a screen reader can tell which team or country each flag image represents — every flag image in the homepage bracket and the groups standings exposes a non-empty text alternative.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the knockout bracket section" },
+    { "type": "assertion", "description": "Verify a screen-reader user could identify each team flag in the bracket — every flag image exposes a non-empty text alternative" },
+    { "type": "action", "description": "Click the Groups navigation link" },
+    { "type": "assertion", "description": "Verify a screen-reader user could identify each team flag in the group standings — every flag image exposes a non-empty text alternative" }
+  ]
+}

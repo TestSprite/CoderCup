@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "News panel loads without visible error states or broken UI",
+  "description": "The Related News panel should load cleanly without error messages, broken cards, or JavaScript errors visible in the UI.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab and wait a few seconds for content to load" },
+    { "type": "assertion", "description": "Verify the news panel shows content without error messages like 'Failed to load news', '404', 'Error fetching articles', or broken card skeletons that never resolved. The panel should show readable news cards." }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Each analysis paragraph is no longer than 600 characters",
+  "description": "Analysis paragraphs should be concise and readable. No single paragraph in the analysis panel should exceed 600 characters to keep the content scannable.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on any match bracket cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Scroll through the analysis panel to read all paragraphs" },
+    { "type": "assertion", "description": "Verify that no single paragraph in the analysis panel appears excessively long. A paragraph exceeding 600 characters would visually appear as a very long wall of text taking up more than 5-6 lines on a standard viewport." }
+  ]
+}

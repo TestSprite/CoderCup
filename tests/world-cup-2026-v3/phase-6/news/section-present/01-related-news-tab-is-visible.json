@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Related news tab or section is visible on a match detail page",
+  "description": "A match detail page should have a visible Related News tab, section header, or control enabling navigation to recent news about the match.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on any bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Wait for the match detail page to load" },
+    { "type": "assertion", "description": "Verify that a tab, button, or section labeled 'News', 'Related News', 'Latest News', or similar is visible on the match detail page without needing to scroll far" }
+  ]
+}

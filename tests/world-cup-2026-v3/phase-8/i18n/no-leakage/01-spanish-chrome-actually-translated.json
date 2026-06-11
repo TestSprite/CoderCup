@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Spanish page chrome reads in Spanish, not English",
+  "description": "On /es pages the UI chrome (nav links, tab names, buttons) must actually be in Spanish, demonstrably different from the English text on the equivalent /en page. The test compares the two locales rather than hard-coding an expected Spanish string, so it passes only when content genuinely changed language. Proper nouns (team and source names) are allowed to stay unchanged.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /en and read the nav labels and primary tab/section names" },
+    { "type": "action", "description": "Navigate to /es and read the same nav labels and tab/section names" },
+    { "type": "assertion", "description": "Verify the Spanish page's UI chrome text differs from the English chrome text for the same controls (the translated labels are clearly a different language, not byte-identical English). If the /es chrome renders the same English words, the test fails." }
+  ]
+}

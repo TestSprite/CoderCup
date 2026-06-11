@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "De-vigged probability equals raw implied normalized by the overround",
+  "description": "De-vigging is defined as p_i divided by the sum of all p_j, where p_i = 1/decimal_i. The stored devigged value for each outcome must equal its raw implied value divided by the book's overround. This catches builds that store a different or arbitrary normalization.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-odds/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Pick the first book in the array and read its decimal.home, decimal.draw, decimal.away and its devigged.home, devigged.draw, devigged.away" },
+    { "type": "assertion", "description": "Verify that for the home outcome the stored devigged value equals (1/decimal.home) divided by (1/decimal.home + 1/decimal.draw + 1/decimal.away), within plus or minus 0.005. The relationship must hold from the artifact's own numbers — do not compare against any externally assumed value." }
+  ]
+}

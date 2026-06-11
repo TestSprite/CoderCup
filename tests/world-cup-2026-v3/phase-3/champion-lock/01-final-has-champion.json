@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Final match page surfaces the predicted champion",
+  "description": "When a visitor opens the Final match permalink, the page surfaces the agent's pre-tournament champion prediction in a dedicated block.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the match id whose stage label is F or Final" },
+    { "type": "action", "description": "Navigate to /match/<final-id> using the captured id" },
+    { "type": "assertion", "description": "Verify the Final match page renders a predicted champion block that names one specific team as the champion, not an empty or placeholder block" }
+  ]
+}

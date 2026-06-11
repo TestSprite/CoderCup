@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "News cards are accessible without excessive scrolling",
+  "description": "The Related News panel content should be reachable within reasonable scroll distance after clicking the News tab, not buried at the very bottom of a long page.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "action", "description": "Scroll down once or twice to bring the news section into view" },
+    { "type": "assertion", "description": "Verify that at least one news card is visible after clicking the News tab and scrolling down moderately. The news cards should be reachable within 2-3 screen scrolls from the match header, not require scrolling past the entire page." }
+  ]
+}

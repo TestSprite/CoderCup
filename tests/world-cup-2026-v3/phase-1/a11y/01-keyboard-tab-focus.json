@@ -1,0 +1,14 @@
+{
+  "type": "frontend",
+  "name": "Keyboard Tab traversal surfaces visible focus on interactive elements",
+  "description": "When a visitor lands on the homepage and presses Tab repeatedly, focus advances through different interactive elements and each focused element displays a visible focus outline.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Press the Tab key once to move focus to the first interactive element" },
+    { "type": "assertion", "description": "Verify the currently focused element on the homepage displays a visible focus outline" },
+    { "type": "action", "description": "Press the Tab key again to advance focus to the next interactive element" },
+    { "type": "assertion", "description": "Verify focus moved to a different element than before and that the newly focused element also displays a visible focus outline" },
+    { "type": "action", "description": "Press the Tab key three more times to advance focus through additional interactive elements" }
+  ]
+}

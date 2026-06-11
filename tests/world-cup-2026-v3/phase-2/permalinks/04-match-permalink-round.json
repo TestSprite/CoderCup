@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Match detail page shows the round or group label",
+  "description": "When a visitor opens a match permalink, the page surfaces the round-or-group label identifying the stage of the fixture.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "assertion", "description": "Verify the match detail page renders a stage label such as a group letter, R32, R16, QF, SF, F, or 3P" }
+  ]
+}

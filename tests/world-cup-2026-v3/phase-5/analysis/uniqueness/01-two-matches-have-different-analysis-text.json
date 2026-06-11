@@ -1,0 +1,15 @@
+{
+  "type": "frontend",
+  "name": "Two different match pages show different analysis text",
+  "description": "The analysis content should be unique per match. Two different match pages should not show identical analysis text, which would indicate copy-pasted or shared placeholder content.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a first bracket match cell to open its detail page" },
+    { "type": "action", "description": "Click the Analysis tab and read the first sentence of the first analysis paragraph" },
+    { "type": "action", "description": "Navigate back to the homepage using the back link" },
+    { "type": "action", "description": "Click on a different bracket match (e.g., a different round or matchup) to open its detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "assertion", "description": "Verify the first sentence or opening text of the analysis paragraphs is different from what was seen on the first match. If both match pages show the exact same analysis text, the test fails." }
+  ]
+}

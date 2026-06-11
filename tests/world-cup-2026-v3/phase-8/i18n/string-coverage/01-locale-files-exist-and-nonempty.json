@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "All three locale translation files exist and are non-empty",
+  "description": "Translations are backed by /public/locales/en.json, es.json and pt.json. Each must exist and contain a non-trivial set of key/value pairs. A missing es.json or pt.json (or an empty {} stub) means translations are not actually shipped.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /locales/en.json and read the JSON body" },
+    { "type": "action", "description": "Navigate to /locales/es.json and read the JSON body" },
+    { "type": "action", "description": "Navigate to /locales/pt.json and read the JSON body" },
+    { "type": "assertion", "description": "Verify all three locale files return 200 with a parseable JSON object containing multiple translation keys (not empty, not a single placeholder). If any file 404s or is an empty object, the test fails." }
+  ]
+}

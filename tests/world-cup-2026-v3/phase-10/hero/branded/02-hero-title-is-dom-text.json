@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "The hero title \"FIFA World Cup 2026 Predictions (AI)\" is real DOM text over the image",
+  "description": "The hero title \"FIFA World Cup 2026 Predictions (AI)\" is real DOM text over the image.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / and read the hero heading text"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the visible title text \"FIFA World Cup 2026 Predictions\" (AI variant accepted) is selectable DOM text overlaid on the hero image — NOT pixels baked into the image. It must be present in the initial HTML (curl-grep-able)."
+    }
+  ]
+}

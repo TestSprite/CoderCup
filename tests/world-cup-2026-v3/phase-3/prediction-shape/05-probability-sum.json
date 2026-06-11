@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Probability values sum to approximately 1.0",
+  "description": "On a match permalink the probability bars show three percentage labels that visually sum to approximately 100%.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click any match link to open a match detail page" },
+    { "type": "assertion", "description": "Verify the prediction block shows three outcome probability percentages and that they sum to approximately 100%" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "type": "frontend",
+  "name": "Theme choice persists across navigation and a hard reload via localStorage",
+  "description": "Theme choice persists across navigation and a hard reload via localStorage.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to /, toggle to dark mode, then navigate to a /match/<id> page"
+    },
+    {
+      "type": "action",
+      "description": "Hard-reload the page"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the theme is still dark after navigation AND after reload (localStorage `theme`=`dark` honored); the chosen theme is not reset to default."
+    }
+  ]
+}

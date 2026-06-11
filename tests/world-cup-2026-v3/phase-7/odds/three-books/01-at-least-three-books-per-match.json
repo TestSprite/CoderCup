@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Every match offers at least three bookmaker lines",
+  "description": "The Odds tab is a comparison surface, so each match must carry at least three distinct bookmakers with full home/draw/away decimal odds. Fewer than three books, or duplicate book entries padding the count, means the comparison feature is not really built.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read the ids of at least three distinct matches" },
+    { "type": "action", "description": "For each id, navigate to /match-odds/<id>.json and read the books array" },
+    { "type": "assertion", "description": "Verify each sampled match's artifact contains at least three books with distinct bookmaker names, and each book has decimal odds greater than 1.0 for home, draw and away. A match with fewer than three books, repeated book names, or any decimal odds at or below 1.0 fails." }
+  ]
+}

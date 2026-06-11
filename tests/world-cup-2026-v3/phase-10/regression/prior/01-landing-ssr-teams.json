@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Regression: landing still SSRs real team names",
+  "description": "Regression: landing still SSRs real team names.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "curl/load / and scan the initial HTML"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify real team names (Brazil/Argentina/France/etc.) appear in the initial server-rendered HTML and the bracket + 12 group tables still render."
+    }
+  ]
+}

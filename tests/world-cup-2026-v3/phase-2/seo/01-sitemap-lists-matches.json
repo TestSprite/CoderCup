@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Sitemap lists at least 80 URLs spanning index, groups, and matches",
+  "description": "When the sitemap is retrieved, it lists at least 80 URL entries covering the homepage, the groups page, and the 78 match permalinks.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /sitemap.xml" },
+    { "type": "assertion", "description": "Verify the sitemap contains at least 80 URL entries" },
+    { "type": "assertion", "description": "Verify the sitemap contains at least 78 entries with /match/ in the URL path" }
+  ]
+}

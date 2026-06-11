@@ -1,0 +1,14 @@
+{
+  "type": "frontend",
+  "name": "Clicking a bracket cell reaches a match detail page that shows kickoff and venue",
+  "description": "When a visitor clicks a bracket cell and arrives at the match detail page, the destination surfaces both a kickoff time and a venue or host city — proving the click reached a real fixture record, not a stub.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the knockout bracket section" },
+    { "type": "action", "description": "Click any cell in the bracket" },
+    { "type": "assertion", "description": "Verify the destination URL differs from the homepage URL" },
+    { "type": "assertion", "description": "Verify the match detail page surfaces a kickoff time (a date, day, or clock time)" },
+    { "type": "assertion", "description": "Verify the match detail page surfaces a venue, stadium, or host city" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Translation values are real text, not key-name placeholders",
+  "description": "A common stub pattern ships locale files where a value equals its key name (for example {\"nav.lineups\": \"nav.lineups\"} or {\"submit\": \"submit\"}). Such placeholders render raw keys in the UI. Across all three locales, values must be human-readable translations distinct from the key path.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /locales/es.json and read each key together with its value" },
+    { "type": "action", "description": "Navigate to /locales/pt.json and read each key together with its value" },
+    { "type": "assertion", "description": "Verify that in es.json and pt.json no value is identical to its own key name and no value is left as the English key path or an obvious placeholder token. If any locale value equals its key (a sign of an unfilled translation slot), the test fails." }
+  ]
+}

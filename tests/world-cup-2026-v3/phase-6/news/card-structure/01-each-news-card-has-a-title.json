@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Each news card has a readable article title",
+  "description": "Every news card in the Related News panel should display a title that describes the article content. Cards without titles or with only placeholder text fail this test.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "assertion", "description": "Verify that the first visible news card shows a readable article title — a headline-like string of at least 10 characters that is not 'Untitled', 'Article Title', or other placeholder text" }
+  ]
+}

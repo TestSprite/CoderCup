@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Prior-phase features remain functional in a non-default locale",
+  "description": "Adding i18n must not regress earlier features. On a Spanish match page the bracket navigation, predictions, and odds tab must still render their real data (translated labels, but populated content), with no layout break from longer translated strings. A localization layer that empties or breaks these tabs fails this test.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /es/match/<captured-id>" },
+    { "type": "action", "description": "Open the predictions/odds content tab on the Spanish match page" },
+    { "type": "assertion", "description": "Verify the prior-phase content (prediction verdict and/or per-book odds with concrete values) still renders populated on the Spanish page, with labels translated and no obvious layout break (no overflowing/clipped text, no empty panel). If a prior feature renders empty or broken under /es, the test fails." }
+  ]
+}

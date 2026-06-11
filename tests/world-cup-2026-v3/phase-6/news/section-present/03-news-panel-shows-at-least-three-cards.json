@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "News panel shows at least three news cards",
+  "description": "The related news section should show at least 3 distinct news cards per match to provide meaningful coverage.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a knockout bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the News or Related News tab" },
+    { "type": "action", "description": "Scroll through the news panel to see all news cards" },
+    { "type": "assertion", "description": "Verify the news panel contains at least 3 distinct news card entries. Each card should appear as a separate visual unit with distinct content. Fewer than 3 cards fails this test." }
+  ]
+}

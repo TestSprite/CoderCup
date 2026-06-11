@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Lowest-odds favorite aligns with the agent's predicted winner",
+  "description": "The outcome with the lowest decimal odds (the market favorite / highest consensus probability) should align with the agent's predicted winner for the match, since the agent's implied probability is shown alongside. A favorite that contradicts the prediction is a cross-feature inconsistency worth flagging — let the agent judge, do not assume a fixed winner.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage and open a match detail page, then read the predicted winner shown in the Predictions tab or prediction block" },
+    { "type": "action", "description": "Open the Betting Odds tab on the same match and identify which outcome (home/draw/away) carries the highest market consensus probability and lowest decimal odds" },
+    { "type": "assertion", "description": "Verify the market favorite (highest consensus / lowest odds outcome) is consistent with the agent's predicted winner for the same match. Judge whether they point to the same side; a clear contradiction (agent predicts the home team yet the market consensus strongly favors the away team with no explanation) fails. Do not assume any specific team in advance." }
+  ]
+}

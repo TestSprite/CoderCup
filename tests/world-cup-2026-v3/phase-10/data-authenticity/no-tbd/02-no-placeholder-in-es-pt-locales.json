@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "No placeholder/untranslated data in the es and pt locales",
+  "description": "No placeholder/untranslated data in the es and pt locales.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Open /es and /pt (landing + a match page) and scan visible text"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify no placeholder/TBD data and no raw i18n keys / untranslated English data labels leak in the es or pt locales."
+    }
+  ]
+}

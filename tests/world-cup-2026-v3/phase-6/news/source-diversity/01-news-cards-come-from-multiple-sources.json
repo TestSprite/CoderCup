@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "News cards come from at least two different source domains",
+  "description": "The Related News panel should not show all articles from a single source. At least two distinct source names or domains should be represented across the visible news cards.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "action", "description": "Scroll through the news panel and read the source names shown on all news cards" },
+    { "type": "assertion", "description": "Verify that the news cards show at least 2 different source names or domains. If all visible cards list the exact same source (e.g., all from 'BBC Sport'), the diversity requirement is not met. Having articles from e.g. 'ESPN' and 'Goal.com' or any two different outlets passes." }
+  ]
+}

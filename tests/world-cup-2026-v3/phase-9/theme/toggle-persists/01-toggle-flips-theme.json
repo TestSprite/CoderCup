@@ -1,0 +1,20 @@
+{
+  "type": "frontend",
+  "name": "The nav theme toggle visibly flips between light and dark",
+  "description": "The nav theme toggle visibly flips between light and dark.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / and locate the theme toggle control in the nav (sun/moon icon or label)"
+    },
+    {
+      "type": "action",
+      "description": "Click the toggle"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the page background and text colors invert to the other theme (computed background-color changes from light to dark or vice versa)."
+    }
+  ]
+}

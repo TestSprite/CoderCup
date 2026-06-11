@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Unknown match slug shows a 404 view and recovers via home link",
+  "description": "When a visitor navigates to a match slug that does not exist, the app renders a 404 indicator, and clicking the home or bracket link from that page returns the visitor to the homepage with the knockout bracket present.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /match/does-not-exist-9999" },
+    { "type": "assertion", "description": "Verify the page surfaces a 404 indicator such as the text 404 or the phrase not found" },
+    { "type": "action", "description": "Click the home, brand, or bracket link on the 404 page" },
+    { "type": "assertion", "description": "Verify the destination page surfaces the knockout bracket section" }
+  ]
+}

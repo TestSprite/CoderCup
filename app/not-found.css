@@ -1,0 +1,63 @@
+/* 404 page styling. Restores the .nf* rules dropped from design.css in the
+   Scale Labs design-system rewrite (506ec1f) — not-found.tsx still references
+   these classes, so without them the 404 content block renders unstyled.
+   Uses the current design tokens (--ink-*, --accent, --line, fonts). */
+.nf {
+  padding: 96px 0;
+  position: relative;
+}
+.nf::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 30%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%),
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: auto, 64px 64px, 64px 64px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 30%, #000 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 30%, #000 30%, transparent 90%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+.nf-inner {
+  position: relative;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.nf-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 24px;
+}
+.nf h1 {
+  font-family: var(--font-sans);
+  font-size: clamp(40px, 5.5vw, 60px);
+  margin: 0 0 24px;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  font-weight: 300;
+  text-wrap: balance;
+}
+.nf h1 em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 300;
+}
+.nf p {
+  font-size: 17px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  margin: 0 auto 32px;
+  max-width: 560px;
+}
+.nf-links {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

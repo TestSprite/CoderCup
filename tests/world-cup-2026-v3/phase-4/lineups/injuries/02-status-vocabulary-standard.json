@@ -1,0 +1,14 @@
+{
+  "type": "frontend",
+  "name": "Every injury entry uses a standard severity from a fixed vocabulary",
+  "description": "When the per-match lineups artifact is fetched, every entry in the home and away injuries arrays carries a non-empty player name, a reason, and a severity drawn from the fixed vocabulary out, doubtful, suspended, or returning.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-lineups/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Collect every entry from the home.injuries and away.injuries arrays" },
+    { "type": "assertion", "description": "Verify every injury entry that is present has a non-empty name and a non-empty reason" },
+    { "type": "assertion", "description": "Verify every injury entry that is present has a severity equal to one of out, doubtful, suspended, or returning" }
+  ]
+}

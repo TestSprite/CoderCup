@@ -1,0 +1,15 @@
+{
+  "type": "frontend",
+  "name": "At least one player status note is surfaced on the match lineups",
+  "description": "When a visitor opens the Lineups panel on a match page whose artifact carries an injury entry, at least one affected player surfaces a fitness status note alongside an inline warning indicator next to that player's name.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-lineups/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Read the home.injuries and away.injuries arrays and capture an affected player name if either array is non-empty" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "action", "description": "Open the Lineups tab or scroll to the lineups region" },
+    { "type": "assertion", "description": "Verify at least one player status note is rendered as visible text stating a reason and a severity, with an inline warning indicator shown next to the affected player's name in the lineup" }
+  ]
+}

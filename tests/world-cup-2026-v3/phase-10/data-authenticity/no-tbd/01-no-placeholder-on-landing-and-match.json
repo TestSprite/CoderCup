@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "No TBD/placeholder data on the landing or a match page",
+  "description": "No TBD/placeholder data on the landing or a match page.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Scan / (bracket + 12 group tables) and one /match/<id> (all tabs) for placeholder text"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify NO visible data field contains TBD/TODO/lorem/placeholder/\"Team A\"/\"Home\"/\"Away\"-as-name/\"coming soon\"/undefined/NaN, and group standings/scorelines are not uniformly 0-0."
+    }
+  ]
+}

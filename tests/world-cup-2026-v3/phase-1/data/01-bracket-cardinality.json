@@ -1,0 +1,21 @@
+{
+  "type": "frontend",
+  "name": "Clicking one cell from each bracket stage reaches four distinct match pages",
+  "description": "When a visitor clicks one cell from each of Round-of-16, Quarterfinal, Semifinal, and Final in the knockout bracket, they reach four distinct match detail pages — proving the bracket exposes all four stages as real navigation, not decorative cells.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the knockout bracket section" },
+    { "type": "action", "description": "Click one cell in the Round-of-16 area of the bracket" },
+    { "type": "action", "description": "Note the current match detail URL as the first destination" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click one cell in the Quarterfinal area of the bracket" },
+    { "type": "action", "description": "Note the current match detail URL as the second destination" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click one cell in the Semifinal area of the bracket" },
+    { "type": "action", "description": "Note the current match detail URL as the third destination" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click the Final cell in the bracket" },
+    { "type": "assertion", "description": "Verify the four noted destination URLs are all distinct from each other" }
+  ]
+}

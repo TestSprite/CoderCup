@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Staleness warning appears when the oldest book is over six hours old",
+  "description": "When a match's oldest book fetched_at_iso is more than 6 hours before page load, the Odds tab must surface a staleness warning badge that names the age, so visitors know the line may be outdated. The badge must reflect the artifact's own staleness data.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read match ids, then for each navigate to /match-odds/<id>.json and inspect staleness.is_stale and staleness.age_hours to find a match whose oldest book is more than 6 hours old (is_stale true)" },
+    { "type": "action", "description": "Open that match's detail page and click the Betting Odds tab" },
+    { "type": "assertion", "description": "Verify a staleness warning badge is visible on the Odds tab for the stale match, that it communicates the odds may be out of date, and that it references an age consistent with the artifact's age_hours (e.g. 'oldest: 8h ago'). No badge on a match flagged is_stale fails." }
+  ]
+}

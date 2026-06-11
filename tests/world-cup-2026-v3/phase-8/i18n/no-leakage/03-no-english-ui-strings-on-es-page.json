@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "No hardcoded English UI strings leak onto a Spanish page",
+  "description": "Visiting /es/match/<id> must not surface common English UI words (such as Lineups, Analysis, Odds, Predictions, Final, Live) as interface labels. Those would indicate hardcoded English that the translation layer never reached. Proper nouns (team names, bookmaker names) are exempt.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /es/match/<captured-id> and scan all interface labels (nav, tabs, headers, buttons, status pills)" },
+    { "type": "assertion", "description": "Verify none of the English UI control words (Lineups, Analysis, Odds, Predictions, News, Final, Live) appear as interface labels on the Spanish page. If any such English UI string is rendered as a label (excluding proper nouns), the test fails." }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Responsible-gambling / 18+ disclaimer is present on the Odds surface",
+  "description": "Any product surfacing betting odds must show a responsible-gambling notice (an 18+/21+ age statement, 'odds for informational purposes', or a help-line / 'gamble responsibly' message). A real betting brief that omits this is non-compliant; a placeholder or absent disclaimer fails.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage and open a match detail page" },
+    { "type": "action", "description": "Click the Betting Odds tab and read any surrounding notices, footnotes, or disclaimers on the odds surface" },
+    { "type": "assertion", "description": "Verify a responsible-gambling or age-restriction disclaimer is visibly present on or adjacent to the Odds tab — for example an '18+' / '21+' notice, a 'gamble responsibly' message, a help-line reference, or an 'odds shown for informational purposes only' statement. No such notice anywhere on the odds surface fails this test." }
+  ]
+}

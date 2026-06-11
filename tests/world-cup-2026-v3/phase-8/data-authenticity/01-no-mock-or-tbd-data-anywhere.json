@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "No mock, TBD, or placeholder data anywhere in the rendered product",
+  "description": "This is a real forecasting product and every data value must be real. Placeholder/mock sentinels indicate fabricated or unfinished data and are an automatic fail. This directly guards the 'real data, no mock' requirement: an agent that ships TBD scorelines, lorem-ipsum copy, dummy team names, or unfilled placeholders must lose this test.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to / (landing) and scan all visible text, including the knockout bracket cells and the 12 group standings tables." },
+    { "type": "action", "description": "Navigate to /api/matches, capture the first match id, then open /match/<captured-id> and scan its prediction block, scoreline, lineups/formation, analysis, news and odds sections." },
+    { "type": "assertion", "description": "Verify NO visible data field contains a placeholder or mock sentinel. Failing tokens include (case-insensitive): 'TBD', 'TODO', 'lorem ipsum', 'placeholder', 'mock', 'dummy', 'sample data', 'coming soon', 'example.com', 'Team A' / 'Team B' / 'Home Team' / 'Away Team' used as a team name, 'XXX', 'foo'/'bar', or 'N/A' standing in for a real value. Any such token appearing where real World Cup data belongs fails the test." }
+  ]
+}

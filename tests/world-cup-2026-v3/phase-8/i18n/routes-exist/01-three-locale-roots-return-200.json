@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "All three locale root routes return 200",
+  "description": "Real i18n ships every page under three locale prefixes. The roots /en, /es and /pt must each return a successful (200) HTML response. A single-language skeleton that only serves / (or 404s on /es and /pt) fails this test.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /en and observe the HTTP response and rendered page" },
+    { "type": "action", "description": "Navigate to /es and observe the HTTP response and rendered page" },
+    { "type": "action", "description": "Navigate to /pt and observe the HTTP response and rendered page" },
+    { "type": "assertion", "description": "Verify all three locale roots (/en, /es, /pt) return a 200 status and render a real page with bracket or standings content. If any of /es or /pt returns 404, redirects to the English-only root, or renders an empty/error page, the test fails." }
+  ]
+}

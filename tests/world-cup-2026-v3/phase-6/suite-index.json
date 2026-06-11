@@ -1,0 +1,20 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-6",
+  "phase": 6,
+  "status": "fully-authored",
+  "total_plans": 16,
+  "planned_plans": 16,
+  "planned_categories": [
+    "news/section-present",
+    "news/card-structure",
+    "news/freshness",
+    "news/head-check",
+    "news/source-diversity",
+    "news/coverage"
+  ],
+  "feature_theme": "Related news · 相关新闻 — ≥3 news cards per match (title + source + ISO date + URL); freshness ≤7 days; HEAD-checked; source diversity ≥5 domains",
+  "depends_on_phases": [2, 5],
+  "pass_criterion": "at least 13 of 16 plans pass",
+  "composite_formula": "0.40 * correctness + 0.25 * freshness + 0.20 * url_liveness + 0.15 * efficiency"
+}

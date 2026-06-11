@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Match page renders a Prediction block",
+  "description": "When a visitor opens a match permalink, the page renders a Prediction block identified by a heading or dedicated section.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click any match link to open a match detail page" },
+    { "type": "assertion", "description": "Verify the match detail page renders a distinct Prediction block, identified by its heading or section, holding the match's prediction content" }
+  ]
+}

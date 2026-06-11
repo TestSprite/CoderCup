@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "News card titles mention the match teams or relevant football terms",
+  "description": "News articles in the Related News section should be relevant to the match. Article titles should mention at least one team playing in the match, their country names, or relevant football/World Cup terminology.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a specific bracket match and note the two teams shown in the match header" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "assertion", "description": "Verify that at least one news card title mentions one of the match teams, their country, or World Cup 2026 context. If no card references the specific teams at all and articles appear completely unrelated to football or the match, the test fails." }
+  ]
+}

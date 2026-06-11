@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Predicted scoreline values stay within a sane 0 to 9 range",
+  "description": "When the predictions API is fetched, every predicted scoreline value for home and away stays within a sane 0 to 9 range.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/predictions" },
+    { "type": "action", "description": "Inspect the scoreline.home and scoreline.away values for every prediction" },
+    { "type": "assertion", "description": "Verify every scoreline home and away value is a non-negative integer between 0 and 9 inclusive" }
+  ]
+}

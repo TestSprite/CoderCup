@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Light mode body and heading text meet WCAG AA contrast",
+  "description": "Light mode body and heading text meet WCAG AA contrast.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / in light mode and sample the contrast of body text and a heading against their backgrounds"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify body text contrast ≥ 4.5:1 and large/heading text ≥ 3:1 against their actual backgrounds."
+    }
+  ]
+}

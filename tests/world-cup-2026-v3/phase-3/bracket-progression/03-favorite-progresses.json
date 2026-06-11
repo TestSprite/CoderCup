@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Top-probability R16 team also appears in QF predictions",
+  "description": "The bracket page shows both Round of 16 and Quarter-final sections with team names, confirming multi-round predictions are populated.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Find a Round of 16 cell whose predicted winner is the higher-probability team and note that team name" },
+    { "type": "action", "description": "Locate the Quarter-final cell that this Round of 16 winner feeds into" },
+    { "type": "assertion", "description": "Verify the noted Round of 16 winner appears as a participant in the Quarter-final cell it advances to, confirming the predicted winner actually carries forward across rounds rather than each round listing unrelated teams" }
+  ]
+}

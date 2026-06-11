@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Bookmakers are real named sportsbooks, not invented placeholders",
+  "description": "Odds must be attributed to real sportsbooks (e.g. Pinnacle, Bet365, DraftKings, FanDuel, Betfair, William Hill, Stake, Caesars, BetMGM, Unibet). Inventing a generic name like MockBook, BookA, Bookmaker 1, Sample, or TBD to reach three is fabrication and fails source integrity.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage and open a match detail page" },
+    { "type": "action", "description": "Open the Betting Odds tab and read the bookmaker name shown for each row of the odds table" },
+    { "type": "assertion", "description": "Verify every bookmaker label rendered in the odds table is a real, recognizable sportsbook brand and that none are anonymous or obviously synthetic names such as 'Book A', 'Bookmaker 1', 'MockBook', 'Sample', 'Demo', 'TBD', or a blank source. Odds with no attributed source name fail." }
+  ]
+}

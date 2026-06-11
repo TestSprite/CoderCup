@@ -1,0 +1,56 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-7",
+  "phase": 7,
+  "status": "fully-authored",
+  "total_plans": 19,
+  "planned_plans": 18,
+  "categories": {
+    "odds/math-devig": [
+      "01-devigged-probs-sum-to-one.json",
+      "02-raw-implied-shows-vig.json",
+      "03-devig-is-normalized-raw.json",
+      "04-devig-holds-across-sampled-matches.json"
+    ],
+    "odds/math-consensus": [
+      "01-consensus-sums-to-one.json",
+      "02-consensus-equals-mean-of-devigged.json",
+      "03-consensus-not-decimal-average-trap.json"
+    ],
+    "odds/three-books": [
+      "01-at-least-three-books-per-match.json",
+      "02-bookmakers-are-real-named-sources.json"
+    ],
+    "odds/ui-rendered": [
+      "01-odds-tab-renders-book-table.json",
+      "02-consensus-and-agent-rows-rendered.json",
+      "03-probability-bars-match-consensus.json"
+    ],
+    "odds/staleness-badge": [
+      "01-badge-present-when-odds-stale.json",
+      "02-no-badge-when-odds-fresh.json"
+    ],
+    "odds/agent-consistency": [
+      "01-agent-implied-matches-phase3.json",
+      "02-favorite-aligns-with-prediction.json"
+    ],
+    "odds/accessibility": [
+      "01-bars-have-text-labels.json",
+      "02-odds-tab-keyboard-reachable.json",
+      "03-responsible-gambling-disclaimer.json"
+    ]
+  },
+  "planned_categories": [
+    "odds/math-devig",
+    "odds/math-consensus",
+    "odds/three-books",
+    "odds/ui-rendered",
+    "odds/staleness-badge",
+    "odds/agent-consistency",
+    "odds/accessibility"
+  ],
+  "feature_theme": "Betting odds · 博彩指数 — ≥3 bookmaker columns + market consensus (de-vig math correct) + agent's own implied prob + staleness UI when oldest book >6h old + responsible-gambling notice",
+  "depends_on_phases": [2, 3],
+  "pass_criterion": "at least 15 of 19 plans pass; all odds/math-* plans must pass (math is non-negotiable)",
+  "composite_formula": "0.35 * correctness + 0.35 * math_accuracy + 0.20 * source_integrity + 0.10 * efficiency"
+}

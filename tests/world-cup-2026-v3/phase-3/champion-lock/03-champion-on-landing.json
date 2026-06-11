@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Champion prediction is reachable from the landing page",
+  "description": "When a visitor loads the homepage, the predicted champion is either visible on the landing page directly or reachable via a dedicated champion page.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Inspect the page for a champion block or a champion page link" },
+    { "type": "assertion", "description": "Verify the homepage either renders the predicted champion inline or exposes a link to a /champion page" }
+  ]
+}

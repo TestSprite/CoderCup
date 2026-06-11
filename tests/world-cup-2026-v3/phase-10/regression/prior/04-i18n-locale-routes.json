@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Regression: en/es/pt locale routes still resolve",
+  "description": "Regression: en/es/pt locale routes still resolve.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Request /, /es, /pt"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify all three locale roots return 200 with translated content (phase-8 deliverable intact)."
+    }
+  ]
+}

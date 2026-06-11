@@ -1,0 +1,20 @@
+{
+  "type": "frontend",
+  "name": "Match page prediction, lineup and odds render correctly in both light and dark",
+  "description": "Match page prediction, lineup and odds render correctly in both light and dark.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Open a /match/<id> page in light mode and confirm the predicted scoreline + win-probability bars, the lineup/formation, and the odds section are visible"
+    },
+    {
+      "type": "action",
+      "description": "Toggle to dark mode and re-check the same prediction, lineup and odds blocks"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the prediction bars, lineup, and odds all render legibly in BOTH modes — none disappear, lose contrast to invisibility, or break layout under the re-skin."
+    }
+  ]
+}

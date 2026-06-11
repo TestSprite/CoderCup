@@ -1,0 +1,14 @@
+{
+  "type": "frontend",
+  "name": "Home formation label matches a valid formation pattern and sums to ten",
+  "description": "When the per-match lineups artifact is fetched, the home team's formation string matches the digits-and-hyphens pattern of a real football formation such as 4-3-3, 4-2-3-1, or 3-5-2, and its digits sum to ten outfield players.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-lineups/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Read the home.formation string from the lineups artifact" },
+    { "type": "assertion", "description": "Verify the home.formation string matches the pattern of two to four hyphen-separated single digits, for example 4-3-3, 4-2-3-1, or 3-5-2" },
+    { "type": "assertion", "description": "Verify the digits in the home.formation string sum to exactly ten" }
+  ]
+}

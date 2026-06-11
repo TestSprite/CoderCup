@@ -1,0 +1,14 @@
+{
+  "type": "frontend",
+  "name": "Both teams' formation labels render as visible text on the match page",
+  "description": "When a visitor opens the Lineups panel on a match page, a prominent formation label is rendered for the home team and a separate formation label is rendered for the away team, each as visible text matching a valid formation pattern.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "action", "description": "Open the Lineups tab or scroll to the lineups region" },
+    { "type": "assertion", "description": "Verify a formation label matching a digits-and-hyphens pattern such as 4-3-3 is visible within the home team column" },
+    { "type": "assertion", "description": "Verify a separate formation label matching a digits-and-hyphens pattern is visible within the away team column" }
+  ]
+}

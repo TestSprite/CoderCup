@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "All visible reference URLs use HTTPS",
+  "description": "Reference source URLs in the analysis panel should use secure HTTPS links, not plain HTTP. Mixed content or insecure links are not acceptable on a modern web application.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Scroll to the References section and inspect the visible URLs" },
+    { "type": "assertion", "description": "Verify that all visible reference URLs in the References section start with https:// rather than http://. If any URL starts with plain http://, the test fails." }
+  ]
+}

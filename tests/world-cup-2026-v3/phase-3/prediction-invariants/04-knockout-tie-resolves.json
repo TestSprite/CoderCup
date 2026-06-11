@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Tied knockout predictions surface an extra-time or penalties resolution",
+  "description": "Browse several knockout match prediction pages; any that show a level scoreline must also display an ET or PENS resolution indicator.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Open a knockout-round match page" },
+    { "type": "action", "description": "Read the predicted scoreline in the prediction block" },
+    { "type": "assertion", "description": "Verify that when the predicted scoreline is level the prediction block also surfaces an extra-time or penalties resolution naming the advancing team; when the scoreline is decisive, verify the block names a clear winner without a resolution indicator" }
+  ]
+}

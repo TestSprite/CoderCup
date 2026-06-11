@@ -1,0 +1,1456 @@
+{
+  "schema_version": "1",
+  "agent": {
+    "slug": "kimi",
+    "name": "Kimi",
+    "vendor": "Moonshot",
+    "driver_type": "kimi_code_cli",
+    "model_id": "kimi-k2.6",
+    "status": "completed",
+    "onboarded_at_iso": "2026-05-24T00:00:00Z"
+  },
+  "runs": [
+    {
+      "run_id": "kimi-phase1",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 1,
+      "phase_slug": "phase-1",
+      "phase_label": "Phase 1 · Landing page",
+      "started_at": "2026-06-05T10:33:15Z",
+      "ended_at": "2026-06-05T10:53:43Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-1",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 1228000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "Homepage team flag images render the correct national flag, not broken or placeholder",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780742766461138//tmp/6035c3d5-dcb2-406b-9625-37286c69c34c/result.webm"
+        },
+        {
+          "name": "Homepage shows a hero heading at the top and the bracket section below",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/17807430824965//tmp/f4d0f209-6922-413a-b0cb-a593609458a3/result.webm"
+        },
+        {
+          "name": "A match URL listed in sitemap.xml renders real match content when visited",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/178074342451381//tmp/6d7a1bf8-047d-4c10-89e1-1add69c0f069/result.webm"
+        },
+        {
+          "name": "Clicking the Final cell reaches a match detail page labeled Final",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780743411037212//tmp/cd34338e-db66-4f73-91c1-39375a11a521/result.webm"
+        },
+        {
+          "name": "Unknown match slug shows a 404 view and recovers via home link",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780743395751576//tmp/dfa70445-5000-4344-93b1-ad266a3ffb2e/result.webm"
+        },
+        {
+          "name": "Clicking a Group A team row navigates to a page that names that team",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780742850418774//tmp/dfc8164c-a811-4c83-8cff-ab3b4a30376e/result.webm"
+        },
+        {
+          "name": "Clicking the Groups navigation surfaces all twelve groups A through L",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780743287155646//tmp/5a2b0347-3677-4b5c-b5c8-3b3e961d42a6/result.webm"
+        },
+        {
+          "name": "Clicking a Round-of-16 cell navigates from homepage to a match detail page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780743465925728//tmp/a960b97d-150b-43c3-af0d-c339194105e8/result.webm"
+        },
+        {
+          "name": "Five sequential bracket-cell clicks land on five distinct match detail pages",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780743491573742//tmp/98ba75b0-b2c0-4f33-afc8-980f757b148a/result.webm"
+        },
+        {
+          "name": "Clicking a Group A team row reaches a destination that surfaces Group A context",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780743024790347//tmp/8c1665dd-ec61-4606-837a-1bcdf6b2d3bb/result.webm"
+        },
+        {
+          "name": "Clicking a Quarterfinal cell reaches a match page labeled Quarterfinal",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780743806803667//tmp/6cf52123-c807-48ca-af52-48235b91989c/result.webm"
+        },
+        {
+          "name": "Clicking a bracket cell reaches a match detail page that shows kickoff and venue",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780743848483573//tmp/622aba12-3ffc-4c3d-8e85-df30d1ecc62e/result.webm"
+        },
+        {
+          "name": "Three Round-of-16 cell clicks lead to three different match detail pages",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780744072631843//tmp/4d07a1e5-36da-49b9-8ba1-c89f42cabd2b/result.webm"
+        },
+        {
+          "name": "Clicking a team row in Group A then in Group L lands on two distinct destinations",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780743618558812//tmp/73450a7d-c0ea-4a4b-94d9-380119ea89f5/result.webm"
+        },
+        {
+          "name": "Clicking one cell from each bracket stage reaches four distinct match pages",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780744192899075//tmp/da949732-08e9-4228-8867-4aa324eed056/result.webm"
+        },
+        {
+          "name": "Screen-reader users can identify each team flag in the bracket and group standings",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780744075524401//tmp/dabc9230-729b-4b18-b656-817c9ea29afc/result.webm"
+        },
+        {
+          "name": "Keyboard Tab traversal surfaces visible focus on interactive elements",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780744010820733//tmp/488e1393-abf3-4752-b604-685c7d5656f0/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase1",
+        "phase": 1,
+        "composite": 0.7787,
+        "components": {
+          "correctness": 0.737
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 1.4605,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 20.4667
+          }
+        },
+        "passed": 12,
+        "total": 17,
+        "correctness": 0.737,
+        "phase_correctness": 0.7368,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.7368
+      }
+    },
+    {
+      "run_id": "kimi-phase2",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 2,
+      "phase_slug": "phase-2",
+      "phase_label": "Phase 2 · Match details",
+      "started_at": "2026-06-05T11:28:19Z",
+      "ended_at": "2026-06-05T12:07:55Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-2",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 2376000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "Match page exposes a canonical link tag matching the URL",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728060625775//tmp/db6f9573-ad36-4d51-8f77-5e70fae6b87d/result.webm"
+        },
+        {
+          "name": "Match page og:title contains both team names",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/178072791009345//tmp/d7308376-5752-4818-bc3d-df6ad9ebac53/result.webm"
+        },
+        {
+          "name": "Sitemap lists at least 80 URLs spanning index, groups, and matches",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780727845732912//tmp/25f7c58a-b312-4aae-b98f-69327650117c/result.webm"
+        },
+        {
+          "name": "Match page response includes X-Frame-Options or frame-ancestors",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780727885350827//tmp/6b908dbd-dd0b-4536-a98a-3087f18fa034/result.webm"
+        },
+        {
+          "name": "Match page response includes a Content-Security-Policy header",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728148508979//tmp/5c7194ad-ec83-48fd-b474-71cb6cb72e2e/result.webm"
+        },
+        {
+          "name": "Match detail page has a back-to-bracket link",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728193037505//tmp/b1bf8cdf-4747-4a4e-b907-77b991926a56/result.webm"
+        },
+        {
+          "name": "Match detail page shows the round or group label",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728262754241//tmp/35d4fcb7-da08-4322-8abf-ffbffdc883ce/result.webm"
+        },
+        {
+          "name": "Match detail page shows venue host city",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728070158222//tmp/72e0971a-4386-440d-bdc1-1318fc0d9982/result.webm"
+        },
+        {
+          "name": "Match detail page shows kickoff time",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728145125651//tmp/bdce2a68-e701-43de-8e21-6edadbfe7ee6/result.webm"
+        },
+        {
+          "name": "Sample match permalink loads with team names visible",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728449045451//tmp/388ea303-ecc6-46f7-bae7-74f092998b29/result.webm"
+        },
+        {
+          "name": "Malformed match id renders a graceful error page",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728024935491//tmp/08e7c378-a0f1-4af6-836a-62d7dd23e99d/result.webm"
+        },
+        {
+          "name": "Unknown match id returns HTTP 404 with rendered page",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728404459508//tmp/7515d476-22f8-4519-b0ab-ae53757b49c4/result.webm"
+        },
+        {
+          "name": "Match page renders a stage badge for the fixture",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728310487969//tmp/2beece1a-f881-444f-b354-cb5ca14d42a3/result.webm"
+        },
+        {
+          "name": "Kickoff timestamp is rendered in human-readable form",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728400054005//tmp/7d0a4fbe-41fb-4226-94e7-bbe112630d7a/result.webm"
+        },
+        {
+          "name": "Both team flag images render the correct flags on the match detail page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728776044635//tmp/aeab9c6c-7154-4a9c-a170-703a134dea1c/result.webm"
+        },
+        {
+          "name": "Both team names render as readable text on match page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780728733510579//tmp/a65d5191-73d1-4be2-a401-d9815163bdc1/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase2",
+        "phase": 2,
+        "composite": 0.7494,
+        "components": {
+          "correctness": 0.722
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 3.0061,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 60.0667
+          }
+        },
+        "passed": 10,
+        "total": 16,
+        "correctness": 0.722,
+        "phase_correctness": 0.6765,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.6944
+      }
+    },
+    {
+      "run_id": "kimi-phase3",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 3,
+      "phase_slug": "phase-3",
+      "phase_label": "Phase 3 · Predictions",
+      "started_at": "2026-06-05T13:24:34Z",
+      "ended_at": "2026-06-05T13:40:07Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-3",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 933000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "Prediction block renders cleanly at 360px viewport",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780742135316831//tmp/4f2036cf-a1e4-4f35-bf66-c29f2572de94/result.webm"
+        },
+        {
+          "name": "Bracket match cards surface the predicted winner",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741977734451//tmp/d5d96329-ceff-4ecd-a40a-ed27c2749fcf/result.webm"
+        },
+        {
+          "name": "Prediction block is visible above the fold on desktop",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780742203408524//tmp/7e03232b-558b-4736-8297-3881830c77a2/result.webm"
+        },
+        {
+          "name": "Probability values sum to approximately 1.0",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741960385997//tmp/e2c23439-b2e6-4023-a7d3-5dd14f25b022/result.webm"
+        },
+        {
+          "name": "Prediction block shows probability bars with percentages",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780742095772017//tmp/5dae7df6-21a2-4470-8f22-b77671ea747d/result.webm"
+        },
+        {
+          "name": "Prediction block renders a concrete scoreline",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780742500285065//tmp/34133b47-ba60-4f0a-af82-47dc137691cd/result.webm"
+        },
+        {
+          "name": "Prediction block names a winner or a draw",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780742247168852//tmp/33f7dce9-1268-445f-909e-d0b4ca836e57/result.webm"
+        },
+        {
+          "name": "Match page renders a Prediction block",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780742057965066//tmp/54468f5c-4255-4839-b7e1-7cfb4bf109ea/result.webm"
+        },
+        {
+          "name": "Prediction block includes a reasoning paragraph",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780742341884855//tmp/b7736b18-c912-4601-9d19-3e59b2fde65d/result.webm"
+        },
+        {
+          "name": "Group-stage predictions allow draw as a valid winner",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780729825068385//tmp/fcb90c20-99dc-4b0a-baa6-844a7e7347a4/result.webm"
+        },
+        {
+          "name": "Tied knockout predictions surface an extra-time or penalties resolution",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780729970394829//tmp/ef4e1100-c036-4072-bf87-f811eef2219c/result.webm"
+        },
+        {
+          "name": "Knockout-stage predictions never declare a draw winner",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780730373592162//tmp/94617ead-1317-4c5c-8cad-2db0f567bc51/result.webm"
+        },
+        {
+          "name": "Predicted scoreline values stay within a sane 0 to 9 range",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780730264697582//tmp/ccf06d6d-a445-4f30-b878-288690c09c58/result.webm"
+        },
+        {
+          "name": "No prediction has a team predicted to play itself",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780729822920621//tmp/5dbfd88e-e821-4a09-a552-19bb430de9e1/result.webm"
+        },
+        {
+          "name": "Champion prediction is reachable from the landing page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780729816145564//tmp/fe4c2ebe-25d9-4cc7-9936-53bcafc7f93e/result.webm"
+        },
+        {
+          "name": "Champion pick is one of the 48 FIFA 2026 teams",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780730528174644//tmp/639cbf97-4312-4743-ba8e-aa5c2399f998/result.webm"
+        },
+        {
+          "name": "Final match page surfaces the predicted champion",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780730603509094//tmp/ab2f5f47-7c53-410f-943d-54026de9d2b1/result.webm"
+        },
+        {
+          "name": "Top-probability R16 team also appears in QF predictions",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780730610559665//tmp/c2fc152b-e7fc-43cf-90cf-567d5b4065ce/result.webm"
+        },
+        {
+          "name": "Predicted finalists derive from predicted semi-final winners",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780730498835582//tmp/0761c673-02b9-4495-b696-5c6b0a2a1b2a/result.webm"
+        },
+        {
+          "name": "Bracket shows the expected number of cells per knockout round",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780730860303273//tmp/47ac1586-f197-4617-b5c2-8fe385070667/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase3",
+        "phase": 3,
+        "composite": 0.7626,
+        "components": {
+          "correctness": 0.741
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 5.7354,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 75.6167
+          }
+        },
+        "passed": 15,
+        "total": 20,
+        "correctness": 0.741,
+        "phase_correctness": 0.7273,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.7216
+      }
+    },
+    {
+      "run_id": "kimi-phase4",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 4,
+      "phase_slug": "phase-4",
+      "phase_label": "Phase 4 · Lineups",
+      "started_at": "2026-06-05T14:50:02Z",
+      "ended_at": "2026-06-05T15:19:01Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-4",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 1739000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "Lineups content is reachable by scrolling the match page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/178073356083316//tmp/74040d2c-a218-4d22-8f59-52b2eb920d6a/result.webm"
+        },
+        {
+          "name": "Lineups tab is reachable and activatable by keyboard",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780733727798447//tmp/c46ca648-6ff1-4dbe-bcf9-2833854f2d54/result.webm"
+        },
+        {
+          "name": "Lineups tab is visible and opens a populated lineups panel on a match page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780733918121555//tmp/2697af37-d4a3-457d-806f-e017bf3caf1a/result.webm"
+        },
+        {
+          "name": "Rendered starting XI is a structured list of distinct named rows",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780733678483819//tmp/771cba0e-bb86-4346-a3fb-5854c719bab5/result.webm"
+        },
+        {
+          "name": "Every starting XI player has a non-empty name and a valid position",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780734050898645//tmp/a4b214af-a936-4dce-8bae-ba8dee02578d/result.webm"
+        },
+        {
+          "name": "Away team starting XI lists exactly eleven players",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780733780715551//tmp/04fdbe1a-598d-4e57-9efc-b0060f446856/result.webm"
+        },
+        {
+          "name": "Home team starting XI lists exactly eleven players",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780734143664571//tmp/947f2cab-7f6e-4f3e-b199-0e78d485f4e5/result.webm"
+        },
+        {
+          "name": "Formation pitch diagram stays legible inside the viewport at 360px",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780733640609532//tmp/1ba7f783-8a98-4d8d-b96e-5547acf275cc/result.webm"
+        },
+        {
+          "name": "Lineups render at a 360px viewport without horizontal scroll",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780733547611746//tmp/6cbf004d-1954-4101-bbfd-da40017ae100/result.webm"
+        },
+        {
+          "name": "Every injury entry uses a standard severity from a fixed vocabulary",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780734238544549//tmp/a2b3080d-1710-49d1-ac40-93e52eaf3dc1/result.webm"
+        },
+        {
+          "name": "At least one player status note is surfaced on the match lineups",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780734263415011//tmp/6a92326f-0b53-433a-8448-4dcbfa791c1c/result.webm"
+        },
+        {
+          "name": "Starting XI count is exactly eleven per team across a sample of matches",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780734361773871//tmp/5a697ce9-5fbf-42be-a430-d84f2960748c/result.webm"
+        },
+        {
+          "name": "No player appears in both teams' starting lineups",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780734416280595//tmp/9d58087c-af07-4c08-aaf2-22157a5d2fe2/result.webm"
+        },
+        {
+          "name": "Formation pitch diagram renders at least twenty-two position markers",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780734436388847//tmp/f1e3efd1-e560-4f8c-a72e-27ee2b95e486/result.webm"
+        },
+        {
+          "name": "Both teams' formation labels render as visible text on the match page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780734195236703//tmp/ea1c03f2-db3e-457c-9180-7f84a2e875df/result.webm"
+        },
+        {
+          "name": "Home formation label matches a valid formation pattern and sums to ten",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780734393196166//tmp/d1af919a-a218-4ee2-82b3-5a3b8a24c901/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase4",
+        "phase": 4,
+        "composite": 0.724,
+        "components": {
+          "correctness": 0.685
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 8.1252,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 104.6
+          }
+        },
+        "passed": 12,
+        "total": 16,
+        "correctness": 0.685,
+        "phase_correctness": 0.7879,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.6612
+      }
+    },
+    {
+      "run_id": "kimi-phase5",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 5,
+      "phase_slug": "phase-5",
+      "phase_label": "Phase 5 · Your analysis",
+      "started_at": "2026-06-05T16:24:20Z",
+      "ended_at": "2026-06-05T17:24:20Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-5",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 3600000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "Reference source links are clickable anchor tags",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737065826898//tmp/3809b689-1dbc-4f8b-96fa-37c17b50c761/result.webm"
+        },
+        {
+          "name": "All visible reference URLs use HTTPS",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737070951894//tmp/3c9673d6-ac62-42a2-93a1-939f45a1a40c/result.webm"
+        },
+        {
+          "name": "The first reference URL is a valid reachable web address",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737150903285//tmp/25ab6881-32b5-4cdf-b808-e3ac5f5c4e47/result.webm"
+        },
+        {
+          "name": "Analysis text mentions the specific teams playing in the match",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737112416606//tmp/d8fb7e55-4690-46dc-afbf-74c2e9962608/result.webm"
+        },
+        {
+          "name": "Two different match pages show different analysis text",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/178073733163012//tmp/67616ee2-45f6-4ec4-b3e1-f08ef028a296/result.webm"
+        },
+        {
+          "name": "Clicking the Analysis tab opens an analysis panel with content",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737230917768//tmp/0a2b83ba-5b6b-4630-b657-e45640b8fb8a/result.webm"
+        },
+        {
+          "name": "Analysis tab is visible on a match detail page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/178073720629128//tmp/b9852f59-4b2e-4f36-99be-c204d41f731e/result.webm"
+        },
+        {
+          "name": "Analysis text appears substantive and match-specific, not generic boilerplate",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737346220269//tmp/ead9115d-2623-4eb7-8c60-0df8a09cd649/result.webm"
+        },
+        {
+          "name": "Each analysis paragraph is no longer than 600 characters",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737402658912//tmp/c88004b0-d324-4db4-b20c-b3944ee86ec5/result.webm"
+        },
+        {
+          "name": "Each analysis paragraph is at least 200 characters long",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737539618284//tmp/6d568384-c7e9-410d-a733-8c5baf10ef73/result.webm"
+        },
+        {
+          "name": "Two different match detail pages both show analysis content",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737718409079//tmp/1cabd5ec-8d27-4c19-acf0-70c1ead9483b/result.webm"
+        },
+        {
+          "name": "Analysis panel contains no more than five paragraphs",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737752937468//tmp/17eb2e69-dea9-471c-b71a-11c4c161f15a/result.webm"
+        },
+        {
+          "name": "Analysis panel contains at least three paragraphs",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737658131914//tmp/1a85d52d-423e-4214-aef2-2f41a7fe3c40/result.webm"
+        },
+        {
+          "name": "Analysis panel loads without intrusive external popups or overlays",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737448070832//tmp/27c5ba7a-0d37-4387-adfc-23f50b044c64/result.webm"
+        },
+        {
+          "name": "Analysis content is fully visible without requiring login or signup",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737484921568//tmp/f99e73ae-8558-4ece-9dab-ddf9f92349f2/result.webm"
+        },
+        {
+          "name": "Analysis text does not contain placeholder dates or lorem ipsum",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737504264222//tmp/069be521-aeee-46ed-997b-f3ed64809745/result.webm"
+        },
+        {
+          "name": "Analysis text references 2026 World Cup context",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737510480668//tmp/8f9b3188-6c8b-4f97-9ffc-0019a8e54a2a/result.webm"
+        },
+        {
+          "name": "A References panel or section is present after the analysis text",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737561113033//tmp/18d07508-e4a5-48d4-adee-727875c5e44a/result.webm"
+        },
+        {
+          "name": "Analysis paragraphs contain inline citation markers",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737566646468//tmp/f8bd5acc-1832-46de-8c3d-2abdbb782b14/result.webm"
+        },
+        {
+          "name": "The number of references matches the number of unique inline citations",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737606177947//tmp/c2ea8ad5-c402-4ece-985b-5f89f3cce9f6/result.webm"
+        },
+        {
+          "name": "Reference entries display a source URL or link",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737690474897//tmp/421a7912-327a-4d24-bb6f-62ccc5612857/result.webm"
+        },
+        {
+          "name": "Clicking a citation marker scrolls to or highlights the corresponding reference",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780737704502258//tmp/c4e2fe12-1deb-43af-8932-e09b6aa45a13/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase5",
+        "phase": 5,
+        "composite": 0.8396,
+        "components": {
+          "correctness": 0.869
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 13.169899999999998,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 164.6
+          }
+        },
+        "passed": 22,
+        "total": 22,
+        "correctness": 0.869,
+        "phase_correctness": 1,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.8104
+      }
+    },
+    {
+      "run_id": "kimi-phase6",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 6,
+      "phase_slug": "phase-6",
+      "phase_label": "Phase 6 · Related news",
+      "started_at": "2026-06-05T19:02:02Z",
+      "ended_at": "2026-06-05T19:25:30Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-6",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 1408000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "Different match pages show different news article sets",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741811794802//tmp/f2c669ff-66a4-4db1-8519-c391629995ad/result.webm"
+        },
+        {
+          "name": "News cards come from at least two different source domains",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741274606481//tmp/b2e374b1-e6c0-457c-9f1d-3088873e085f/result.webm"
+        },
+        {
+          "name": "News panel shows at least three news cards",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741280857397//tmp/d49604fe-4146-4d56-9a65-3e0ac6d8ecc8/result.webm"
+        },
+        {
+          "name": "Clicking the News tab reveals a populated news panel",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741300572009//tmp/3d8472ec-6d51-4a20-8c7a-a73e9b45c954/result.webm"
+        },
+        {
+          "name": "Related news tab or section is visible on a match detail page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741267268417//tmp/dcc4975c-c727-41ef-a677-d3dab6ed6bf7/result.webm"
+        },
+        {
+          "name": "News URLs point to real recognizable domains",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741412826291//tmp/cfe0f1f8-27e2-44b7-ad54-a20379b988bb/result.webm"
+        },
+        {
+          "name": "News source URLs in cards use HTTPS",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741824962409//tmp/4b6c87d1-fd2a-4411-b2fa-b77acd6195e9/result.webm"
+        },
+        {
+          "name": "News panel does not show placeholder or fake article titles",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741401028535//tmp/667dcb50-071f-4b74-9f21-f99ad05ac89b/result.webm"
+        },
+        {
+          "name": "News articles do not reference only the 2022 World Cup",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741414758323//tmp/623ff727-780a-4301-9511-888cfa5c1bab/result.webm"
+        },
+        {
+          "name": "News cards show dates within the last 7 days",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741418290585//tmp/68586abc-aaea-4e33-ad28-432d2aa897aa/result.webm"
+        },
+        {
+          "name": "News cards are accessible without excessive scrolling",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741414705227//tmp/62c6dc25-4c17-4985-b383-470b6101b9e0/result.webm"
+        },
+        {
+          "name": "News panel loads without visible error states or broken UI",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741423968145//tmp/dea5f49c-0bf8-4634-ac35-0e7da35db42d/result.webm"
+        },
+        {
+          "name": "News card titles mention the match teams or relevant football terms",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741434149282//tmp/9b80e4d1-1321-4ed0-9572-53198702dc8a/result.webm"
+        },
+        {
+          "name": "Each news card is a clickable link to the source article",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741537223773//tmp/dbc1cebc-0714-4faa-b1b2-3153e4c7841d/result.webm"
+        },
+        {
+          "name": "Each news card shows a source name and publication date",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741672819307//tmp/f9039a30-d491-4887-b514-5e1d5d931601/result.webm"
+        },
+        {
+          "name": "Each news card has a readable article title",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780741554108258//tmp/fac2e582-849e-4d99-8284-cefabb8e5296/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase6",
+        "phase": 6,
+        "composite": 0.8425,
+        "components": {
+          "correctness": 0.865
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 15.287199999999999,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 188.0667
+          }
+        },
+        "passed": 16,
+        "total": 16,
+        "correctness": 0.865,
+        "phase_correctness": 1,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.8229
+      }
+    },
+    {
+      "run_id": "kimi-phase7",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 7,
+      "phase_slug": "phase-7",
+      "phase_label": "Phase 7 · Betting odds",
+      "started_at": "2026-06-05T19:54:34Z",
+      "ended_at": "2026-06-05T20:09:58Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-7",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 924000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "Probability bars render and their widths track the consensus values",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780699735938913//tmp/3b188fa7-9714-426f-ab36-a9cff0b8da90/result.webm"
+        },
+        {
+          "name": "Consensus row and agent implied row both render with percentages",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780726433963561//tmp/07679835-60a8-4b60-a633-013206fb4219/result.webm"
+        },
+        {
+          "name": "Odds tab renders a per-book table with concrete decimal values",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780699749459785//tmp/01cb57c9-76d7-4068-bf4f-b651e376d754/result.webm"
+        },
+        {
+          "name": "Bookmakers are real named sportsbooks, not invented placeholders",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780726487105262//tmp/dcc1e610-a80d-40a4-90bf-b77000f0a918/result.webm"
+        },
+        {
+          "name": "Every match offers at least three bookmaker lines",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780700328782691//tmp/5c166680-b950-4ccf-a403-d544b509cc1a/result.webm"
+        },
+        {
+          "name": "No staleness warning on a match whose odds are fresh",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780699840302614//tmp/ab9e7fce-3f1a-4e3b-b872-b139d7c636ab/result.webm"
+        },
+        {
+          "name": "Staleness warning appears when the oldest book is over six hours old",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780725655854254//tmp/3ddfcfb4-6259-4da8-88d9-4b0428149b2d/result.webm"
+        },
+        {
+          "name": "De-vig sum-to-one holds across multiple sampled matches",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780700342173481//tmp/58c02638-ca67-4cd1-b1a6-d5830f1ac51e/result.webm"
+        },
+        {
+          "name": "De-vigged probability equals raw implied normalized by the overround",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/178072564264488//tmp/33b1ebdb-0529-455e-a938-2d2e950b52b2/result.webm"
+        },
+        {
+          "name": "Raw implied probabilities sum above 1.0 (the vig is real)",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780725251274896//tmp/2bb3679f-1eeb-47fc-ac05-dd84bbb5ed89/result.webm"
+        },
+        {
+          "name": "Each book's de-vigged probabilities sum to 1.0",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780726771784753//tmp/790ce6fc-67ff-47d8-bbf8-b476892b1b9a/result.webm"
+        },
+        {
+          "name": "Consensus is computed on probabilities, not by averaging decimal odds",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780725015790118//tmp/16cd40c2-6382-477f-be0a-5bd7bd93343c/result.webm"
+        },
+        {
+          "name": "Consensus equals the arithmetic mean of de-vigged book probabilities",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780724944297851//tmp/b82a2c65-6e84-4581-aeee-ed2aecfa961f/result.webm"
+        },
+        {
+          "name": "Market consensus probabilities sum to 1.0",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/178072544199018//tmp/c82ba99a-d8f8-4d13-85d4-917f64e3e50a/result.webm"
+        },
+        {
+          "name": "Lowest-odds favorite aligns with the agent's predicted winner",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780699876484338//tmp/36ec9f1a-3ec5-4174-8bf1-8a2dfa7fa65d/result.webm"
+        },
+        {
+          "name": "Agent implied probability on the Odds tab matches the phase-3 prediction",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780725669920537//tmp/3af093eb-6fea-4804-9b5c-20e61d7c3d13/result.webm"
+        },
+        {
+          "name": "Responsible-gambling / 18+ disclaimer is present on the Odds surface",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780726582682668//tmp/097072de-21f7-46be-923d-adcf466e255b/result.webm"
+        },
+        {
+          "name": "Betting Odds tab is reachable and activatable by keyboard",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780700530729174//tmp/ec86043a-763f-4333-b1d3-518fe0cfd925/result.webm"
+        },
+        {
+          "name": "Probability bars carry text labels, not color alone",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780699946962698//tmp/55e774c2-c975-41fd-acaa-3a6ccf7c5d1a/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase7",
+        "phase": 7,
+        "composite": 0.8492,
+        "components": {
+          "correctness": 0.875
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 17.5859,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 203.4667
+          }
+        },
+        "passed": 16,
+        "total": 19,
+        "correctness": 0.875,
+        "phase_correctness": 0.8222,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.8219
+      }
+    },
+    {
+      "run_id": "kimi-phase8",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 8,
+      "phase_slug": "phase-8",
+      "phase_label": "Phase 8 · Multi-language · i18n",
+      "started_at": "2026-06-06T11:16:54Z",
+      "ended_at": "2026-06-06T12:16:54Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-8",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 3600000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "No mock, TBD, or placeholder data anywhere in the rendered product",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828246790703//tmp/a5ed2433-c380-460e-ac52-07d1025967ca/result.webm"
+        },
+        {
+          "name": "Group standings are projected from predictions, not all-zero placeholders",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780827784496961//tmp/82d119b8-103d-4e2e-a5a4-b25254aeb1c9/result.webm"
+        },
+        {
+          "name": "Match predictions are real and varied and a real champion is named",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/178082792556793//tmp/60e3eb19-78d8-48cd-8631-3543f4e1772d/result.webm"
+        },
+        {
+          "name": "Match kickoff time renders with locale-specific month names",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828292597821//tmp/ae949434-cecd-4f31-aba8-a4e46f759f41/result.webm"
+        },
+        {
+          "name": "Portuguese date formatting is distinct from English",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828290164714//tmp/4bb25e00-0a92-464e-a8c3-55cc90ad0c39/result.webm"
+        },
+        {
+          "name": "html lang attribute matches the selected locale",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828245301162//tmp/d73e4f5b-da39-413d-91ba-5486d388b4b0/result.webm"
+        },
+        {
+          "name": "Head lists hreflang alternates for all three locales",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780827754258761//tmp/a6bc2fae-c3d8-446a-9542-944cb7fdd972/result.webm"
+        },
+        {
+          "name": "Locale switcher is present in the nav and offers all three languages",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780827687392251//tmp/d63e9caa-0b3f-4dbb-a0b3-c40dade76d3b/result.webm"
+        },
+        {
+          "name": "Switching language preserves the current path",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828165120296//tmp/d706e5c9-2ad3-459f-81b9-4d6e30ab72ed/result.webm"
+        },
+        {
+          "name": "Selected locale persists across in-app navigation",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780827811361488//tmp/2fe654b9-43b6-4ceb-82f1-dd0ed67d7493/result.webm"
+        },
+        {
+          "name": "Spanish page chrome reads in Spanish, not English",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828401198524//tmp/9ea27a95-8bed-46bb-8f50-56c068fc55f2/result.webm"
+        },
+        {
+          "name": "Portuguese match page translates data labels, not just nav",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828472426164//tmp/0126d90d-5c6d-44d0-9056-3f6a822cb24e/result.webm"
+        },
+        {
+          "name": "No hardcoded English UI strings leak onto a Spanish page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828503280131//tmp/a51aa9e7-d153-4eb8-ba6f-f77ea034897a/result.webm"
+        },
+        {
+          "name": "Decimal numbers use locale-correct separators",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828546907368//tmp/97e6ef6f-205f-44ee-a4db-029505b3a97f/result.webm"
+        },
+        {
+          "name": "Portuguese decimals use a comma separator",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828629882064//tmp/af0bb868-ab74-4878-b6bd-5fd67c7f99a8/result.webm"
+        },
+        {
+          "name": "Prior-phase features remain functional in a non-default locale",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828869692626//tmp/080f8d99-70c2-4691-a759-816655d608dd/result.webm"
+        },
+        {
+          "name": "Missing translations fall back gracefully without blank or broken text",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828951412702//tmp/3fc2ccf0-5d3a-43e2-8c62-58480e1d2c8b/result.webm"
+        },
+        {
+          "name": "All three locale root routes return 200",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828960110491//tmp/b250aa5d-feb1-429f-a14b-ce6b59d7150f/result.webm"
+        },
+        {
+          "name": "Match detail pages resolve under es and pt locale prefixes",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780829009364152//tmp/78840456-06f5-4adc-8379-8f6aa40a089e/result.webm"
+        },
+        {
+          "name": "Group standings page exists under all three locales",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828994073971//tmp/c8846ad3-8c96-45cc-ba7e-19fdd81cf1ce/result.webm"
+        },
+        {
+          "name": "All three locale translation files exist and are non-empty",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828847651217//tmp/5ed9096f-54c8-4d44-9784-247063d450a0/result.webm"
+        },
+        {
+          "name": "Locale files share an identical key shape",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780829020038716//tmp/5a467292-e7e9-43ce-941d-5141c69fe98e/result.webm"
+        },
+        {
+          "name": "Translation values are real text, not key-name placeholders",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780829201812766//tmp/68449986-b82c-44a9-bbb2-dc652ca7d571/result.webm"
+        },
+        {
+          "name": "No raw i18n keys or untranslated placeholders leak into the rendered page",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780828988387833//tmp/b7a83aea-0587-4850-8ea9-9045957da1fc/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase8",
+        "phase": 8,
+        "composite": 0.8308,
+        "components": {
+          "correctness": 0.848
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 21.441,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 263.4667
+          }
+        },
+        "passed": 17,
+        "total": 24,
+        "correctness": 0.848,
+        "phase_correctness": 0.6949,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.8136
+      }
+    },
+    {
+      "run_id": "kimi-phase9",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 9,
+      "phase_slug": "phase-9",
+      "phase_label": "Phase 9 · Light/Dark · polish",
+      "started_at": "2026-06-06T15:13:17Z",
+      "ended_at": "2026-06-06T16:01:14Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-9",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 2877000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "All images have non-empty alt text and the document lang is set",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826663182904//tmp/c02f014c-eb6d-4469-bab1-e482a0ee9521/result.webm"
+        },
+        {
+          "name": "Interactive elements show a visible focus ring on keyboard focus",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826869865478//tmp/850997c4-5445-479e-b79b-d02c80f46c73/result.webm"
+        },
+        {
+          "name": "The product is branded \"Matchday\" with its favicon",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826835455076//tmp/9a3a3c7b-1e91-4b3c-a3cb-1ade6a5eccc5/result.webm"
+        },
+        {
+          "name": "Landing bracket and group standings render correctly in both light and dark",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826866500692//tmp/bfa7a47d-d62c-4f77-8b57-6b97f55af90a/result.webm"
+        },
+        {
+          "name": "Match page prediction, lineup and odds render correctly in both light and dark",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826912476706//tmp/afe4e8fa-3d38-4f3d-9123-585c38c71c5f/result.webm"
+        },
+        {
+          "name": "Unknown match route returns HTTP 404 with a styled page",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826419339668//tmp/c2a59114-ec6b-4d2e-8f1b-d8e46f870800/result.webm"
+        },
+        {
+          "name": "Unknown API match returns 404 JSON with error and code",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826571804547//tmp/95f1198f-4e5d-4999-9d1e-28811d1447cd/result.webm"
+        },
+        {
+          "name": "Images declare dimensions to avoid layout shift",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826833142137//tmp/24ae0f84-132e-4b1e-b939-93523261a0ef/result.webm"
+        },
+        {
+          "name": "Light mode body and heading text meet WCAG AA contrast",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826357521544//tmp/b85d8fe9-3672-4fe4-a82c-5a16ce4d468e/result.webm"
+        },
+        {
+          "name": "Dark mode body and heading text meet WCAG AA contrast",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826725050222//tmp/567305f4-54cc-46a4-88c9-d4b0b4047b53/result.webm"
+        },
+        {
+          "name": "With prefers-color-scheme dark, the site renders in dark mode on first paint",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826543345965//tmp/ec3e2aab-d66d-4309-a830-3ea7cd8bdffb/result.webm"
+        },
+        {
+          "name": "With prefers-color-scheme light, the site renders in light mode",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826733836309//tmp/c43e573f-6391-46a3-a501-3e891645907e/result.webm"
+        },
+        {
+          "name": "The nav theme toggle visibly flips between light and dark",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780827274327975//tmp/dc194c37-6a12-440b-953c-29837d359f17/result.webm"
+        },
+        {
+          "name": "Theme choice persists across navigation and a hard reload via localStorage",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780826834956393//tmp/c1b7e7f2-a2d0-4f33-9d67-675eb4759959/result.webm"
+        },
+        {
+          "name": "Surface, border and text colors come from the provided token palette",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780827375906989//tmp/45c2dcd7-54c9-4fe7-b4ab-e9c51365950d/result.webm"
+        },
+        {
+          "name": "Light and dark are two real themes, not a CSS invert",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780827493553518//tmp/accddbdd-5962-428f-8ac6-4623af16f590/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase9",
+        "phase": 9,
+        "composite": 0.8083,
+        "components": {
+          "correctness": 0.833
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 26.0601,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 311.4167
+          }
+        },
+        "passed": 7,
+        "total": 16,
+        "correctness": 0.833,
+        "phase_correctness": 0.4865,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.7851
+      }
+    },
+    {
+      "run_id": "kimi-phase10",
+      "task_slug": "world-cup-2026-v3",
+      "phase": 10,
+      "phase_slug": "phase-10",
+      "phase_label": "Phase 10 · Final polish · release",
+      "started_at": "2026-06-06T18:50:15Z",
+      "ended_at": "2026-06-06T19:28:38Z",
+      "status": "completed",
+      "artifact": {
+        "repo_url": "https://github.com/TestSprite/CoderCup-kimi",
+        "commit_sha": "phase-10",
+        "deployed_app_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+        "amplify_app_id": "d1i83t74qytjgs"
+      },
+      "driver_metadata": {
+        "driver": "kimi_code_cli",
+        "model_id": "kimi-k2.6",
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "wall_clock_ms": 2303000
+      },
+      "per_test_verdicts": [
+        {
+          "name": "Knockout bracket matches the editorial design (flag chips, rank badges, green winner, champion panel)",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832526834821//tmp/1e15bbf1-a460-4d2c-bba7-f0170b4948f4/result.webm"
+        },
+        {
+          "name": "Predicted champion is identical on the Final page, the bracket, and the landing",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832555398334//tmp/5ae8f03f-1133-4580-8bf7-8270b4f449bf/result.webm"
+        },
+        {
+          "name": "The predicted champion is a real qualified nation, not a placeholder",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832403759582//tmp/3c400024-92d7-43a6-b034-a4124910897f/result.webm"
+        },
+        {
+          "name": "Each group’s top-2 standings match the teams advancing in the bracket",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832619409356//tmp/2aeb57f2-7a86-4757-8952-76ae7a9cbd21/result.webm"
+        },
+        {
+          "name": "No prose/reasoning sentence contradicts the structured prediction",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832533519227//tmp/3f4ee39d-3b4f-489d-8a62-d6b9f97d9285/result.webm"
+        },
+        {
+          "name": "Each predicted winner is the higher-scored side (no winner/scoreline contradiction)",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832734737128//tmp/2d1793e9-f2e0-4d9c-a571-632367b9bce8/result.webm"
+        },
+        {
+          "name": "No TBD/placeholder data on the landing or a match page",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832679498994//tmp/77078041-aacd-4908-863f-79751635dc82/result.webm"
+        },
+        {
+          "name": "No placeholder/untranslated data in the es and pt locales",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832568370366//tmp/298112cf-c908-436f-9410-89d2c06bb02b/result.webm"
+        },
+        {
+          "name": "Landing shows a real photographic/generated hero image, not a flat fill or SVG",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832875172505//tmp/8e40b519-dd54-4d2d-9372-28f00815357c/result.webm"
+        },
+        {
+          "name": "The hero title \"FIFA World Cup 2026 Predictions (AI)\" is real DOM text over the image",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832421580063//tmp/4557efd7-83ef-4548-96eb-6c85612eeada/result.webm"
+        },
+        {
+          "name": "Hero title meets WCAG AA contrast over the image in light and dark",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780833116905315//tmp/8559e015-4c7f-45aa-81d5-989ffff5f06a/result.webm"
+        },
+        {
+          "name": "Regression: landing still SSRs real team names",
+          "verdict": "failed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832630369477//tmp/5d7f5562-e235-40f5-8b15-c811a2afa72c/result.webm"
+        },
+        {
+          "name": "Regression: /match still shows the prediction block",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832674595131//tmp/f90e5f29-0d0e-4e02-bc68-a6241e7f5b09/result.webm"
+        },
+        {
+          "name": "Regression: the odds tab still renders",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832681737731//tmp/edd13549-db1c-4601-9084-e4e855b4f3f1/result.webm"
+        },
+        {
+          "name": "Regression: en/es/pt locale routes still resolve",
+          "verdict": "passed",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832822171109//tmp/01fced78-8c23-4e02-9048-32597ca646d5/result.webm"
+        },
+        {
+          "name": "Light theme is the default on first load",
+          "verdict": "blocked",
+          "video_url": "https://testsprite-videos.s3.us-east-1.amazonaws.com/1448c408-3071-7073-1553-c62f6fd21ae5/1780832676146214//tmp/130dfc3c-4c95-467c-91bb-adef38acdeee/result.webm"
+        }
+      ],
+      "score": {
+        "agent_slug": "kimi",
+        "task_slug": "world-cup-2026-v3",
+        "run_id": "kimi-phase10",
+        "phase": 10,
+        "composite": 0.8354,
+        "components": {
+          "correctness": 0.892
+        },
+        "side_metrics": {
+          "prediction_accuracy_at_t": 0,
+          "lifetime_bugs_caught": 0,
+          "raw": {
+            "bugs_caught_this_task": 0,
+            "usd_spent_this_task": 31.8793,
+            "tokens_total": 0,
+            "iterations": 0,
+            "wall_clock_minutes": 349.8
+          }
+        },
+        "passed": 13,
+        "total": 16,
+        "correctness": 0.892,
+        "phase_correctness": 0.8205,
+        "note": "composite = 0.35·correctness + 0.25·first_try_rate + 0.2·(1−regression_rate) + 0.1·(1−never_rate) + 0.1·ACM. Pure quality; cost + wall-clock are separate side-metrics (not in the headline). first_try/late/never/regression are per-plan outcomes; ACM = decay-weighted contest score (first-try=full, k phases late=×max(0.4,1−0.25k), regression ended-broken→0 / wobble→×0.85).",
+        "acm": 0.8252
+      }
+    }
+  ],
+  "amplify_app": {
+    "stable_url": "https://main.d1i83t74qytjgs.amplifyapp.com",
+    "app_id": "d1i83t74qytjgs",
+    "note": "Per-(agent, event) Amplify reuse: one app id per (kimi, world-cup-2026)."
+  },
+  "acm_breakdown": {
+    "first_try": 140,
+    "solved_late": 30,
+    "never_solved": 12,
+    "regressions": 41,
+    "total_plans": 182
+  }
+}

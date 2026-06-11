@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Analysis tab is visible on a match detail page",
+  "description": "When a visitor opens a match detail page, an Analysis tab or section control is present and visible without requiring scroll, enabling navigation to the match analysis content.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage at the root URL" },
+    { "type": "action", "description": "Click on any bracket cell or fixture link to open a match detail page" },
+    { "type": "action", "description": "Wait for the match detail page to fully render" },
+    { "type": "assertion", "description": "Verify that a tab, button, or section control labeled 'Analysis', 'Match Analysis', or a similar label is visible in the match detail page header or tab bar without requiring additional scroll" }
+  ]
+}

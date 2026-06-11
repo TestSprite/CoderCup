@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Clicking the Analysis tab opens an analysis panel with content",
+  "description": "When the Analysis tab or section control is clicked on a match detail page, the page reveals a panel containing text analysis content rather than a blank or placeholder state.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on any knockout bracket cell to open a match detail page" },
+    { "type": "action", "description": "Wait for the match page to load" },
+    { "type": "action", "description": "Click the Analysis tab or section control" },
+    { "type": "assertion", "description": "Verify the analysis panel is now visible and contains at least one paragraph of text content (not empty and not a placeholder message like 'coming soon' or 'no analysis available')" }
+  ]
+}

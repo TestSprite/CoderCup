@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Match predictions are real and varied and a real champion is named",
+  "description": "Predicted scorelines must be concrete and vary across matches, and a single predicted champion (a real qualified nation) must be surfaced on the Final. Uniform '0-0' predictions, identical filler across every match, or a missing / 'TBD' / 'Team A' champion indicate fabricated or stub data.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Sample 3 different /match/<id> pages and read each predicted scoreline and predicted winner." },
+    { "type": "action", "description": "Open the Final match page and read the 'Predicted champion' block." },
+    { "type": "assertion", "description": "Verify the 3 sampled predicted scorelines are concrete numbers and are NOT all identical (e.g. not every match predicted '0-0'), and the predicted champion is a real nation name (not empty, 'TBD', 'Team A', or a placeholder). Uniform stub scorelines or a placeholder/missing champion fail the test." }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "type": "frontend",
+  "name": "Rendered starting XI is a structured list of distinct named rows",
+  "description": "When a visitor opens the Lineups panel on a match page, the home team's starting XI renders as a list of distinct player rows each carrying a shirt number and a name, rather than one concatenated blob of text, confirming the data is structured in the DOM.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "action", "description": "Open the Lineups tab or scroll to the lineups region" },
+    { "type": "action", "description": "Locate the home team's starting XI list" },
+    { "type": "assertion", "description": "Verify the home team's starting XI renders as at least eleven distinct player rows, each containing a shirt number and a non-empty player name as separate readable text" }
+  ]
+}

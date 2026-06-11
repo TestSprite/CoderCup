@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Analysis paragraphs contain inline citation markers",
+  "description": "The analysis content should include inline citation markers such as [1], [2], or superscript numbers linking to a references section. At least one citation marker should appear in the visible analysis text.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on any bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Scroll through the analysis panel to see inline citations" },
+    { "type": "assertion", "description": "Verify that at least one inline citation marker is visible in the analysis text. This could appear as [1], [2], superscript numbers, or similar citation notation within the paragraphs." }
+  ]
+}

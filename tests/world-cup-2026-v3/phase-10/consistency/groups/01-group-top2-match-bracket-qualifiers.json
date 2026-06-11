@@ -1,0 +1,20 @@
+{
+  "type": "frontend",
+  "name": "Each group’s top-2 standings match the teams advancing in the bracket",
+  "description": "Each group’s top-2 standings match the teams advancing in the bracket.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Read 3 group standings tables (top-2 ranked teams) on /groups"
+    },
+    {
+      "type": "action",
+      "description": "Find those same groups’ qualifiers as shown advancing into the knockout bracket"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the top-2 of each sampled group table are exactly the teams shown advancing from that group in the bracket — standings and bracket tell the same story."
+    }
+  ]
+}

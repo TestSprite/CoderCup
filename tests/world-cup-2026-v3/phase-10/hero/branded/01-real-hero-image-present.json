@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Landing shows a real photographic/generated hero image, not a flat fill or SVG",
+  "description": "Landing shows a real photographic/generated hero image, not a flat fill or SVG.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / and inspect the top hero area"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the hero is a real raster image (an <img> or CSS background-image pointing at a bundled .jpg/.png/.webp with naturalWidth>0), depicting football/World-Cup key art — NOT a flat background color, a CSS gradient, an emoji collage, or an inline hand-drawn SVG. A flat/gradient/SVG-only hero fails."
+    }
+  ]
+}

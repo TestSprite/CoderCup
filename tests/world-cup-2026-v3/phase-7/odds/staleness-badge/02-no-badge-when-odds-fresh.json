@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "No staleness warning on a match whose odds are fresh",
+  "description": "The staleness badge must be conditional, not always-on. For a match whose oldest book is within the 6-hour freshness window (is_stale false), the Odds tab must NOT show the stale-odds warning. An always-present badge defeats its purpose.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read match ids, then for each navigate to /match-odds/<id>.json and inspect staleness.is_stale and staleness.age_hours to find a match whose oldest book is 6 hours old or less (is_stale false)" },
+    { "type": "action", "description": "Open that match's detail page and click the Betting Odds tab" },
+    { "type": "assertion", "description": "Verify the Odds tab for this fresh match does NOT display a stale-odds warning badge. If the warning appears on a match the artifact marks is_stale false, the badge is unconditional and this test fails." }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Clicking a citation marker scrolls to or highlights the corresponding reference",
+  "description": "When a reader clicks an inline citation marker like [1] in the analysis text, the page should scroll to or highlight the corresponding numbered entry in the references panel.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Locate and click the first inline citation marker visible in the analysis text (such as [1] or a superscript number)" },
+    { "type": "assertion", "description": "Verify that the page responds to the click by scrolling to the references section or by highlighting/focusing the corresponding reference entry. The references section should be visible in the viewport after the click." }
+  ]
+}

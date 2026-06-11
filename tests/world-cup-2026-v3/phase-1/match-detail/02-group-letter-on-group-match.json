@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Clicking a Group A team row reaches a destination that surfaces Group A context",
+  "description": "When a visitor clicks a team row inside Group A and arrives at the destination, the destination page surfaces Group A as context — proving group identity propagates with the navigation.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the group standings area" },
+    { "type": "action", "description": "Click the first team row inside Group A" },
+    { "type": "assertion", "description": "Verify the destination URL differs from the homepage URL" },
+    { "type": "assertion", "description": "Verify the destination page surfaces a Group A indicator — accepting any of the literal text 'Group A', the standalone letter A in a stage/group context label, breadcrumb, heading, badge, or a URL path segment containing 'group-a' or '/a/'" }
+  ]
+}

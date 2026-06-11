@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "News articles do not reference only the 2022 World Cup",
+  "description": "News cards should reference the 2026 FIFA World Cup, not carry-over articles from the 2022 Qatar World Cup or earlier tournaments.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "action", "description": "Read the titles and any visible text snippets of the news cards" },
+    { "type": "assertion", "description": "Verify the news articles appear relevant to the 2026 World Cup or current events. If every article title mentions Qatar, 2022, or clearly refers to the 2022 tournament, the test fails. Articles referencing 2026, USA/Canada/Mexico hosting, or current team preparations are acceptable." }
+  ]
+}

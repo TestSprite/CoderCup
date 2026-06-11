@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Match detail page has a back-to-bracket link",
+  "description": "When a visitor opens a match permalink, the page provides a back navigation link targeting the bracket or homepage.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "action", "description": "Click the back navigation link on the match detail page" },
+    { "type": "assertion", "description": "Verify the click navigates away from the match detail page and lands on the bracket homepage or the groups page" }
+  ]
+}

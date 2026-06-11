@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Portuguese date formatting is distinct from English",
+  "description": "Portuguese dates should localize too (month names and time formatting follow pt conventions). On /pt the same match's kickoff text must differ from the English rendering. The test judges that the rendering localized for pt, without hard-coding the exact translated string.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /en/match/<captured-id> and read the visible kickoff date/time text" },
+    { "type": "action", "description": "Navigate to /pt/match/<captured-id> and read the visible kickoff date/time text for the same match" },
+    { "type": "assertion", "description": "Verify the Portuguese kickoff date text is localized (Portuguese month/weekday naming or pt time format) and differs from the English rendering of the same instant. If the /pt date is byte-identical to the English date, the test fails." }
+  ]
+}

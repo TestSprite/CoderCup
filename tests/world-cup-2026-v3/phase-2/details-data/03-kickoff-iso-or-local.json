@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Kickoff timestamp is rendered in human-readable form",
+  "description": "When a visitor opens a match permalink, the kickoff timestamp is rendered as either an ISO datetime or a localized human-readable string.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "assertion", "description": "Verify the match detail page renders a kickoff value formatted as an ISO datetime or a localized date and time string" }
+  ]
+}

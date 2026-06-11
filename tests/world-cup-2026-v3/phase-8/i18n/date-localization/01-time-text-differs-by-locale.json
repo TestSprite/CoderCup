@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Match kickoff time renders with locale-specific month names",
+  "description": "Dates must be localized, not just wrapped in a span. The same match's kickoff <time> must render with English month spelling on /en and a Spanish month spelling on /es (e.g. an English month name versus a Spanish one). The test compares the two locales rather than asserting a fixed string, so it only passes when the date text genuinely localized.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /en/match/<captured-id> and read the visible kickoff date/time text in the <time> element" },
+    { "type": "action", "description": "Navigate to /es/match/<captured-id> and read the visible kickoff date/time text in the <time> element" },
+    { "type": "assertion", "description": "Verify the Spanish kickoff date text uses Spanish month/weekday naming and differs from the English rendering of the same instant (the date string is genuinely re-formatted, not byte-identical English). If both locales show the same English month text, the test fails." }
+  ]
+}

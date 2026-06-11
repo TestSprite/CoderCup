@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Prediction block renders cleanly at 360px viewport",
+  "description": "A match detail page loads and the prediction block contains all required elements: a winner label, a scoreline, and probability information.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Resize the viewport to a 360px-wide mobile size" },
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click any match link to open a match detail page" },
+    { "type": "assertion", "description": "Verify that at the 360px mobile width the prediction block lays out its winner, scoreline, and outcome probabilities readably without overflow, clipping, or horizontal overlap, and all three are legible" }
+  ]
+}

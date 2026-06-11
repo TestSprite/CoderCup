@@ -1,0 +1,47 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-2",
+  "phase": 2,
+  "status": "fully-authored",
+  "total_plans": 16,
+  "planned_plans": 16,
+  "categories": {
+    "permalinks": [
+      "01-match-permalink-loads.json",
+      "02-match-permalink-kickoff.json",
+      "03-match-permalink-venue.json",
+      "04-match-permalink-round.json",
+      "05-match-permalink-back-nav.json"
+    ],
+    "details-data": [
+      "01-team-name-rendered.json",
+      "02-team-flags-present.json",
+      "03-kickoff-iso-or-local.json",
+      "04-stage-badge.json"
+    ],
+    "seo": [
+      "01-sitemap-lists-matches.json",
+      "02-og-title-matches.json",
+      "03-canonical-url.json"
+    ],
+    "security": [
+      "01-csp-header.json",
+      "02-xfo-or-frame-ancestors.json"
+    ],
+    "errors": [
+      "01-unknown-match-404.json",
+      "02-malformed-id-graceful.json"
+    ]
+  },
+  "planned_categories": [
+    "permalinks",
+    "details-data",
+    "seo",
+    "security",
+    "errors"
+  ],
+  "feature_theme": "Match detail pages — 78 SSR permalinks with team metadata, flags, kickoff time, venue, round label",
+  "depends_on_phases": [1],
+  "pass_criterion": "at least 13 of 16 plans pass",
+  "composite_formula": "0.55 * correctness + 0.20 * ssr_purity + 0.15 * metadata_completeness + 0.10 * efficiency"
+}

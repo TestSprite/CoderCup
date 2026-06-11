@@ -1,0 +1,15 @@
+{
+  "type": "frontend",
+  "name": "Formation pitch diagram stays legible inside the viewport at 360px",
+  "description": "When a visitor views the formation pitch diagram at a 360 pixel mobile viewport, the diagram fits within the viewport width without overflowing and its position markers remain large enough to read.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Resize the viewport to 360 pixels wide" },
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "action", "description": "Open the Lineups tab or scroll to the formation pitch diagram" },
+    { "type": "assertion", "description": "Verify the formation pitch diagram fits within the 360 pixel viewport width without overflowing its container" },
+    { "type": "assertion", "description": "Verify the diagram's position markers render at a readable size of at least six pixels in diameter at the 360 pixel viewport" }
+  ]
+}

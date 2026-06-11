@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Reference entries display a source URL or link",
+  "description": "Each entry in the References section should display a URL or hyperlink so readers can verify the source. References without URLs fail this test.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "action", "description": "Scroll to the References or Sources section at the bottom of the analysis panel" },
+    { "type": "assertion", "description": "Verify that at least one reference entry contains a visible URL, hyperlink, or source name that is clickable or shows a web address (starting with http or https). References that only show text descriptions without any URL fail this test." }
+  ]
+}

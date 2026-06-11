@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Betting Odds tab is reachable and activatable by keyboard",
+  "description": "The Odds tab must be operable without a mouse: focusable via keyboard and activatable with Enter or Space, revealing the odds content. A tab that only responds to mouse clicks is inaccessible.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage and open a match detail page" },
+    { "type": "action", "description": "Use the keyboard (Tab key) to move focus to the Betting Odds tab in the tab navigation, then press Enter or Space to activate it" },
+    { "type": "assertion", "description": "Verify the Betting Odds tab can receive keyboard focus (shows a visible focus indicator) and that activating it via the keyboard reveals the odds content with the per-book table and consensus row. If the tab cannot be focused or activated without a mouse, the test fails." }
+  ]
+}

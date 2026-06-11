@@ -1,0 +1,71 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-10",
+  "phase": 10,
+  "status": "fully-authored",
+  "total_plans": 16,
+  "categories": {
+    "hero/branded": [
+      "01-real-hero-image-present.json",
+      "02-hero-title-is-dom-text.json"
+    ],
+    "hero/contrast": [
+      "01-hero-title-aa-contrast-both-modes.json"
+    ],
+    "consistency/champion": [
+      "01-champion-agrees-across-surfaces.json",
+      "02-champion-is-real-nation.json"
+    ],
+    "consistency/scoreline": [
+      "01-winner-matches-scoreline.json"
+    ],
+    "consistency/groups": [
+      "01-group-top2-match-bracket-qualifiers.json"
+    ],
+    "consistency/prose": [
+      "01-no-prose-contradiction.json"
+    ],
+    "data-authenticity/no-tbd": [
+      "01-no-placeholder-on-landing-and-match.json",
+      "02-no-placeholder-in-es-pt-locales.json"
+    ],
+    "regression/prior": [
+      "01-landing-ssr-teams.json",
+      "02-match-prediction-block.json",
+      "03-odds-tab.json",
+      "04-i18n-locale-routes.json"
+    ],
+    "bracket": [
+      "01-knockout-bracket-design.json"
+    ],
+    "theme": [
+      "01-light-is-default.json"
+    ]
+  },
+  "planned_categories": [
+    "hero/branded",
+    "hero/contrast",
+    "consistency/champion",
+    "consistency/scoreline",
+    "consistency/groups",
+    "consistency/prose",
+    "data-authenticity/no-tbd",
+    "regression/prior",
+    "bracket",
+    "theme"
+  ],
+  "feature_theme": "Final polish + release gate — reproduce the provided knockout-bracket DESIGN mockup (image-recognition) + align whole-page style, LIGHT default theme, a real generated/sourced branded hero (\"FIFA World Cup 2026 Predictions (AI)\" title as DOM text), ZERO placeholder/TBD data in any locale, full internal consistency (champion==bracket==Final==prose; winner==scoreline; group top-2==bracket qualifiers), and all prior-phase regressions fixed.",
+  "depends_on_phases": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "pass_criterion": "at least 13 of 16 plans pass; hero/branded, consistency/champion, consistency/prose, and data-authenticity/no-tbd are HARD gates.",
+  "composite_formula": "rolls into the cumulative ACM contest score (composite); this phase is a polish/consistency/release gate, not a new feature."
+}

@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "News cards show dates within the last 7 days",
+  "description": "Related news articles should be recent. Any visible publication date should be within the past 7 days of the current date, not months-old articles.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "action", "description": "Read the publication dates shown on the news cards" },
+    { "type": "assertion", "description": "Verify the publication dates shown on the news cards are recent. Dates like 'today', 'yesterday', '2 days ago', '5 days ago', or an ISO date within the last 7 days are acceptable. Dates showing articles from weeks or months ago fail this test." }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "frontend",
+  "name": "Formation pitch diagram renders at least twenty-two position markers",
+  "description": "When a visitor opens the Lineups panel on a match page, a pitch silhouette diagram renders player position markers, with at least twenty-two markers present across both teams so all eleven positions per side are plotted on the pitch.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "action", "description": "Open the Lineups tab or scroll to the lineups region" },
+    { "type": "action", "description": "Locate the formation pitch diagram element" },
+    { "type": "assertion", "description": "Verify the pitch diagram is a visible graphical element such as an SVG or canvas, not a placeholder image" },
+    { "type": "assertion", "description": "Verify the pitch diagram contains at least twenty-two position markers such as circles or numbered nodes, covering eleven players per team" }
+  ]
+}

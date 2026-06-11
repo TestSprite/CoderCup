@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Analysis panel loads without intrusive external popups or overlays",
+  "description": "Opening the Analysis tab should not trigger any external cookie consent overlays, advertisement popups, or promotional modals that obscure the analysis content.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match cell to open a match detail page" },
+    { "type": "action", "description": "Click the Analysis tab and wait for the panel to fully load" },
+    { "type": "assertion", "description": "Verify the analysis panel content is readable without any intrusive overlay, popup, or modal covering it. The analysis paragraphs should be accessible and the page should not be obscured by third-party popups." }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": "1",
+  "event_slug": "world-cup-2026",
+  "iteration_slug": "iteration-2",
+  "state": "completed",
+  "polled_at_iso": "2026-05-27T08:00:00Z",
+  "cohort_started_at_iso": "2026-05-27T01:01:24Z",
+  "cohort_ended_at_iso": "2026-05-27T06:56:00Z",
+  "time_budget_seconds": 5400,
+  "elapsed_seconds": 21276,
+  "snapshot_note": "Iteration 2 — Bettor's Edition. All 3 agents shipped + graded via TestSprite v2 (20 plans per agent). Final standings: claude-code #1 (0.655), antigravity #2 (0.582), codex #3 (0.450). Real cohort change vs cohort 1 ranks (was agy/codex/claude).",
+  "agents": [
+    {
+      "agent_slug": "claude-code",
+      "name": "Claude Code",
+      "vendor": "Anthropic",
+      "progress": 1.0,
+      "composite_so_far": 0.655,
+      "latest_action": "graded: 10/11 passed in v2 sweep — en/es/pt locales, /me, /simulator, sitemap, robots, 9 API routes",
+      "file_count": 12,
+      "deployed_app_url": "https://main.d2cyz5kp1vxns8.amplifyapp.com",
+      "cost_so_far_usd": 0.0,
+      "leading": true
+    },
+    {
+      "agent_slug": "antigravity",
+      "name": "Anti-Gravity",
+      "vendor": "Google",
+      "progress": 1.0,
+      "composite_so_far": 0.582,
+      "latest_action": "graded: 13/17 passed in v2 sweep — full bettors-tools (Monte Carlo, odds widget, EV picker, scenario explorer), /me prediction history",
+      "file_count": 17,
+      "deployed_app_url": "https://main.d3ds0cy7nla3ka.amplifyapp.com",
+      "cost_so_far_usd": 0.0,
+      "leading": false
+    },
+    {
+      "agent_slug": "codex",
+      "name": "Codex",
+      "vendor": "OpenAI",
+      "progress": 1.0,
+      "composite_so_far": 0.450,
+      "latest_action": "graded: 5/10 passed in v2 sweep — en/es locales, /api/*, /match/*, /og/*, 404, _headers (no /simulator or bettors-tools)",
+      "file_count": 11,
+      "deployed_app_url": "https://main.d73bifx6lxpxb.amplifyapp.com",
+      "cost_so_far_usd": 0.0,
+      "leading": false
+    }
+  ],
+  "recent_verdicts": []
+}

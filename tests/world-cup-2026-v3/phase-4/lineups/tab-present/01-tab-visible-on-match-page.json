@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Lineups tab is visible and opens a populated lineups panel on a match page",
+  "description": "When a visitor opens a match detail permalink and activates the Lineups tab or section, the page reveals a lineups panel that contains both teams' starting players rather than an empty placeholder.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "action", "description": "Click the control labeled Lineups (a tab, button, or section header)" },
+    { "type": "assertion", "description": "Verify a lineups panel becomes visible that contains a home-team starting player list and an away-team starting player list, each holding multiple named player rows rather than an empty or placeholder state" }
+  ]
+}

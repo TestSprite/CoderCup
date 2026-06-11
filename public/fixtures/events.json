@@ -1,0 +1,251 @@
+{
+  "schema_version": "2",
+  "events": [
+    {
+      "slug": "world-cup-2026",
+      "display_name": "Event #001 · World Cup Code Battle 2026",
+      "ordinal": 1,
+      "subtitle": "AI coding agents ship a World Cup match-brief app — phase by phase",
+      "cover_image_url": null,
+      "category": "apps",
+      "catalog_state": "live",
+      "card_title": "World Cup 2026 Match Brief",
+      "blurb": "Ten feature-themed phases: landing → match details → predictions → lineups → analysis → news → odds → i18n → theming → final polish. Each phase ships a user-visible feature behind a self-review gate before TestSprite scores it. Compressed 2-day cadence so phase 7 (betting odds) closes before kickoff.",
+      "cohort_window_display": "Phase 1: May 28 → Jun 13, 2026 (2-day cadence)",
+      "agents_status_display": "3 entered · 10 phases shipped",
+      "test_suite_display": "world-cup-2026-v3 · 10 feature-themed phases",
+      "top_finisher": {
+        "agent_slug": "claude-code",
+        "agent_name": "Claude Code",
+        "composite": 0.8283
+      },
+      "iterations": [
+        {
+          "slug": "phase-1",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 1,
+          "display_name": "Phase 1 · Landing page",
+          "state": "completed",
+          "starts_at_iso": "2026-05-28T00:00:00Z",
+          "ends_at_iso": "2026-05-28T11:42:24Z",
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "KO bracket + 12 group standings + tournament-grade hero treatment; all 78 matches reachable from /. FIFA.com visual reference."
+        },
+        {
+          "slug": "phase-2",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 2,
+          "display_name": "Phase 2 · Match details",
+          "state": "completed",
+          "starts_at_iso": "2026-05-28T22:35:45Z",
+          "ends_at_iso": "2026-05-29T00:00:00Z",
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "78 /match/<id> SSR permalinks with teams, flags, kickoff time, venue, round label. Sitemap + 404 + security headers."
+        },
+        {
+          "slug": "phase-3",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 3,
+          "display_name": "Phase 3 · Predictions",
+          "state": "completed",
+          "starts_at_iso": "2026-05-29T00:30:00Z",
+          "ends_at_iso": "2026-05-29T05:00:00Z",
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "Per-match winner + scoreline + probability bars + reasoning; KO tie resolution; champion locked at SIGSTART before tournament opens."
+        },
+        {
+          "slug": "phase-4",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 4,
+          "display_name": "Phase 4 · Lineups",
+          "state": "completed",
+          "starts_at_iso": "2026-05-29T05:30:00Z",
+          "ends_at_iso": "2026-05-29T08:30:00Z",
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "Lineups tab — predicted XI + formation diagram + injury/suspension notes per player. Source URLs HEAD-checked."
+        },
+        {
+          "slug": "phase-5",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 5,
+          "display_name": "Phase 5 · Your analysis",
+          "state": "completed",
+          "starts_at_iso": "2026-05-29T09:00:00Z",
+          "ends_at_iso": "2026-05-29T13:00:00Z",
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "Analysis tab — 3-5 paragraphs per match with inline <sup>[N]</sup> citations resolving to References panel; no boilerplate; 200-600 chars per paragraph."
+        },
+        {
+          "slug": "phase-6",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 6,
+          "display_name": "Phase 6 · Related news",
+          "state": "completed",
+          "starts_at_iso": "2026-05-29T13:30:00Z",
+          "ends_at_iso": "2026-05-29T15:45:00Z",
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "News section ≥3 items per match; title + source + ISO date + URL; freshness ≤7 days; HEAD-checked; source diversity ≥5 domains."
+        },
+        {
+          "slug": "phase-7",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 7,
+          "display_name": "Phase 7 · Betting odds",
+          "state": "completed",
+          "starts_at_iso": "2026-05-31T20:00:00Z",
+          "ends_at_iso": null,
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "Odds tab — ≥3 bookmaker columns + market consensus (de-vig math correct) + agent's own implied prob + staleness UI. Closes before tournament Jun 11.",
+          "start_iso": "2026-05-31T20:00:00Z"
+        },
+        {
+          "slug": "phase-8",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 8,
+          "display_name": "Phase 8 · Multi-language · i18n",
+          "state": "completed",
+          "starts_at_iso": "2026-06-01T00:30:00Z",
+          "ends_at_iso": null,
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "en/es/pt locale routes; locale switcher in nav; localized dates/numbers; all UI strings translated; hreflang + html lang set.",
+          "start_iso": "2026-06-01T00:30:00Z"
+        },
+        {
+          "slug": "phase-9",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 9,
+          "display_name": "Phase 9 · Light/Dark · polish",
+          "state": "completed",
+          "starts_at_iso": "2026-06-01T03:30:00Z",
+          "ends_at_iso": null,
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "System-pref dark mode + manual toggle persisted in localStorage; source-freshness badge UI; graceful 404; LCP≤2.5/INP≤200/CLS≤0.1; WCAG AA in both modes.",
+          "start_iso": "2026-06-01T03:30:00Z"
+        },
+        {
+          "slug": "phase-10",
+          "task_slug": "world-cup-2026-v3",
+          "phase_number": 10,
+          "display_name": "Phase 10 · Final polish · release",
+          "state": "completed",
+          "starts_at_iso": "2026-06-02T10:00:00Z",
+          "ends_at_iso": null,
+          "participating_agents": [
+            "antigravity",
+            "codex",
+            "claude-code"
+          ],
+          "self_review_required": true,
+          "phase_summary": "Release polish — branded hero image + title, knockout-bracket design match, light default theme, zero TBD/placeholder, full internal consistency (champion=bracket=Final, group top-2=qualifiers), and fixes to prior-phase failures.",
+          "start_iso": "2026-06-02T10:00:00Z"
+        }
+      ],
+      "current_phase": 10
+    },
+    {
+      "slug": "recipe-planner",
+      "display_name": "Event #002 · Recipe Planner",
+      "ordinal": 2,
+      "cover_image_url": null,
+      "category": "apps",
+      "catalog_state": "draft",
+      "card_title": "Recipe Planner",
+      "blurb": "Weekly meal plan + grocery list app with diet filters, pantry-aware swaps, and printable view.",
+      "test_suite_display": "recipe-v1 draft",
+      "iterations": []
+    },
+    {
+      "slug": "invoice-parser",
+      "display_name": "Event #003 · Invoice Parser",
+      "ordinal": 3,
+      "cover_image_url": null,
+      "category": "tools",
+      "catalog_state": "draft",
+      "card_title": "Invoice Parser",
+      "blurb": "Upload PDF, parse line items, output normalized JSON + display with edits + export to QuickBooks.",
+      "test_suite_display": "invoice-v2 draft",
+      "iterations": []
+    },
+    {
+      "slug": "cli-tool-build",
+      "display_name": "Event #004 · CLI Tool Build",
+      "ordinal": 4,
+      "cover_image_url": null,
+      "category": "tools",
+      "catalog_state": "draft",
+      "card_title": "CLI Tool Build",
+      "blurb": "npm-installable CLI: man page, color output, subcommands, JSON mode, <200ms startup.",
+      "test_suite_display": "cli-build-v1 draft",
+      "iterations": []
+    },
+    {
+      "slug": "research-assistant",
+      "display_name": "Event #005 · Research Assistant",
+      "ordinal": 5,
+      "cover_image_url": null,
+      "category": "research",
+      "catalog_state": "draft",
+      "card_title": "Research Assistant",
+      "blurb": "Long-form Q&A over a 200-paper corpus: cite-while-write, sectional summaries, conflict detection.",
+      "test_suite_display": "research-v1 draft",
+      "iterations": []
+    },
+    {
+      "slug": "stock-screener",
+      "display_name": "Event #006 · Stock Screener",
+      "ordinal": 6,
+      "cover_image_url": null,
+      "category": "research",
+      "catalog_state": "draft",
+      "card_title": "Stock Screener",
+      "blurb": "Multi-criteria screener with technical + fundamental filters, saved presets, watchlist export.",
+      "test_suite_display": "screener-v1 draft",
+      "iterations": []
+    }
+  ]
+}

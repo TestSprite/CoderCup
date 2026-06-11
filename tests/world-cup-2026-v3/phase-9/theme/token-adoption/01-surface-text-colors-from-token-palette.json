@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Surface, border and text colors come from the provided token palette",
+  "description": "Surface, border and text colors come from the provided token palette.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / in dark mode and inspect the computed background of the main surfaces and the primary accent color"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify colors come from the Matchday token palette: the dark surface is a neutral near-black (≈ #131313–#323232) and the primary/brand accent is the token green (≈ #54B365). Generic default colors (pure #000/#fff body, unstyled blue links) indicate the tokens were not adopted and fail."
+    }
+  ]
+}

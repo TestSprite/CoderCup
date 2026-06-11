@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "No player appears in both teams' starting lineups",
+  "description": "When the per-match lineups artifact is fetched, the set of home starting player names and the set of away starting player names are disjoint, so no single player is fabricated into both lineups at once.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-lineups/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Collect the player names from home.starting_xi into one set and from away.starting_xi into another set" },
+    { "type": "assertion", "description": "Verify the home starting player name set and the away starting player name set share zero common names" }
+  ]
+}

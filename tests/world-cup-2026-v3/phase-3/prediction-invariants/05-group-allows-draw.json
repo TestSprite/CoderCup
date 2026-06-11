@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Group-stage predictions allow draw as a valid winner",
+  "description": "On a group-stage match page the prediction section acknowledges draw as a possible outcome — either by showing a draw probability bar or by labeling the predicted result as Draw.",
+  "priority": "p2",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Open a match page from a link labeled as a group-stage fixture" },
+    { "type": "assertion", "description": "Verify the prediction section on the group-stage match page treats draw as a valid outcome, surfacing a populated draw probability bar or an explicit draw label" }
+  ]
+}

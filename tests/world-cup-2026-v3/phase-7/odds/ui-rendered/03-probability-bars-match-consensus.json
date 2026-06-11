@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "Probability bars render and their widths track the consensus values",
+  "description": "The Odds tab shows three horizontal bars (home/draw/away) visualizing the market consensus, with the agent's implied value as an overlaid marker. The bar lengths must visually reflect the consensus percentages, not all be equal or zero-width.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage and open a match detail page" },
+    { "type": "action", "description": "Click the Betting Odds tab and read the consensus home/draw/away percentages, then look at the three probability bars" },
+    { "type": "assertion", "description": "Verify three distinct probability bars are rendered and that the outcome with the highest consensus percentage has the visibly longest bar (ordering of bar widths matches ordering of consensus values). Bars that are all equal length, zero width, or absent fail; an agent-implied marker should also be visible on the bars." }
+  ]
+}

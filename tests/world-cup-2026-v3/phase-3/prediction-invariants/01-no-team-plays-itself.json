@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "No prediction has a team predicted to play itself",
+  "description": "On any match detail page the two teams shown in the prediction block are different team names, confirming no data corruption where a team faces itself.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click any match link to open a match detail page" },
+    { "type": "assertion", "description": "Verify the prediction block on the match page names two distinct teams — the home team and away team differ from each other" }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Market consensus probabilities sum to 1.0",
+  "description": "The consensus row is the arithmetic mean of the de-vigged probabilities across all books, so it must itself be a valid probability distribution summing to 1.0. A consensus that sums above 1.0 indicates it was averaged from raw (vigged) numbers or from decimal odds.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-odds/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Read the consensus.home, consensus.draw and consensus.away values" },
+    { "type": "assertion", "description": "Verify the three consensus probabilities sum to 1.0 within plus or minus 0.001. A sum meaningfully above 1.0 (e.g. ~1.05, the overround) means consensus was computed on vigged probabilities and fails." }
+  ]
+}

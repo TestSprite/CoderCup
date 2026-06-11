@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Match page og:title contains both team names",
+  "description": "When a visitor opens a match permalink, the Open Graph title meta tag contains both competing team names.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id and the two team names from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "assertion", "description": "Verify the document head contains an og:title meta tag whose content includes both team names captured earlier" }
+  ]
+}

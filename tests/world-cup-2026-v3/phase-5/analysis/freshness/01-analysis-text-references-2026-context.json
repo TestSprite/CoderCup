@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Analysis text references 2026 World Cup context",
+  "description": "The analysis content should reference the 2026 FIFA World Cup, current team forms, or recent tournament context, not outdated 2022 or earlier World Cup data.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a Semifinal or Final bracket match to open its detail page" },
+    { "type": "action", "description": "Click the Analysis tab" },
+    { "type": "assertion", "description": "Verify that the analysis text contains references to 2026, the current tournament, or present-tense team/player information. The text should not exclusively reference 2022 or older tournament results without any 2026 context." }
+  ]
+}

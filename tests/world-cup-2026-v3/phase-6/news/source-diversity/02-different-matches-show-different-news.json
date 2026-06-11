@@ -1,0 +1,15 @@
+{
+  "type": "frontend",
+  "name": "Different match pages show different news article sets",
+  "description": "The Related News panel should be match-specific. Two different match pages should not show the exact same set of news articles, which would indicate shared generic content.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a first bracket match cell to open its match detail page" },
+    { "type": "action", "description": "Click the Related News tab and note the title of the first news card" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Click on a different bracket match (a different round or country matchup)" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "assertion", "description": "Verify the first news card title on the second match page is different from the first card on the first match. If both matches show identically titled news articles in the same order, the test fails." }
+  ]
+}

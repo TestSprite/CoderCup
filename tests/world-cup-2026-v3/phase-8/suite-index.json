@@ -1,0 +1,67 @@
+{
+  "schema_version": "1",
+  "suite": "world-cup-2026-v3-phase-8",
+  "phase": 8,
+  "status": "fully-authored",
+  "total_plans": 24,
+  "planned_plans": 18,
+  "categories": {
+    "data-authenticity": [
+      "01-no-mock-or-tbd-data-anywhere.json",
+      "02-group-standings-projected-not-zeroed.json",
+      "03-predictions-real-and-varied-champion-named.json"
+    ],
+    "i18n/routes-exist": [
+      "01-three-locale-roots-return-200.json",
+      "02-localized-match-routes-resolve.json",
+      "03-groups-page-under-all-locales.json"
+    ],
+    "i18n/locale-switcher": [
+      "01-switcher-present-in-nav.json",
+      "02-switcher-preserves-path.json",
+      "03-selected-locale-persists-across-navigation.json"
+    ],
+    "i18n/string-coverage": [
+      "01-locale-files-exist-and-nonempty.json",
+      "02-locale-files-share-key-shape.json",
+      "03-values-not-equal-to-keys.json",
+      "04-no-raw-keys-leak-in-rendered-page.json"
+    ],
+    "i18n/no-leakage": [
+      "01-spanish-chrome-actually-translated.json",
+      "02-portuguese-data-labels-translated.json",
+      "03-no-english-ui-strings-on-es-page.json"
+    ],
+    "i18n/date-localization": [
+      "01-time-text-differs-by-locale.json",
+      "02-portuguese-date-distinct.json"
+    ],
+    "i18n/number-localization": [
+      "01-decimal-separator-differs-by-locale.json",
+      "02-portuguese-number-separator.json"
+    ],
+    "i18n/html-lang": [
+      "01-html-lang-matches-locale.json",
+      "02-hreflang-alternates-present.json"
+    ],
+    "i18n/regression": [
+      "01-prior-features-work-in-non-default-locale.json",
+      "02-graceful-fallback-no-blank-text.json"
+    ]
+  },
+  "planned_categories": [
+    "data-authenticity",
+    "i18n/routes-exist",
+    "i18n/locale-switcher",
+    "i18n/string-coverage",
+    "i18n/no-leakage",
+    "i18n/date-localization",
+    "i18n/number-localization",
+    "i18n/html-lang",
+    "i18n/regression"
+  ],
+  "feature_theme": "Multi-language · i18n — en/es/pt locale routes; locale switcher in nav that survives navigation; translated UI chrome AND data labels (no raw keys / placeholders / English leakage); localized dates and decimal separators; correct html lang + hreflang; prior-phase features regression-safe in non-default locales",
+  "depends_on_phases": [1, 2, 3, 4, 5, 6, 7],
+  "pass_criterion": "at least 18 of 24 plans pass; data-authenticity/01 (no mock/TBD/placeholder data) is a hard gate and MUST pass, and all i18n/no-leakage and i18n/string-coverage/04 plans must pass (real data + real translation are non-negotiable)",
+  "composite_formula": "0.40 * correctness + 0.25 * translation_completeness + 0.20 * locale_correctness + 0.15 * efficiency"
+}

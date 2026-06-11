@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Locale files share an identical key shape",
+  "description": "The three locale files must have the same set of translation keys; only the values differ by language. A divergent key set means some strings are translated in one language but missing in another, producing partial rendering.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /locales/en.json and enumerate its full set of (nested) keys" },
+    { "type": "action", "description": "Navigate to /locales/es.json and enumerate its full set of keys" },
+    { "type": "action", "description": "Navigate to /locales/pt.json and enumerate its full set of keys" },
+    { "type": "assertion", "description": "Verify the key set of es.json and pt.json each match the key set of en.json (same keys present in all three files). If any locale file is missing keys that exist in en.json, the test fails." }
+  ]
+}

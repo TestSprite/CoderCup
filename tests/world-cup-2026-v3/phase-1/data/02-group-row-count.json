@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "Clicking a team row in Group A then in Group L lands on two distinct destinations",
+  "description": "When a visitor opens Group A and clicks a team row, then returns and opens Group L and clicks a team row, the two destinations are different URLs — proving each group's rows are individually navigable and bound to a distinct destination.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Scroll down to the group standings area" },
+    { "type": "action", "description": "Click the first team row in Group A" },
+    { "type": "action", "description": "Note the current destination URL as the Group A destination" },
+    { "type": "action", "description": "Navigate back to the homepage" },
+    { "type": "action", "description": "Scroll down to Group L in the group standings area" },
+    { "type": "action", "description": "Click the first team row in Group L" },
+    { "type": "assertion", "description": "Verify the current destination URL differs from the noted Group A destination URL" }
+  ]
+}

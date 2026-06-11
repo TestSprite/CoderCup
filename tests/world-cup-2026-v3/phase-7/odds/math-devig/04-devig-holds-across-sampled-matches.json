@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "De-vig sum-to-one holds across multiple sampled matches",
+  "description": "The de-vig invariant must hold for the whole tournament, not just one match. Sampling several distinct matches guards against a build that hard-codes correct math for one fixture and ships broken or placeholder odds for the rest.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read the ids of at least four distinct matches from different rounds" },
+    { "type": "action", "description": "For each captured id, navigate to /match-odds/<id>.json and read every book's devigged.home, devigged.draw and devigged.away" },
+    { "type": "assertion", "description": "Verify that across all sampled matches every book's de-vigged probabilities sum to 1.0 within plus or minus 0.001, and that the decimal odds differ between matches (not the same repeated placeholder line). A match whose odds are missing, zero, or identical to another match's fails." }
+  ]
+}

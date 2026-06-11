@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "With prefers-color-scheme dark, the site renders in dark mode on first paint",
+  "description": "With prefers-color-scheme dark, the site renders in dark mode on first paint.",
+  "priority": "p0",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Set the browser/emulation to prefers-color-scheme: dark, then navigate to /"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the initial paint is the dark theme: the page background computed-color is a near-black from the token palette (around #131313–#222424) and body text is light, with no flash of light theme."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "News source URLs in cards use HTTPS",
+  "description": "The URLs in news card links should use secure HTTPS protocol, not plain HTTP or data URIs.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to the homepage" },
+    { "type": "action", "description": "Click on a bracket match to open a match detail page" },
+    { "type": "action", "description": "Click the Related News tab" },
+    { "type": "assertion", "description": "Verify that visible news card links or URLs in the news panel use https:// URLs, not http:// or data: or javascript: URLs. Hover over a card or inspect the visible URL text to confirm HTTPS usage." }
+  ]
+}

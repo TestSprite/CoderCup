@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "The product is branded \"Matchday\" with its favicon",
+  "description": "The product is branded \"Matchday\" with its favicon.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Navigate to / and read the document <title>, the nav brand label, and the <link rel=\"icon\"> favicon"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the brand name \"Matchday\" appears in the <title> and the nav, and a favicon (the green ball-arc mark, an svg/png link rel=icon) is present — not a default framework title or missing favicon."
+    }
+  ]
+}

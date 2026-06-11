@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Match page renders a stage badge for the fixture",
+  "description": "When a visitor opens a match permalink, the page renders a stage badge identifying the round (R32, R16, QF, SF, F, 3P) or the group letter (A through L).",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "assertion", "description": "Verify the match detail page renders a stage badge whose text matches a knockout round label or a group letter from A through L" }
+  ]
+}

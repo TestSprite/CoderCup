@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Raw implied probabilities sum above 1.0 (the vig is real)",
+  "description": "Before de-vigging, the sum of 1/decimal across the three outcomes (the raw implied / overround) must exceed 1.0 for a real bookmaker line — that excess is the vig. A book whose raw implied already sums to exactly 1.0 has fabricated odds with no margin, which is not how real sportsbooks price.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-odds/<first-id>.json using the captured id" },
+    { "type": "action", "description": "For each book read decimal.home, decimal.draw and decimal.away, and read the stored implied.home / implied.draw / implied.away values" },
+    { "type": "assertion", "description": "Verify that for every book the raw implied probabilities (1/decimal for each outcome) sum to strictly greater than 1.0 and within a realistic overround band of roughly 1.02 to 1.15. A sum of exactly 1.0 or below indicates fabricated margin-free odds and fails." }
+  ]
+}

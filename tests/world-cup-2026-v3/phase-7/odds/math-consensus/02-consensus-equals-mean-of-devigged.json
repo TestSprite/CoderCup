@@ -1,0 +1,12 @@
+{
+  "type": "frontend",
+  "name": "Consensus equals the arithmetic mean of de-vigged book probabilities",
+  "description": "The consensus for each outcome must equal the average of that outcome's de-vigged probability across every book in the artifact. This is the core consensus computation; sampling lets the agent recompute it from the artifact's own book rows rather than trusting the stored consensus blindly.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match-odds/<first-id>.json using the captured id" },
+    { "type": "action", "description": "Read every book's devigged.home value and compute their arithmetic mean, then read the stored consensus.home value" },
+    { "type": "assertion", "description": "Verify the stored consensus.home equals the mean of the books' devigged.home values within plus or minus 0.005, and confirm the same relationship for draw and away. The consensus must be derivable from the book rows in the same artifact, not an independent or hard-coded figure." }
+  ]
+}

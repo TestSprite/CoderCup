@@ -1,0 +1,16 @@
+{
+  "type": "frontend",
+  "name": "With prefers-color-scheme light, the site renders in light mode",
+  "description": "With prefers-color-scheme light, the site renders in light mode.",
+  "priority": "p1",
+  "planSteps": [
+    {
+      "type": "action",
+      "description": "Set prefers-color-scheme: light, then navigate to /"
+    },
+    {
+      "type": "assertion",
+      "description": "Verify the page renders the light theme: page background is a light/near-white token color and body text is dark."
+    }
+  ]
+}

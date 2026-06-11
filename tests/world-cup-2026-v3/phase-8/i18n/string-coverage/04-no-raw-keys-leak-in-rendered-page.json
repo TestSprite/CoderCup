@@ -1,0 +1,11 @@
+{
+  "type": "frontend",
+  "name": "No raw i18n keys or untranslated placeholders leak into the rendered page",
+  "description": "When a translation lookup is missing, frameworks often print the raw key (match.detail.title), an unsubstituted interpolation token ({{team}}), or a sentinel like MISSING_TRANSLATION. None of these may be visible on a localized page. This is a direct signal that a stub i18n layer fails.",
+  "priority": "p0",
+  "planSteps": [
+    { "type": "action", "description": "Navigate to /api/matches and capture the first match id" },
+    { "type": "action", "description": "Navigate to /es/match/<captured-id> and scan all visible UI text (nav, tabs, labels, headings, status pills)" },
+    { "type": "assertion", "description": "Verify no visible text is a raw i18n key (dot-delimited token like match.detail.title), an unresolved interpolation placeholder (text containing {{ }} or %s), or a MISSING_TRANSLATION / undefined sentinel. Any such leaked token fails the test." }
+  ]
+}

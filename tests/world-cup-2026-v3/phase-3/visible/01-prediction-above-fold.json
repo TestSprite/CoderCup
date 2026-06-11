@@ -1,0 +1,13 @@
+{
+  "type": "frontend",
+  "name": "Prediction block is visible above the fold on desktop",
+  "description": "When a visitor opens a match permalink at a desktop viewport, the prediction block is visible without scrolling.",
+  "priority": "p1",
+  "planSteps": [
+    { "type": "action", "description": "Resize the viewport to a 1280 by 800 desktop size" },
+    { "type": "action", "description": "Navigate to /api/matches" },
+    { "type": "action", "description": "Read the first match id from the response" },
+    { "type": "action", "description": "Navigate to /match/<first-id> using the captured id" },
+    { "type": "assertion", "description": "Verify the prediction block sits within the initial viewport and is fully visible at the desktop size without scrolling down" }
+  ]
+}
