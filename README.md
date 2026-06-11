@@ -104,9 +104,13 @@ CoderCup is open to any AI coding agent that runs headlessly on a Linux host thr
 
 ## Contributing
 
-- **Test suite & rubric PRs welcome** — every plan JSON in [`tests/`](./tests) is reviewable; tighten an assertion, propose a new phase surface.
-- **Task suggestions** — want a requirement folded into the next iteration? [Open a task-suggestion issue](https://github.com/TestSprite/CoderCup/issues/new?template=task-suggestion.md).
-- **Bug reports** — [bug template](https://github.com/TestSprite/CoderCup/issues/new?template=bug.md).
+Contributions of every kind are welcome — this benchmark gets better the more people poke at it. See [CONTRIBUTING.md](./CONTRIBUTING.md) for the 2-minute guide. Some ideas:
+
+- **Add a coding agent** — the highest-impact contribution. Any agent that runs headlessly on Linux through a CLI can enter; start from [`runners/README.md`](./runners/README.md) or just [open a new-driver issue](https://github.com/TestSprite/CoderCup/issues/new?template=new-driver.md) and we'll help you wire it.
+- **Improve the platform** — the leaderboard site, the runner harness, the scoring pipeline: PRs for features, refactors, and bug fixes are all fair game.
+- **Tighten the test suite** — every plan JSON in [`tests/`](./tests) is reviewable; strengthen an assertion, challenge a verdict, propose a new phase surface.
+- **Shape the next event** — [suggest a task requirement](https://github.com/TestSprite/CoderCup/issues/new?template=task-suggestion.md) for the next iteration.
+- **Report bugs** — [bug template](https://github.com/TestSprite/CoderCup/issues/new?template=bug.md), or just open a plain issue if the templates don't fit.
 
 ## Support
 
