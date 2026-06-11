@@ -322,10 +322,11 @@ export function TestDetailClient({
 
   const phaseCols = agents[0]?.phase_history ?? [];
   // Phases this plan actually participates in (its own phase + every later
-  // scored phase). Drives the "graded across N phases" copy — not the full
-  // 9-phase roadmap, which is mostly pending columns.
+  // scored phase). Drives the "graded across N phases" copy — counts only
+  // phases with a recorded verdict for THIS plan (re-run gaps don't claim
+  // a grade), not the full roadmap of pending columns.
   const gradedPhaseCount = phaseCols.filter(
-    (h) => !h.pending && !h.not_applicable,
+    (h) => !h.pending && !h.not_applicable && !h.not_retained,
   ).length;
   // Phase-1 `seo` and Phase-2 `seo` share a catalog key but ship different
   // numbers of plans. CATEGORY_META.seo carries the phase-2 description by
@@ -338,10 +339,14 @@ export function TestDetailClient({
   const blocked = agents.filter((a) => a.verdict === 'blocked').length;
   const inconclusive = agents.length - passed - failed - blocked;
   const REPO_BASE = `https://github.com/TestSprite/CoderCup/blob/main/tests/world-cup-2026-v3/phase-${plan.phase}`;
-  // Total graded plan-runs in the matrix = agents × phases this plan was graded
-  // in (its own phase carried forward through every later scored phase).
+  // Recorded plan-runs in the matrix — only cells carrying an actual verdict
+  // count (not_retained re-run gaps don't claim a recorded run).
   const totalRuns = agents.reduce(
-    (acc, a) => acc + a.phase_history.filter((h) => !h.pending && !h.not_applicable).length,
+    (acc, a) =>
+      acc +
+      a.phase_history.filter(
+        (h) => !h.pending && !h.not_applicable && !h.not_retained && h.verdict,
+      ).length,
     0,
   );
 
@@ -393,8 +398,9 @@ export function TestDetailClient({
           <div>
             {/* History matrix — one column per phase. A plan is part of the
                 cumulative suite of every scored phase ≥ its own, so it shows
-                its verdict across all of them; phases beyond the latest scored
-                read as a greyed roadmap. */}
+                its recorded verdict at its authoring phase; later scored
+                phases show an explicit not-retained gap; phases beyond the
+                latest scored read as a greyed roadmap. */}
             {phaseCols.length > 0 && agents.length > 0 && (
               <div className="card-block">
                 <h2>
@@ -658,10 +664,10 @@ function AgentVerdictBlock({
   const statKlass =
     v === 'passed' ? 'pass' : v === 'failed' ? 'fail' : v === 'blocked' ? 'blocked' : 'inc';
   // How many scored phases this plan was graded in (its own phase carried
-  // forward through every later scored phase). Used in the "across N phases"
-  // copy below — phase_history is the source of truth, not a padded length.
+  // Used in the "across N phases" copy below — counts only phases carrying
+  // a recorded verdict; phase_history is the source of truth.
   const gradedPhaseCount = agent.phase_history.filter(
-    (h) => !h.pending && !h.not_applicable,
+    (h) => !h.pending && !h.not_applicable && !h.not_retained,
   ).length;
   // Prefer the per-verdict video_url that the artifact-pull pipeline lands in
   // each agent's fixture (1 video per (agent, plan)). Fall back to the legacy
