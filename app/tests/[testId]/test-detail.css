@@ -252,6 +252,14 @@
   border: 1px solid var(--line);
   opacity: 0.45;
 }
+/* not-retained — the phase re-ran this plan cumulatively but the per-plan
+   record wasn't kept. A flat dash: explicitly "no record", distinct from
+   pass/fail color and from the dashed not-yet-run pending cell. */
+.history .cell.nr {
+  background: var(--surface);
+  color: var(--ink-4);
+  border: 1px solid var(--line);
+}
 .history-note {
   font-family: var(--font-mono);
   font-size: 11.5px;

@@ -45,11 +45,13 @@ type AgentVerdict = {
   recommended_fix_target: string | null;
   failure_kind: string | null;
   recorded_steps: RecordedStep[] | null;
-  // Per-PHASE verdicts for this plan, phase 1 → phase N. A plan authored in
-  // phase P is part of the cumulative suite of every scored phase ≥ P (earlier
-  // phases re-run as part of each later phase), so it carries its KNOWN verdict
-  // in each of those phase columns. Scored phases earlier than P (the plan did
-  // not exist yet) and phases beyond the latest scored phase render as pending.
+  // Per-PHASE cells for this plan, phase 1 → phase N. A verdict renders ONLY
+  // where a recorded result exists — the plan's authoring phase, carrying its
+  // latest TestSprite run. Later scored phases DID re-run the plan (suites are
+  // cumulative) but the per-plan record isn't retained, so those columns are
+  // an explicit not_retained gap rather than a carried-forward copy. Phases
+  // before the plan existed are n/a; phases beyond the latest scored are
+  // pending roadmap.
   phase_history: Array<{
     phase: number;
     phase_label: string;
@@ -58,6 +60,9 @@ type AgentVerdict = {
     pending: boolean;
     // true when the plan did not exist in this earlier phase (n/a, not a gap).
     not_applicable: boolean;
+    // true when the phase was scored cumulatively but the per-plan verdict
+    // record from that re-run wasn't retained (rendered as a dash).
+    not_retained?: boolean;
   }>;
 };
 
@@ -185,27 +190,16 @@ export function TestDetailClient({
               const p = runPhase(r);
               return p && p > mx ? p : mx;
             }, 0);
-            // Phase-aware history. A plan authored in `plan.phase` is part of
-            // the cumulative suite of every scored phase ≥ its own phase (the
-            // earlier suite re-runs inside each later phase), so it carries its
-            // KNOWN verdict in each of those columns. No separately-recorded
-            // re-run verdict exists, so we surface the plan's own phase verdict
-            // forward — this is what makes a phase-1 plan show BOTH phase 1 and
-            // phase 2 instead of one ambiguous run.
+            // Phase-aware history. Suites re-run cumulatively (every scored
+            // phase ≥ the plan's own phase re-fires the plan), but only the
+            // plan's LATEST run is recorded in the fixtures — re-runs reuse
+            // the same test id and overwrite. So the only honest cell is the
+            // plan's authoring-phase column; later scored phases render as an
+            // explicit not_retained gap instead of a carried-forward copy.
             const planPhase = plan?.phase ?? 1;
-            // The verdict this plan earned in its OWN phase's re-run (current).
             const ownPhaseRun = runs.find((r) => runPhase(r) === planPhase);
             const ownVerdict = ownPhaseRun?.per_test_verdicts.find(matchVerdict)
               ?.verdict as Verdict;
-            // Original first-run verdict — stored in per_test_verdicts_original
-            // when the phase was later re-run (e.g. phase-1 re-run during phase-2
-            // scoring). Shows P1 = original result, P2+ = re-run result, so the
-            // matrix reflects genuine history rather than a carried-forward copy.
-            const originalVerdict = (
-              ownPhaseRun as unknown as {
-                per_test_verdicts_original?: Array<{ test_id: string; name?: string; verdict?: string }>;
-              }
-            )?.per_test_verdicts_original?.find(matchVerdict)?.verdict as Verdict | undefined;
             const columnCount = Math.max(TOTAL_PHASES, latestScoredPhase);
             const phase_history = Array.from({ length: columnCount }, (_, k) => {
               const ph = k + 1;
@@ -217,13 +211,12 @@ export function TestDetailClient({
                 return { phase: ph, phase_label, verdict: undefined as Verdict, pending: false, not_applicable: true };
               }
               if (ph <= latestScoredPhase) {
-                // Own phase column: show original first-run verdict when available;
-                // later scored phases show the re-run verdict.
-                const verdict =
-                  ph === planPhase && originalVerdict !== undefined
-                    ? originalVerdict
-                    : ownVerdict;
-                return { phase: ph, phase_label, verdict, pending: false, not_applicable: false };
+                if (ph === planPhase) {
+                  return { phase: ph, phase_label, verdict: ownVerdict, pending: false, not_applicable: false };
+                }
+                // Re-run cumulatively in this phase, but the per-plan record
+                // wasn't retained — an explicit gap, never a synthesized copy.
+                return { phase: ph, phase_label, verdict: undefined as Verdict, pending: false, not_applicable: false, not_retained: true };
               }
               return { phase: ph, phase_label, verdict: undefined as Verdict, pending: true, not_applicable: false };
             });
@@ -447,6 +440,8 @@ export function TestDetailClient({
                                 ? 'na'
                                 : h.pending
                                 ? 'pending'
+                                : h.not_retained
+                                ? 'nr'
                                 : h.verdict === 'passed'
                                 ? 'pass'
                                 : h.verdict === 'failed'
@@ -460,6 +455,8 @@ export function TestDetailClient({
                                 ? `${h.phase_label} · plan not in this phase`
                                 : h.pending
                                 ? `${h.phase_label} · not yet run`
+                                : h.not_retained
+                                ? `${h.phase_label} · re-run cumulatively; per-plan record not retained`
                                 : `${h.phase_label} · ${h.verdict ?? 'no verdict'}`
                             }
                           >
@@ -467,6 +464,8 @@ export function TestDetailClient({
                               ? ''
                               : h.pending
                               ? ''
+                              : h.not_retained
+                              ? '–'
                               : h.verdict === 'passed'
                               ? '✓'
                               : h.verdict === 'failed'
@@ -480,6 +479,13 @@ export function TestDetailClient({
                     );
                   })}
                 </div>
+                <p className="history-note">
+                  Suites re-run cumulatively — every scored phase re-fires all
+                  earlier plans against that phase&apos;s deploy. A plan&apos;s verdict is
+                  recorded from its latest TestSprite run at its authoring phase;
+                  per-phase re-run records aren&apos;t retained (–). Aggregate per-phase
+                  results drive each agent&apos;s trajectory chart.
+                </p>
                 </div>
               </div>
             )}
