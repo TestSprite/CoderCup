@@ -47,7 +47,7 @@ export const TESTS: TestEntry[] = [
 
   // a11y (2) — keyboard + alt text
   { test_id: 'a3b4c5d6', phase: 1, category: 'a11y', path: 'a11y/01-keyboard-tab-focus.json', name: 'Keyboard Tab traversal surfaces visible focus on interactive elements', priority: 'p1' },
-  { test_id: 'b4c5d6e7', phase: 1, category: 'a11y', path: 'a11y/02-flag-images-alt.json', name: 'Team flag images in the bracket and group standings carry non-empty alt text', priority: 'p1' },
+  { test_id: 'b4c5d6e7', phase: 1, category: 'a11y', path: 'a11y/02-flag-images-alt.json', name: 'Screen-reader users can identify each team flag in the bracket and group standings', priority: 'p1' },
 
   // visual (1) — hero + bracket layout
   { test_id: 'c5d6e7f8', phase: 1, category: 'visual', path: 'visual/01-hero-and-bracket-present.json', name: 'Homepage shows a hero heading at the top and the bracket section below', priority: 'p1' },
@@ -66,7 +66,7 @@ export const TESTS: TestEntry[] = [
 
   // details-data (4) — content rendered in the initial HTML
   { test_id: 'bfab9939', phase: 2, category: 'details-data', path: 'details-data/01-team-name-rendered.json', name: 'Both team names render as readable text on match page', priority: 'p0' },
-  { test_id: '98805948', phase: 2, category: 'details-data', path: 'details-data/02-team-flags-present.json', name: 'Both team flag images render with non-empty alt text', priority: 'p0' },
+  { test_id: '98805948', phase: 2, category: 'details-data', path: 'details-data/02-team-flags-present.json', name: 'Both team flag images render the correct flags on the match detail page', priority: 'p0' },
   { test_id: 'c4363884', phase: 2, category: 'details-data', path: 'details-data/03-kickoff-iso-or-local.json', name: 'Kickoff timestamp is rendered in human-readable form', priority: 'p1' },
   { test_id: 'dc9c837d', phase: 2, category: 'details-data', path: 'details-data/04-stage-badge.json', name: 'Match page renders a stage badge for the fixture', priority: 'p1' },
 

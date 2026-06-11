@@ -157,6 +157,14 @@ export function TestDetailClient({
         const lb: LeaderboardJson = await fetch(`${CDN_BASE}/leaderboard.json`).then((r) =>
           r.json(),
         );
+        // Real per-phase × per-plan verdict history, reassembled from each
+        // scoring round's published score snapshots. Optional — when absent
+        // the matrix falls back to authoring-phase verdict + retained gaps.
+        const phaseHistory: {
+          agents?: Record<string, Record<string, string>>;
+        } | null = await fetch(`${CDN_BASE}/phase-history.json`)
+          .then((r) => (r.ok ? r.json() : null))
+          .catch(() => null);
         const slugs = lb.rankings.map((r) => r.agent_slug);
         const list: AgentVerdict[] = await Promise.all(
           slugs.map(async (slug) => {
@@ -200,6 +208,23 @@ export function TestDetailClient({
             const ownPhaseRun = runs.find((r) => runPhase(r) === planPhase);
             const ownVerdict = ownPhaseRun?.per_test_verdicts.find(matchVerdict)
               ?.verdict as Verdict;
+            // Per-phase history row for this (agent, plan) — a 10-char code
+            // string (p/f/b/i, '.' = no record), keyed by full plan name with
+            // the same prefix tolerance as verdict joins.
+            const historyByName = phaseHistory?.agents?.[slug] ?? null;
+            const historyRow = historyByName
+              ? (planName && historyByName[planName]) ??
+                Object.entries(historyByName).find(([k]) =>
+                  planNameMatches(k, planName ?? ''),
+                )?.[1] ??
+                null
+              : null;
+            const HIST_CODE: Record<string, Verdict> = {
+              p: 'passed',
+              f: 'failed',
+              b: 'blocked',
+              i: 'inconclusive',
+            } as Record<string, Verdict>;
             const columnCount = Math.max(TOTAL_PHASES, latestScoredPhase);
             const phase_history = Array.from({ length: columnCount }, (_, k) => {
               const ph = k + 1;
@@ -211,11 +236,18 @@ export function TestDetailClient({
                 return { phase: ph, phase_label, verdict: undefined as Verdict, pending: false, not_applicable: true };
               }
               if (ph <= latestScoredPhase) {
-                if (ph === planPhase) {
+                // Real as-of-phase verdict from the score snapshots, when
+                // recorded for this (agent, plan, phase).
+                const code = historyRow?.[ph - 1];
+                const hist = code ? HIST_CODE[code] : undefined;
+                if (hist) {
+                  return { phase: ph, phase_label, verdict: hist, pending: false, not_applicable: false };
+                }
+                if (!historyRow && ph === planPhase) {
                   return { phase: ph, phase_label, verdict: ownVerdict, pending: false, not_applicable: false };
                 }
-                // Re-run cumulatively in this phase, but the per-plan record
-                // wasn't retained — an explicit gap, never a synthesized copy.
+                // No per-plan record for this phase (plan reworded mid-event,
+                // or record not retained) — an explicit gap, never a copy.
                 return { phase: ph, phase_label, verdict: undefined as Verdict, pending: false, not_applicable: false, not_retained: true };
               }
               return { phase: ph, phase_label, verdict: undefined as Verdict, pending: true, not_applicable: false };
@@ -487,10 +519,10 @@ export function TestDetailClient({
                 </div>
                 <p className="history-note">
                   Suites re-run cumulatively — every scored phase re-fires all
-                  earlier plans against that phase&apos;s deploy. A plan&apos;s verdict is
-                  recorded from its latest TestSprite run at its authoring phase;
-                  per-phase re-run records aren&apos;t retained (–). Aggregate per-phase
-                  results drive each agent&apos;s trajectory chart.
+                  earlier plans against that phase&apos;s deploy, and each cell shows
+                  the as-graded result from that phase&apos;s score snapshot. A dash
+                  (–) means no per-plan record exists for that phase (e.g. the
+                  plan was reworded mid-event).
                 </p>
                 </div>
               </div>
